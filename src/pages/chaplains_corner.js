@@ -5,7 +5,6 @@ import SEO from "../components/seo"
 export default (props) => (
   < >
     <SEO title="Page two" />
-    <h1>about page</h1>
+    <h1>chaplains corner</h1>
   </>
 )
-

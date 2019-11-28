@@ -1,47 +1,33 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import {CssBaseline} from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core/styles';
+import './layout.css'
+import theme from './theme'
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children,path }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
-    <>
-      <Header path = {path}siteTitle={data.site.siteMetadata.title} />
-      <div 
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <ThemeProvider theme={theme}><>
+    <CssBaseline />
+    <div style = {{
+      background:'#cfb77b',
+      //backgroundImage:"url('https://www.parksconservancy.org/sites/default/files/styles/basic/public/9thcavalryatpresidio_0.jpg?itok=bzxGr2bY')",
+      display:"flex",
+      flexDirection:"column",
+      minHeight:"100vh"
+    }}>
+      <Header path = {path}siteTitle='buffalo soldiers association' />
+     
+        <main style = {{flexGrow:1}}>{children}</main>
+        
+<Footer/>
+      </div></>
+    </ThemeProvider>
   )
 }
 

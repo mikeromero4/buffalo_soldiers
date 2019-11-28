@@ -1,3 +1,47 @@
+/* .MuiTab-textColorSecondary {
+  color: rgba(255, 255, 255, 0.54) !important;
+} */
+.a-listItem{
+  display:inline-block;
+  padding:5px;
+  text-decoration: underline;
+}
+.m-siteMap{
+  background:black;
+  margin:0;
+}
+.footer{
+  padding:50px;
+}
+.media--large{
+  display:flex;
+  background: #0a2f55;
+  flex-direction: row-reverse;
+  margin: 0 50px;
+align-items: stretch;
+padding:10px;
+}
+.media__content{
+flex-grow: 1;
+flex-basis:50%;
+padding: 10px;
+}
+.media__image{
+flex-grow: 2;
+flex-basis:50%;
+}
+.logo{
+  box-shadow: 2px 2px 4px black;
+    border: 2px solid #f7c10c;
+    background: #0a2f55;
+    border-radius: 100px;
+}
+.bg1{
+  width: 100%;
+}
+img{
+  margin: 0;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -209,17 +253,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
-img {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
+
 h1 {
   margin-left: 0;
   margin-right: 0;
