@@ -1,0 +1,11 @@
+.chapters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__list{
+        margin: 20px;
+    }
+    &__title{
+        font-size: 20px;
+    }
+}

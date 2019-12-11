@@ -4,7 +4,6 @@ import React from "react"
 
 import {ButtonGroup,Button} from '@material-ui/core'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';import { navigate } from "gatsby"
-import AppBar from '@material-ui/core/AppBar';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import Event from '@material-ui/icons/Event';
 import PersonIcon from '@material-ui/icons/Person';
@@ -39,11 +38,11 @@ let primaryNavigationItems = [
     icon:<PersonIcon/>
 
   },
+
   {
     name:"Donate",
     slug:"/donate/",
     icon:<AttachMoneyIcon/>
-
   },
 ]
 let secondaryNavigationItems = [
@@ -60,26 +59,19 @@ let secondaryNavigationItems = [
     name:"fiddlers green",
     slug:"/fiddlers_green/"
   },
-  {
-    name:"chaplain's corner",
-    slug:"/chaplains_corner/"
-  },
-  // {
-  //   name:"Reunion",
-  //   slug:"/reunion/"
-  // },
-  {
-    name:"store",
-    slug:"/store/"
-  },
     {
-    name:"Contact",
+    name:"Community",
     slug:"/contact/"
+  },
+  {
+    name:"Discount Travel",
+    slug:"/membership/",
+
   },
 ]
 
 const Header = ({ siteTitle,path }) => (
-  <header>
+  <header style={{position:'relative',zIndex:100}}>
 
         {/* <PrimaryNavigation primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/> */}
         <NavigationItems  primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/>
@@ -120,7 +112,7 @@ function PrimaryNavigation(props) {
 
 
 function NavigationItems(props) {
-  return <div>
+  return <div style={{boxShadow: '2px 2px 9px #00000091'}}>
 
     <Tabs
     variant={props.primary?'standard':"fullWidth"} 

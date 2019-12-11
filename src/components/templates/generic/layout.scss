@@ -1,34 +1,246 @@
+@import '../../atoms/variables.scss';
+@import '../../atoms/headings.scss';
 /* .MuiTab-textColorSecondary {
   color: rgba(255, 255, 255, 0.54) !important;
 } */
+.MuiFormLabel-root.Mui-focused{
+color:$gold !important;
+
+}
+.MuiTab-fullWidth {
+  min-width: max-content !important; //shame
+}
+.MuiTab-wrapper {
+  white-space: nowrap;
+}
+
+
+//base
+hr{
+  height: 1px;
+    background: #ffffff80;
+    margin: 24px 0;
+}
+hr.dark{
+    background: #00000080;
+    margin: 24px 0;
+}
+// p{
+//   margin: 0;
+//   padding:0;
+// }
+main{
+position: relative;
+}
+.top{
+  background: blue;
+}
+.page{
+  background:#ada176;
+}
+.mainContent{
+  font-size: $typography__size--small;
+  max-width: 1200px;
+  margin: auto;
+  background:$tan;
+  z-index: 0;
+  //background:'#cfb77b',
+}
+.parallax{
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      perspective:1px;
+      height:100vh;
+      overflow:scroll;}
+.content{
+  width: 700px;
+  margin:auto;
+position: relative;
+}
+//paralax
+.n2{
+}
+.p2, .p1{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2);
+  background-size: contain;
+  z-index: -1;
+  background-color: #b38d08;
+  background-blend-mode: luminosity;
+  background-position-x: center;
+  background-repeat: no-repeat;
+   background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/buffalo-soldiers-keri-beilman.jpg');
+}
+.importantLink{
+  color:$gold;
+  text-decoration:underline;
+}
+.bigButton{
+  margin: 24px;
+  padding:20px;
+  font-size: 20px;
+  background: $gold;
+}
+.callToAction{
+  border-radius:15px;
+  max-width: 915px;
+    background: #0a2f55;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  &__content{
+    background: #082746;
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
+  &__button{
+    max-width: 642px;
+    /* flex-basis: 50%; */
+    font-weight: bolder;
+    border: 2px solid #ffe99a;
+    border-style: outset;
+    border-radius:0 15px 15px 0;
+    color: white;
+    width: -webkit-max-content;
+    width: max-content;
+  }
+}
+.poem{
+  height: 100vh;
+
+  p{
+  text-align: center;
+    overflow: hidden;
+    padding: 30px;
+    margin: 0;
+    /* font-weight: bolder; */
+    /* padding: 0; */
+    font-family: roboto;
+    /* line-height: 1.5; */
+    border-radius: 10px;
+    background: #0a2f55d9;
+    width: -webkit-max-content;
+    width: 400px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 0 18px 0px black;
+    text-shadow: 1px 1px 0px #b38d08;
+  }
+}
+/* atoms */
 .a-listItem{
-  display:inline-block;
   padding:5px;
   text-decoration: underline;
 }
+
+/* footer */
+.o-footer{
+  background:$blue;
+}
+.o-footer__bar{
+  width: 100%;
+  color:$blue;
+  height:32px;
+border-top: 16px solid $blue;
+  background:$gold;
+}
+.o-footer__content{
+  color:#ffffff99;
+  padding:20px;
+  display:flex;
+  flex-direction:row;
+}
+.o-footer__boxes{
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+    height: min-content;
+    flex-shrink: 2;
+    flex-grow: 1;
+    display: flex;
+}
+.footerBox{    
+  max-width: 400px;
+  margin: 20px;
+  padding: 20px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column-reverse;
+}
 .m-siteMap{
-  background:black;
+  flex-grow:1; 
+      text-align: center;
+    display: flex;
+    padding: 20px;
+    width: min-content;
   margin:0;
 }
-.footer{
-  padding:50px;
+.m-siteMap__group {
+  flex-grow:1; 
+    text-align: left;
+    padding: 20px;
+    &:not(:first-child){
+      border-left: 1px solid #ffffff55;
+    }
+}
+.m-siteMap__groupName {
+  display: block;
+  /* margin: 90px; */
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.m-siteMap__grouplist.a-list {
+    margin: 0;
+}
+.m-siteMap__listItem.a-listItem {
+  list-style: none;
+    width: max-content;
+    padding:0;
+    margin:0;
+
+}
+
+
+/* //homepage */
+.presidentsPen{
+  width: 800px;
+  margin:auto;
 }
 .media--large{
+  flex-wrap: wrap;
   display:flex;
   background: #0a2f55;
   flex-direction: row-reverse;
-  margin: 0 50px;
 align-items: stretch;
 padding:10px;
 }
 .media__content{
+  min-width: 350px;
 flex-grow: 1;
-flex-basis:50%;
+flex-basis:33%;
 padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
 }
 .media__image{
+  padding: 10px;
 flex-grow: 2;
-flex-basis:50%;
+flex-basis:66%;
 }
 .logo{
   box-shadow: 2px 2px 4px black;
@@ -410,16 +622,7 @@ dd {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -507,19 +710,19 @@ iframe {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-hr {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
-  height: 1px;
-}
+// hr {
+//   margin-left: 0;
+//   margin-right: 0;
+//   margin-top: 0;
+//   padding-bottom: 0;
+//   padding-left: 0;
+//   padding-right: 0;
+//   padding-top: 0;
+//   margin-bottom: calc(1.45rem - 1px);
+//   background: hsla(0, 0%, 0%, 0.2);
+//   border: none;
+//   
+// }
 address {
   margin-left: 0;
   margin-right: 0;

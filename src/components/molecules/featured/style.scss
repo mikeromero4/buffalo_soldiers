@@ -1,0 +1,16 @@
+.featured{
+    display:flex;
+    flex-direction:column;
+    height: 100%;
+    &__item{
+        padding: 24px;
+    margin: 12px 0 12px 24px;
+    color: black;
+    background: rgb(231, 227, 214);
+    flex-grow: 1;
+    height: 220px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px #0000007a;
+
+    }
+}

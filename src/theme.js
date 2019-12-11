@@ -11,8 +11,8 @@ export default {
         main: "#caa110", //gold
       },
       background: {
-        paper: "#fff",
-        default: "#fff",
+        // paper: "#fff",
+        // default: "#fff",
       },
     },
     overrides: {
@@ -26,6 +26,13 @@ export default {
             height:'5px',
           backgroundColor: "#caa110",
         },
+      },
+      MuiPaper:{
+        root:{
+          backgroundColor:"#ffffffb3",
+          color:"#262265",
+          padding:"20px",
+        }
       },
       MuiTabs: { flexContainer: { alignItems: "center",backgroundColor:'#0a2f55' } },
       //.MuiTab-textColorSecondary
@@ -42,7 +49,7 @@ export default {
         },
         textColorPrimary: {
           borderRadius: "10px",
-          color: "#ffffffaa",
+          // color: "#ffffffaa",
         },
         root: {
             // height: "min-content",

@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Chapters from "../components/organisms/chapters/index"
+import Layout from "../components/templates/generic/layout"
+import SEO from "../components/utilities/seo"
 
 const SecondPage = (props) => (
   <>
     <SEO title="Page two" />
-    <h1>chappters</h1>
-    
+  
+    <Chapters/>
   </>
 )
 

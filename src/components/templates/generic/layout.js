@@ -3,30 +3,25 @@ import React from "react"
 import PropTypes from "prop-types"
 import {CssBaseline} from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
-import './layout.css'
-import theme from './theme'
+import theme from '../../../theme'
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.css"
+import "./layout.scss"
 
 const Layout = ({ children,path }) => {
 
   return (
     <ThemeProvider theme={theme}><>
     <CssBaseline />
-    <div style = {{
-      background:'#cfb77b',
-      //backgroundImage:"url('https://www.parksconservancy.org/sites/default/files/styles/basic/public/9thcavalryatpresidio_0.jpg?itok=bzxGr2bY')",
-      display:"flex",
-      flexDirection:"column",
-      minHeight:"100vh"
-    }}>
+    <div className = "parallax">
+    <div className = "page" >
       <Header path = {path}siteTitle='buffalo soldiers association' />
-     
+      <div className = "mainContent"  style={{position:'relative'}}>
+
         <main style = {{flexGrow:1}}>{children}</main>
-        
+        </div>
 <Footer/>
-      </div></>
+      </div></div></>
     </ThemeProvider>
   )
 }

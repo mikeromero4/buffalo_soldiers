@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "../components/utilities/seo"
 
 export default (props) => (
   < >
@@ -11,8 +11,7 @@ export default (props) => (
       width:"100%",
       height:"100%"
     }}>
-Contribute to the growth of our community!
-Donate Now
+We welcome your donations which will help us continue to perpetuate, educate and celebrate this rich history and legacy.  These donations will support and help our Jr. Buffalo Soldier Youth Summit activities and any amount is welcome. All donations are tax deductible as we are a registered non-profit entity.Donate Now
 </div>
   </>
 )
