@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Featured, FeaturedItem } from "../components/molecules/featured/index"
-import SEO from "../components/utilities/seo"
+import { Featured, FeaturedItem,FeaturedItem__content,FeaturedItem__image,FeaturedItem__title } from "../components/molecules/featured/index"
 import {Button,Box} from "@material-ui/core"
 import PresidentsPen from "../content/presidentsPen/index"
 
@@ -9,19 +8,47 @@ import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 
 import "./sidebar.scss";
 export default () => (
-  <>
-    <SEO title="Home" />
-    <Section name = "intro" classes={['-transparent']}>
+   <>
+
+
+     <Main>
+     <Section name = "intro" classes={['-transparent']}>
       <Intro />
     </Section>
-    <WideBox>
+     <WideBox>
       <CallToAction/>
     </WideBox>
-    <Section name = "featured" classes={['-transparent']} sidebar = {<FeaturedPreviews />}>
+{/* 
+    <Section name = "featured" classes={['-transparent']} sidebar = {  <FeaturedPreviews />  }>
       <PresidentsPen />
+      <Section name = "intro" classes={['-transparent']}>
+      <ExecutiveBoard /></Section>
+    
+    </Section> */}
+
+
+    {/* <Section name = "featured" classes={['-transparent']}  sidebar = {<ExecutiveBoard />}>
+      <PresidentsPen />
+      <Section name = "intro" classes={['-transparent']}>
+      <FeaturedPreviews /> </Section>
+    
+    </Section> */}
+
+    
+        <Section name = "featured" classes={['-transparent']}>
+      <PresidentsPen />
+      
+    
     </Section>
-    <ExecutiveBoard/>
-  </>
+<Section name = "intro" classes={['-transparent']}>
+      <FeaturedPreviews horizontal/></Section>
+
+    <Section name = "p" classes={['-transparent']}>
+      <ExecutiveBoard/>
+    
+    </Section>
+    </Main>
+    </>
 )
 function WideBox(props) {
 return<div className = "t-wideBox">
@@ -49,12 +76,24 @@ return<div className = "t-wideBox">
  </Box>
 
  }
-function FeaturedPreviews() {
+function FeaturedPreviews({horizontal}) {
   return (
-      <Featured>
-        <FeaturedItem>News </FeaturedItem>
-        <FeaturedItem>Community</FeaturedItem>
-        <FeaturedItem></FeaturedItem>
+      <Featured horizontal={horizontal}>
+        <FeaturedItem>
+        <FeaturedItem__title> Membership</FeaturedItem__title>
+         <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
+         <FeaturedItem__content> Become a member to participate in our events, reunions and more! </FeaturedItem__content>
+        </FeaturedItem>
+      <FeaturedItem>
+        <FeaturedItem__title> Junior Buffalo Soldiers</FeaturedItem__title>
+         <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
+         <FeaturedItem__content>Keep the Buffalo Soldier legacy alive through the generations!</FeaturedItem__content>
+        </FeaturedItem>
+                <FeaturedItem>
+        <FeaturedItem__title> News</FeaturedItem__title>
+         <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
+         <FeaturedItem__content> Stay updated on current events and updates. </FeaturedItem__content>
+        </FeaturedItem>
       </Featured>
   )
 }
@@ -72,6 +111,12 @@ return <div id = {name} className = {"t-section -withSidebar"
   }
 else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
 }
+function Main({children,sidebar}) {
+  return <main className={"t-main" + (sidebar?" -withSidebar":"")}>
+    {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
+    <div className = "t-main__content">{children}</div>
+  </main>
+  }
 function Intro() {
   return (
     <div className="media--large">
@@ -83,7 +128,7 @@ function Intro() {
       </div>
       <div className="media__content">
         <div>
-          <h2 className='heading--2 heading -primary -special'>
+          <h2 className='heading--2 heading -secondary -special'>
             <span>National</span> 
             <span>Buffalo</span> 
             <span>Soldiers</span></h2>
@@ -99,6 +144,7 @@ function Intro() {
             </a>
           </p>
         </div>
+
       </div>
     </div>
   )

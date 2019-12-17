@@ -7,10 +7,11 @@ import theme from '../../../theme'
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.scss"
+import SEO from "../../utilities/seo"
 
 const Layout = ({ children,path }) => {
-
-  return (
+//dont forget to add page name
+  return (<><SEO title="Page name" /> 
     <ThemeProvider theme={theme}><>
     <CssBaseline />
     <div className = "parallax">
@@ -22,7 +23,7 @@ const Layout = ({ children,path }) => {
         </div>
 <Footer/>
       </div></div></>
-    </ThemeProvider>
+    </ThemeProvider></>
   )
 }
 

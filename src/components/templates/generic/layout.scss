@@ -29,23 +29,47 @@ hr.dark{
 //   margin: 0;
 //   padding:0;
 // }
-main{
-position: relative;
+
+// return <div className={"t-main" + (sidebar?" -withSidebar":"")}>
+//   {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
+//   <div className = "t-main__content">{children}</div>
+.mainContent{
+  font-size: $typography__size--normal;
+  
+  
+  background:$tan;
+  z-index: 0;
+  //background:'#cfb77b',
 }
+.t-main{
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  &.-withSidebar{
+    max-width: 1800px;
+    display:flex;
+    flex-direction:row;
+  }
+  &__sidebar{
+    background:$blue;
+    min-width: 300px;
+  }
+  &__content{
+   
+    flex-grow: 1;
+  }
+}
+
+// main{
+// position: relative;
+// }
 .top{
   background: blue;
 }
 .page{
   background:#ada176;
 }
-.mainContent{
-  font-size: $typography__size--small;
-  max-width: 1200px;
-  margin: auto;
-  background:$tan;
-  z-index: 0;
-  //background:'#cfb77b',
-}
+
 .parallax{
       display:flex;
       flex-direction:column;
@@ -61,9 +85,39 @@ position: relative;
 //paralax
 .n2{
 }
-.p2, .p1{
+.fiddlersGreenTitle{
+  width: 100%;
   position: absolute;
-  top: 0;
+  text-align: center;
+  display: block;
+  font-size: 54px;
+  margin: auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffdc5e;
+  font-size: 8vh;
+  text-shadow: 2px 2px 1px #00000099;
+  z-index: 2;
+}
+.p__holder{
+  z-index: 1;
+
+  width: 100%;
+  position: relative;
+background: $blue;
+}
+.p1{
+  background: #1a1506;
+    margin-top: -100px;
+    /* position: absolute; */
+    padding: 24px 290px;
+}
+.p2{
+  width: 80%;
+
+  height:90vh;
+  position: relative;
+  top: -180;
   right: 0;
   bottom: 0;
   left: 0;
@@ -134,7 +188,6 @@ position: relative;
     background: #0a2f55d9;
     width: -webkit-max-content;
     width: 400px;
-    font-size: 20px;
     text-align: center;
     color: #ffffff;
     box-shadow: 0 0 18px 0px black;
@@ -217,10 +270,12 @@ border-top: 16px solid $blue;
 
 /* //homepage */
 .presidentsPen{
-  width: 800px;
+  font-size: $typography__size--small;
+  
   margin:auto;
 }
 .media--large{
+  justify-content: space-around;
   flex-wrap: wrap;
   display:flex;
   background: #0a2f55;
@@ -229,7 +284,8 @@ align-items: stretch;
 padding:10px;
 }
 .media__content{
-  min-width: 350px;
+  max-width: 550px;
+  min-width: 300px;
 flex-grow: 1;
 flex-basis:33%;
 padding: 10px;
@@ -238,6 +294,7 @@ flex-direction: column;
 justify-content: space-evenly;
 }
 .media__image{
+  max-width: 750px;
   padding: 10px;
 flex-grow: 2;
 flex-basis:66%;

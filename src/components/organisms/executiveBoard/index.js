@@ -1,6 +1,7 @@
 import React from "react"
-import { GridList, GridListTile,Button,Paper,Card } from "@material-ui/core"
-
+import {CardContent,CardActionArea, GridList, GridListTile,Button,Paper,Card } from "@material-ui/core"
+       
+import PersonIcon from '@material-ui/icons/Person';
 let executiveMembers = [
 {
   role:"1st Vice President",	
@@ -64,20 +65,30 @@ let executiveMembers = [
 },
 ]
 export default()=><Paper>
-  <div className = "cardGrid">
+  executive board:
+  <br/>
+   <br/>
+  <div style = {{width:"100%",height:"100%"}} className = "cardGrid">
 {
   <GridList cellHeight={'auto'} spacing = {16} cols={4}>
   {executiveMembers.map(e => (
     <GridListTile  cols={1}>
       <Card>
-        <h1>{e.name}</h1>
-    <span>{e.role}</span>
-    </Card>'s'
+        <CardActionArea>
+         
+        <CardContent>
+        <h1 className = "heading--4">{e.name}</h1>
+          <span>{e.role}</span>
+    
+    </CardContent>
+    
+    </CardActionArea>
+    </Card>
     </GridListTile>
   ))}
 </GridList>
   
 }
-<Button variant = "contained" fullWidth color = "primary"> Full List</Button>
+<Button variant = "contained" fullWidth color = "secondary"> Full List</Button>
   </div>
   </Paper>

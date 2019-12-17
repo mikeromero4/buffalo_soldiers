@@ -31,7 +31,6 @@ export default {
         root:{
           backgroundColor:"#ffffffb3",
           color:"#262265",
-          padding:"20px",
         }
       },
       MuiTabs: { flexContainer: { alignItems: "center",backgroundColor:'#0a2f55' } },

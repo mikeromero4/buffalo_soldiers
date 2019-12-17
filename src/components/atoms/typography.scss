@@ -1,2 +1,9 @@
-$typography__size--small:18px;
+$typography__size__base:18px;
 
+$typography__size--small:0.8em;
+$typography__size--normal:1.1em;
+$typography__size--large:1.8em;
+
+html{
+    font-size: $typography__size__base;
+}

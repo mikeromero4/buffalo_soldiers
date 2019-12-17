@@ -1,6 +1,7 @@
-$space-xs:8px;
-$space-s:12px;
-$space-m:24px;
-$space-l:32px;
-$space-xl:48px;
-$space-xxl:64px;
+$space-base:6;
+$space-xs:#{$space-base*2}px;
+$space-s:#{$space-base*4}px;
+$space-m:#{$space-base*8}px;
+$space-l:#{$space-base*16}px;
+$space-xl:#{$space-base*32}px;
+$space-xxl:#{$space-base*64}px;

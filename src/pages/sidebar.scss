@@ -1,6 +1,6 @@
 @import '../components/atoms/variables.scss';
 %section{
-    margin:24px 0;
+    margin: $space-m 0;
     //padding:12px;
     background: $blue;
     border-radius: 5px;
@@ -8,13 +8,16 @@
 }
 .t-wideBox{
     @extend %section;
-    margin: 24px auto;
+    margin: 0;
+   // width: max-content;
+    //margin: $space-m auto;
 }
 .t-section{
     @extend %section;
     &.-withSidebar{
         display:flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     &.-transparent{
         background-color: unset;
@@ -27,10 +30,13 @@
     }
     &__sidebar{
         
-        width: 300px;
+        min-width: 300px;
+        flex-basis:300px;
         flex-grow: 1;
     }
     &__content{
-        
+        min-width: 600px;
+        flex-basis:600px;
+        flex-grow: 1;
     }
 }
