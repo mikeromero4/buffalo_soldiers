@@ -20,6 +20,8 @@ let key = "sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8"
 let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
 
 let Catalog = ({ items, loaded, addToCart }) => (
+    <div className="storeCatalogContainer">
+      <h1>Buffalo Soldiers' store</h1>
   <div className="storeCatalog">
     {loaded == false ? (
       <span>loading catalog...</span>
@@ -28,7 +30,7 @@ let Catalog = ({ items, loaded, addToCart }) => (
         <Item addToCart={addToCart} data={e} />
       ))
     )}
-  </div>
+  </div></div>
 )
 let Item = ({ addToCart, data: { id, name, image, price } }) => (
   <div className="storeItem">
@@ -37,8 +39,8 @@ let Item = ({ addToCart, data: { id, name, image, price } }) => (
       style={{ backgroundImage: `url(${image})` }}
     />
     <div className="storeItem__description">
-      <h3 className="storeItem__name">{name}</h3>
-      <h4 className="storeItem__price">{"$" + (price / 100).toFixed(2)}</h4>
+      <span className="storeItem__name">{name}</span><br/>
+      <span className="storeItem__price">{"$" + (price / 100).toFixed(2)}</span>
     </div>
     <Button
       color="secondary"
@@ -117,7 +119,7 @@ export default class extends React.Component {
       <>
         <SEO title="Page two" />
         <Main reverseSidebar sidebar={<Cart stripe={this.state.stripe} items={this.state.cart} />}>
-          <h1>store</h1>
+          
           <Catalog
             addToCart={this.addToCart}
             loaded={this.state.storeReady}
@@ -139,21 +141,22 @@ function Cart({ items,stripe }) {
   })
   console.log(cart)
   return (
-    <div>
+    <div className='shoppingCart'>
       <h3>
         Cart <ShoppingCartIcon />{totalItems}
       </h3>
-      Your cart is empty.
+      {cart.length==0?'Your cart is empty.':''}<br/>
       {cart.map(e => (
-        <div>
+        <div className = "shoppingCart__item">
               <div
       className="shoppingCart__image"
       style={{ backgroundImage: `url(${e.item.image})` }}
     />
-          {e.item.name} ({e.quantity})<br />
+          <div className="shoppingCart__info">{e.item.name} </div>
+          <input type='number' min="0" max="999" style = {{width:"50px"}} value={e.quantity}></input>
         </div>
       ))}
-      Total price:${ (totalPrice / 100).toFixed(2)}
+     <br/> Total price:${ (totalPrice / 100).toFixed(2)}
       <Button variant = "contained" fullWidth color = "secondary" onClick = {function(){
         checkOut(stripe,cart)
       }}>

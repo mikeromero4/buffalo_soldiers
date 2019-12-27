@@ -40,17 +40,36 @@ hr.dark{
 //   {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
 //   <div className = "t-main__content">{children}</div>
 .storeCatalog{
+  
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
+  justify-content: space-evenly;
+}
+.storeCatalogContainer{
+  text-align: center;
+  color: #0a2f55;
+  margin:24px;
+  background: #ffffffb3;
+    border-radius: 5px;
+    box-shadow: 2px 1px 1px #00000061;
+    padding:24px;
 }
 .storeItem{
+  max-width: 350px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1px #00000029;
+  background: #ffffff;
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
   width: 250px;
-  background: $blue;
-  display:inline-block;
+  color: #0a2f55;
+  /* display: inline-block; */
   padding: 12px;
   margin: 12px;
+  align-items: center;
 }
 .storeItem__image{
   background-position: center;
@@ -65,8 +84,28 @@ hr.dark{
   height: 100px;
   background-size: cover;
 }
-.storeItem__description{
+.shoppingCart{
+  padding: 24px 12px;
+
 }
+.shoppingCart__item{
+  margin: 12px 0;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1px #00000029;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  display: flex;
+  color: black;
+}
+.shoppingCart__info{
+  padding:12px;
+
+}
+.storeItem__description{
+  text-align: center;
+}
+
 .storeItem__name{
 }
 .storeItem__price{
