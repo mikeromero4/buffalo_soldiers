@@ -5,7 +5,7 @@ import {Button,Box} from "@material-ui/core"
 import PresidentsPen from "../content/presidentsPen/index"
 import img1 from "../images/6.jpg"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
-
+import {Main,Section} from "../components/templates/generic/common"
 import "./sidebar.scss";
 export default () => (
    <>
@@ -99,26 +99,6 @@ function FeaturedPreviews({horizontal}) {
       </Featured>
   )
 }
-function Section({sidebar,name,children,classes}) {
-  if (sidebar){
-return <div id = {name} className = {"t-section -withSidebar"
-+(classes?' '+classes.reduce((p,c)=>p+c):'')}>
-<div className="t-section__sidebar">
-{sidebar}
-</div>
-<div className="t-section__content">
-  {children}
-</div>
-</div>
-  }
-else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
-}
-function Main({children,sidebar,margin}) {
-  return <main className={"t-main" + (margin?" -withMargin":"") + (sidebar?" -withSidebar":"")}>
-    {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
-    <div className = "t-main__content  -inverseColors">{children}</div>
-  </main>
-  }
 function Intro() {
   return (
     <div className="media--large">

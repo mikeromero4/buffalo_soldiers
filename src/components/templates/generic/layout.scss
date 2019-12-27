@@ -39,10 +39,40 @@ hr.dark{
 // return <div className={"t-main" + (sidebar?" -withSidebar":"")}>
 //   {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
 //   <div className = "t-main__content">{children}</div>
+.storeCatalog{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
 .storeItem{
-  width: 150px;
-  height: 100px;
+  width: 250px;
+  background: $blue;
   display:inline-block;
+  padding: 12px;
+  margin: 12px;
+}
+.storeItem__image{
+  background-position: center;
+  width: 225px;
+  height: 225px;
+  background-size: cover;
+}
+.shoppingCart__image{
+  display:inline-block;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
+.storeItem__description{
+}
+.storeItem__name{
+}
+.storeItem__price{
+}
+.storeItem__button{
+  display: block;
 }
 .t-mainContent{
   font-size: $typography__size--normal;
@@ -63,6 +93,9 @@ hr.dark{
     max-width: 1800px;
     display:flex;
     flex-direction:row;
+    &.reverse{
+      flex-direction:row-reverse;
+    }
   }
   &.-withMargin{
     background: $blue;
@@ -79,6 +112,7 @@ hr.dark{
   &__sidebar{
     background:$blue;
     min-width: 300px;
+
   }
   &__content{
    
