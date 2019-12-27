@@ -60,8 +60,8 @@ let secondaryNavigationItems = [
     slug:"/fiddlers_green/"
   },
     {
-    name:"Community",
-    slug:"/contact/"
+    name:"Store",
+    slug:"/store/"
   },
   {
     name:"Discount Travel",

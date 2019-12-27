@@ -39,7 +39,11 @@ hr.dark{
 // return <div className={"t-main" + (sidebar?" -withSidebar":"")}>
 //   {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
 //   <div className = "t-main__content">{children}</div>
-
+.storeItem{
+  width: 150px;
+  height: 100px;
+  display:inline-block;
+}
 .t-mainContent{
   font-size: $typography__size--normal;
   
