@@ -44,7 +44,6 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
-    console.log(GATSBY_process.env.stripe || "@nog")
     console.log(process.env.stripe || "nos")
     this.setState({
        stripe: window.Stripe(key2, {betas: ['checkout_beta_3']}) 
@@ -54,7 +53,7 @@ export default class extends React.Component {
       method: "GET",
       withCredentials: true,
       headers: {
-        "Authorization": "Bearer "+GATSBY_process.env.stripe || key,
+        "Authorization": "Bearer "+key,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
       }
