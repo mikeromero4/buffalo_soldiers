@@ -12,13 +12,13 @@ export default class extends React.Component {
 
   componentDidMount() {
     this.setState({
-      stripe: window.Stripe('sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8', {betas: ['checkout_beta_3']}) 
+      stripe: window.Stripe('pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq', {betas: ['checkout_beta_3']}) 
     })
     let p = fetch('https://api.stripe.com/v1/products',{
       method: "GET",
       withCredentials: true,
       headers: {
-        "Authorization": "Bearer sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO",
+        "Authorization": "Bearer pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
       }
