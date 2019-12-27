@@ -16,7 +16,7 @@
     @extend %section;
     &.-withSidebar{
         display:flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         flex-wrap: wrap;
     }
     &.-transparent{
@@ -28,8 +28,9 @@
         margin-top:0;
         padding-top:0;
     }
-    &__sidebar{
-        
+    &__sidebar{ 
+        padding-left: 12px;
+        max-width: 300px;
         min-width: 300px;
         flex-basis:300px;
         flex-grow: 1;

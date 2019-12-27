@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Featured, FeaturedItem,FeaturedItem__content,FeaturedItem__image,FeaturedItem__title } from "../components/molecules/featured/index"
 import {Button,Box} from "@material-ui/core"
 import PresidentsPen from "../content/presidentsPen/index"
-
+import img1 from "../images/6.jpg"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 
 import "./sidebar.scss";
@@ -11,7 +11,7 @@ export default () => (
    <>
 
 
-     <Main>
+     <Main margin>
      <Section name = "intro" classes={['-transparent']}>
       <Intro />
     </Section>
@@ -27,13 +27,13 @@ export default () => (
     </Section> */}
 
 
-    {/* <Section name = "featured" classes={['-transparent']}  sidebar = {<ExecutiveBoard />}>
+    <Section name = "featured" classes={['-transparent']}  sidebar = {<ExecutiveBoard />}>
       <PresidentsPen />
       <Section name = "intro" classes={['-transparent']}>
       <FeaturedPreviews /> </Section>
     
-    </Section> */}
-
+    </Section>
+{/* 
     
         <Section name = "featured" classes={['-transparent']}>
       <PresidentsPen />
@@ -46,7 +46,7 @@ export default () => (
     <Section name = "p" classes={['-transparent']}>
       <ExecutiveBoard/>
     
-    </Section>
+    </Section> */}
     </Main>
     </>
 )
@@ -80,20 +80,22 @@ function FeaturedPreviews({horizontal}) {
   return (
       <Featured horizontal={horizontal}>
         <FeaturedItem>
-        <FeaturedItem__title> Membership</FeaturedItem__title>
          <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
-         <FeaturedItem__content> Become a member to participate in our events, reunions and more! </FeaturedItem__content>
+         <FeaturedItem__content> 
+            <FeaturedItem__title> Membership</FeaturedItem__title>
+            <span>Become a member to participate in our events, reunions and more! </span>
+            <Button variant='contained' color='secondary'>Learn More</Button>
+            </FeaturedItem__content>
         </FeaturedItem>
       <FeaturedItem>
-        <FeaturedItem__title> Junior Buffalo Soldiers</FeaturedItem__title>
          <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
-         <FeaturedItem__content>Keep the Buffalo Soldier legacy alive through the generations!</FeaturedItem__content>
+         <FeaturedItem__content>
+            <FeaturedItem__title> Junior Buffalo Soldiers</FeaturedItem__title>
+            <span>Keep the Buffalo Soldier legacy alive through the generations!</span>
+            <Button variant='contained' color='secondary'>Learn More</Button>
+            </FeaturedItem__content>
         </FeaturedItem>
-                <FeaturedItem>
-        <FeaturedItem__title> News</FeaturedItem__title>
-         <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
-         <FeaturedItem__content> Stay updated on current events and updates. </FeaturedItem__content>
-        </FeaturedItem>
+
       </Featured>
   )
 }
@@ -111,10 +113,10 @@ return <div id = {name} className = {"t-section -withSidebar"
   }
 else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
 }
-function Main({children,sidebar}) {
-  return <main className={"t-main" + (sidebar?" -withSidebar":"")}>
+function Main({children,sidebar,margin}) {
+  return <main className={"t-main" + (margin?" -withMargin":"") + (sidebar?" -withSidebar":"")}>
     {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
-    <div className = "t-main__content">{children}</div>
+    <div className = "t-main__content  -inverseColors">{children}</div>
   </main>
   }
 function Intro() {
@@ -123,26 +125,28 @@ function Intro() {
       <div className="media__image">
         <img
           className="bg1"
-          src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_96.JPG"
+          src={img1}
         />
       </div>
       <div className="media__content">
-        <div>
+        <div className='content_title'>
           <h2 className='heading--2 heading -secondary -special'>
-            <span>National</span> 
-            <span>Buffalo</span> 
-            <span>Soldiers</span></h2>
-          <h4 className='heading--4'>The 9th & 10th (Horse) Calvary Association</h4>
-          <p>
+            National Buffalo Soldiers</h2>
+          <h4 className='heading--4 heading -white'>The 9th & 10th (Horse) Calvary Association</h4>
+           </div>
+           <div  className='content_body'>
+        <span>
             The National Association is an official military unit representing
             one of the most famed Military Units in the history of the American
             Armed Forces; <em>The Buffalo Soldiers</em>. Our Mission is to
             perpetuate, educate and celebrate their rich legacy and herritage!
+            </span>
             <a className="importantLink">
-              {" "}
+              <Button variant='outlined' color='secondary'>
+
               Learn more about Buffalo Soldier History
+              </Button>
             </a>
-          </p>
         </div>
 
       </div>

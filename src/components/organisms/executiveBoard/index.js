@@ -11,50 +11,50 @@ let executiveMembers = [
   role:"2nd Vice President",	
   name:"Frank Bell",
 },
-// {
-//   role:"Asst. 2nd Vice President",	
-//   name:"Bruce Mitchell",
-// },
-// {
-//   role:"Secretary",	
-//   name:"Marilyn Johnson",
-// },
-// {
-//   role:"Asst. Secretary",	
-//   name:"Diane Butler",
-// },
+{
+  role:"Asst. 2nd Vice President",	
+  name:"Bruce Mitchell",
+},
+{
+  role:"Secretary",	
+  name:"Marilyn Johnson",
+},
+{
+  role:"Asst. Secretary",	
+  name:"Diane Butler",
+},
 {
   role:"Treasurer",	
   name:"Larry Thornton",
 },
-// {
-//   role:"Asst. Treasurer",	
-//   name:"Leanna Rogers",
-// },
+{
+  role:"Asst. Treasurer",	
+  name:"Leanna Rogers",
+},
 {
   role:"Parliamentarian",	
   name:"Roy Achong",
 },
-// {
-//   role:"Asst. Parliamentarian",	
-//   name:"Clint Brown",
-// },
+{
+  role:"Asst. Parliamentarian",	
+  name:"Clint Brown",
+},
 {
   role:"Sargent-at-Arms",	
   name:"Virgil Griffin",
 },
-// {
-//   role:"Asst. Sargent-at-Arms",	
-//   name:"Henry Black",
-// },
+{
+  role:"Asst. Sargent-at-Arms",	
+  name:"Henry Black",
+},
 {
   role:"Chaplin",	
   name:"Eddie Sumbler",
 },
-// {
-//   role:"Asst. Chaplin",	
-//   name:"Fred Gray",
-// },
+{
+  role:"Asst. Chaplin",	
+  name:"Fred Gray",
+},
 {
   role:"Color Guard Commander",	
   name:"George Noland",
@@ -65,12 +65,14 @@ let executiveMembers = [
 },
 ]
 export default()=><Paper>
+  <h1 className='heading--4'>
   executive board:
+  </h1>
   <br/>
    <br/>
   <div style = {{width:"100%",height:"100%"}} className = "cardGrid">
 {
-  <GridList cellHeight={'auto'} spacing = {16} cols={4}>
+  <GridList cellHeight={'auto'} spacing = {16} cols={1}>
   {executiveMembers.map(e => (
     <GridListTile  cols={1}>
       <Card>

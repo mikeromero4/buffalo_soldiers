@@ -5,14 +5,15 @@ export function Featured(props){ return <div className = {"featured"+(props.hori
 {props.children}
 </div>}
 export function FeaturedItem(props){ return <div className = "featuredItem">
-   
+
+<div className = {"featuredItem__body"}>
     {props.children}
-  
+</div>
 </div>}
 
 export function FeaturedItem__title({children}){ 
     return <div className = {"featuredItem__title"}>
-        <h2 className = "heading--4 -white heading -background--primary">
+           <h2 className = "heading--4 -white heading -background--primary">
 {children}
 </h2>
 </div>}

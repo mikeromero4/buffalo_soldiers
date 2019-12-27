@@ -16,6 +16,12 @@ color:$gold !important;
 
 
 //base
+html{
+  overflow-y: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
 hr{
   height: 1px;
     background: #ffffff80;
@@ -33,13 +39,17 @@ hr.dark{
 // return <div className={"t-main" + (sidebar?" -withSidebar":"")}>
 //   {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
 //   <div className = "t-main__content">{children}</div>
-.mainContent{
+
+.t-mainContent{
   font-size: $typography__size--normal;
   
   
   background:$tan;
   z-index: 0;
   //background:'#cfb77b',
+  &.-inverseColors{
+    background:$blue;
+  }
 }
 .t-main{
   max-width: 1200px;
@@ -50,6 +60,18 @@ hr.dark{
     display:flex;
     flex-direction:row;
   }
+  &.-withMargin{
+    background: $blue;
+    max-width: 100%;
+    .t-main__content{
+        max-width: 1200px;
+        margin: auto;
+        background: $tan;
+        padding: 24px;
+        padding-top: 0;
+    }
+
+  }
   &__sidebar{
     background:$blue;
     min-width: 300px;
@@ -57,6 +79,9 @@ hr.dark{
   &__content{
    
     flex-grow: 1;
+    &.-inverseColors{
+      background:$tan;
+    }
   }
 }
 
@@ -67,7 +92,7 @@ hr.dark{
   background: blue;
 }
 .page{
-  background:#ada176;
+  background:$tan;
 }
 
 .parallax{
@@ -106,23 +131,35 @@ position: relative;
   position: relative;
 background: $blue;
 }
+.pi1{
+  height:60px;
+  width:100%;
+  background-size: 30%;
+}
 .p1{
   background: #1a1506;
     margin-top: -100px;
     /* position: absolute; */
-    padding: 24px 290px;
+    width: 80%;
+    margin: auto;
 }
 .p2{
   width: 80%;
-
   height:90vh;
   position: relative;
   top: -180;
   right: 0;
   bottom: 0;
   left: 0;
-  -webkit-transform: translateZ(-1px) scale(2);
-  transform: translateZ(-1px) scale(2);
+  overflow: hidden;
+  margin:auto;
+  div{
+    width: 100%;
+    height: 100%;
+
+
+  -webkit-transform: translateZ(-1px) scale(2.2);
+  transform: translateZ(-1px) scale(2.2);
   background-size: contain;
   z-index: -1;
   background-color: #b38d08;
@@ -130,6 +167,8 @@ background: $blue;
   background-position-x: center;
   background-repeat: no-repeat;
    background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/buffalo-soldiers-keri-beilman.jpg');
+
+  }
 }
 .importantLink{
   color:$gold;
@@ -203,6 +242,8 @@ background: $blue;
 /* footer */
 .o-footer{
   background:$blue;
+  z-index: 1;
+  position:relative;
 }
 .o-footer__bar{
   width: 100%;
@@ -274,28 +315,63 @@ border-top: 16px solid $blue;
   
   margin:auto;
 }
+.content_title{
+  padding: 12px;
+    background: #0a2f55;
+    border-bottom: 2px solid #caa110;
+    /* text-align: center; */
+    z-index: 1;
+
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.658);
+    border-width: 1.5px;
+    /* border-radius: 5px; */
+    margin: 0;
+}
+.content_body{
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  border-top: none;
+  border-right: none;
+  background:#e9e6da;
+  span{
+    padding: 12px;
+    flex-grow: 1;
+  }
+}
 .media--large{
+  box-shadow: 2px 2px 2px #0000008a;
+    border-top-left-radius: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0;
   justify-content: space-around;
   flex-wrap: wrap;
   display:flex;
-  background: #0a2f55;
+  background: $transparentWhite;
   flex-direction: row-reverse;
 align-items: stretch;
-padding:10px;
+overflow: hidden;
+
+
 }
 .media__content{
+
+  color:black;
   max-width: 550px;
   min-width: 300px;
 flex-grow: 1;
 flex-basis:33%;
-padding: 10px;
 display: flex;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: flex-start;
 }
 .media__image{
+  padding: 12px;
+  padding-left: 0;
+  height: unset;
   max-width: 750px;
-  padding: 10px;
 flex-grow: 2;
 flex-basis:66%;
 }
@@ -306,6 +382,7 @@ flex-basis:66%;
     border-radius: 100px;
 }
 .bg1{
+  height:100%;
   width: 100%;
 }
 img{
@@ -373,10 +450,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+
 mark {
   background-color: #ff0;
   color: #000;
@@ -523,108 +597,6 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-h1 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
-  line-height: 1.1;
-}
-h2 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
-  line-height: 1.1;
-}
-h3 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
-  line-height: 1.1;
-}
-h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.1;
-}
-h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
-  line-height: 1.1;
-}
-h6 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
-  line-height: 1.1;
-}
 hgroup {
   margin-left: 0;
   margin-right: 0;
