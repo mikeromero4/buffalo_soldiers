@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import SEO from "../components/utilities/seo"
 // let key='sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO'
 // let key2='pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq'
-// let key='sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8'
+ let key='sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8'
 let key2='pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF'
 
 let Catalog = ({items,loaded,stripe})=><>
@@ -44,6 +44,8 @@ export default class extends React.Component {
   }
 
   componentDidMount() {
+    console.log(GATSBY_process.env.stripe || "@nog")
+    console.log(process.env.stripe || "nos")
     this.setState({
        stripe: window.Stripe(key2, {betas: ['checkout_beta_3']}) 
      })
@@ -52,7 +54,7 @@ export default class extends React.Component {
       method: "GET",
       withCredentials: true,
       headers: {
-        "Authorization": "Bearer "+process.env.stripe || "",
+        "Authorization": "Bearer "+GATSBY_process.env.stripe || key,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*"
       }
