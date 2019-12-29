@@ -91,6 +91,6 @@ export default()=><Paper>
 </GridList>
   
 }
-<Button variant = "contained" fullWidth color = "secondary"> Full List</Button>
+{/* <Button variant = "contained" fullWidth color = "secondary"> Full List</Button> */}
   </div>
   </Paper>

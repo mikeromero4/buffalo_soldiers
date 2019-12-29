@@ -7,6 +7,7 @@ import img1 from "../images/6.jpg"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 import {Main,Section} from "../components/templates/generic/common"
 import "./sidebar.scss";
+import { relative } from "path"
 export default () => (
    <>
 
@@ -27,10 +28,31 @@ export default () => (
     </Section> */}
 
 
-    <Section name = "featured" classes={['-transparent']}  sidebar = {<ExecutiveBoard />}>
+    <Section name = "featured" classes={['-transparent']}  >
+      <Section name = "intro" classes={['-transparent']} sidebar = {<>
+      <div style={{
+        height:'100%',
+        position:'relative',
+        overflow:'scroll',
+        alignSelf:'stretch'
+      }}>
+        <div style={{
+          position:'absolute'
+        }}>
+        <ExecutiveBoard />
+        </div>
+
+        </div>
+              <div style={{
+                marginTop: '-40px'
+              }}>
+                <Button color='secondary' variant='contained' fullWidth >Full List</Button>
+              </div>
+            </>
+            }>
       <PresidentsPen />
-      <Section name = "intro" classes={['-transparent']}>
-      <FeaturedPreviews /> </Section>
+      </Section>
+      <FeaturedPreviews /> 
     
     </Section>
 {/* 
@@ -80,18 +102,26 @@ function FeaturedPreviews({horizontal}) {
   return (
       <Featured horizontal={horizontal}>
         <FeaturedItem>
+            <FeaturedItem__title> Membership</FeaturedItem__title>
          <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
          <FeaturedItem__content> 
-            <FeaturedItem__title> Membership</FeaturedItem__title>
             <span>Become a member to participate in our events, reunions and more! </span>
             <Button variant='contained' color='secondary'>Learn More</Button>
             </FeaturedItem__content>
         </FeaturedItem>
       <FeaturedItem>
+            <FeaturedItem__title> Junior Buffalo Soldiers</FeaturedItem__title>
          <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
          <FeaturedItem__content>
-            <FeaturedItem__title> Junior Buffalo Soldiers</FeaturedItem__title>
             <span>Keep the Buffalo Soldier legacy alive through the generations!</span>
+            <Button variant='contained' color='secondary'>Learn More</Button>
+            </FeaturedItem__content>
+        </FeaturedItem>
+        <FeaturedItem>
+            <FeaturedItem__title> News</FeaturedItem__title>
+         <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
+         <FeaturedItem__content>
+            <span>Keep updated on current news and events!</span>
             <Button variant='contained' color='secondary'>Learn More</Button>
             </FeaturedItem__content>
         </FeaturedItem>

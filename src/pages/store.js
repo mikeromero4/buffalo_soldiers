@@ -44,7 +44,7 @@ let Item = ({ addToCart, data: { id, name, image, price } }) => (
     </div>
     <Button
       color="secondary"
-      variant="contained"
+      variant="outlined"
       fullWidth
       onClick={function() {
         addToCart(id)
@@ -170,10 +170,9 @@ function checkOut(stripe, items) {
     sku:e.id,
     quantity:e.quantity
   }))
+  //cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w
   stripe.redirectToCheckout({
-      items: itemData,
-      successUrl: window.location.protocol + "//yourtechclass.com/success",
-      cancelUrl: window.location.protocol + "//yourtechclass.com/canceled",
+    sessionId: 'cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w'
     })
     .then(function(result) {
       if (result.error) {
