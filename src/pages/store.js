@@ -172,6 +172,8 @@ function checkOut(stripe, items) {
   }))
   //cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w
   stripe.redirectToCheckout({
+    billing_address_collection: 'required',
+
     sessionId: 'cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w'
     })
     .then(function(result) {
