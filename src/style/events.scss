@@ -1,0 +1,229 @@
+@import "../components/atoms/colors.scss";
+.react-calendar__month-view__weekdays__weekday abbr {
+    white-space: nowrap;
+    color: black;
+}
+// html { height: 100%; overflow:auto; }
+// body { height: 100%; }
+.ticketAmount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.eventPage .t-section__sidebar {
+    flex-shrink: 1;
+    padding-left: 12px;
+    min-width: 300px;
+    flex-basis: 3px;
+    flex-grow: 1;
+    margin: 24px;
+    margin-right: 24px;
+    padding: 12px;
+    align-self: baseline;
+    background: #e1ddce;
+    box-shadow: 2px 3px 2px #000000ba;
+    border-radius: 4px;
+    margin-top: 0;
+}
+
+.react-calendar__tile--active{
+    background: unset !important;
+    color: black !important;
+
+
+}
+button.react-calendar__tile {
+    padding:2px !important;
+    cursor: default !important;
+}
+abbr{
+    line-height: 2;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    padding: 1px;
+    cursor: default;
+}
+.test{
+    background: #e6bc24;
+    border-radius: 35px;
+    // box-shadow: 2px 2px 1px #00000073;
+    padding: 2px;
+    abbr{
+        cursor: pointer !important;
+        background: #0a2f55;
+    border-radius: 35px;
+    color: white;
+    text-decoration: underline;
+    }
+}
+.singleEvent{
+    // padding: 12px;
+    .top{
+    display:flex;
+    flex-direction:row;
+    .description{
+        
+            // height: 100%;
+background: white;
+padding: 24px;
+        
+    }
+    }
+    .bottom{
+        border-radius: 6px;
+        // width: 800px;
+        background: #ffffffcc;
+        padding: 24px;
+        margin: 24px auto;
+        color: #0a2f55;
+        box-shadow: 3px 2px 2px #0000007a;
+
+    }
+    .eventInformation{
+        border-radius: 6px;
+        margin: 24px;
+        flex-shrink: 1;
+        padding: 24px;
+        flex-basis: 100px;
+        flex-grow: 1;
+        background: #ffffffa6;
+        color: black;
+        box-shadow: 2px 2px 2px 1px #0000007d;
+.info{
+    padding: 24px;
+    background: #0a2f55;
+    color: #ffffff;
+    text-align: center;
+
+}
+    }
+    .RSVP{
+        min-width: 425px; 
+    border-left: 9px double #caa110;
+    border-bottom: 9px double #caa110;
+    padding: 24px;
+    position: relative;
+    /* flex-shrink: 1; */
+    /* align-self: baseline; */
+    color: white;
+    flex-basis: 425px;
+    background: $blue;
+    box-shadow: 3px 2px 2px black;
+    .info{
+        .MuiSvgIcon-root {
+            margin-right: 6px;
+        }
+        padding: 1PX 6PX;
+        background: #ffffffa1;
+        border-radius: 6px;
+        box-shadow: 3px 2px 2px #000000bf;
+       div {
+        padding: 24px;
+    margin: 6PX 0;
+    background: white;
+    color: black;
+    }
+}
+        >div{
+            top: 24px;
+            position: sticky;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+.filters{
+    // text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    padding: 12px;
+    background: #0a2f55;
+    margin-top: 24px;
+    box-shadow: 3px 3px 2px #0000006e;
+    color: black;
+    border-radius: 6px;
+    color: white;
+    div{
+        text-align: left;
+    /* background: #e4e8ec; */
+    margin: 12px;
+    color: #ffffffd4;
+    border-radius: 4px;
+    font-size: 18px;
+    }
+    .MuiFormGroup-root div{
+        margin:0;
+    }
+}
+.event{
+    padding: 12px;
+    background: #ffffffa3;
+    margin:24px;
+    box-shadow: 3px 3px 2px #0000006e;
+    border-radius: 6px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    &:first-child{
+        margin-top: 0;
+    }
+    &__buttons{
+        
+    }
+    &__holder{
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+    }
+    &__imageHolder{
+        background: black;
+    }
+    &__image{
+        width: 300px;
+        height:200px;
+        background-size: cover;
+        background-position: center;
+        flex-shrink: 0;
+        &.-large{
+            margin:6px auto;
+            width: 100%;
+            height:350px;
+        }
+    }
+    &__body{
+        display: flex;
+        // margin-left: 12px;
+        background:$blue;
+        // height: 250px;
+        flex-direction: column;
+        background: hsla(0, 0%, 100%, 0.82);
+        padding:12px;
+    }
+    &__title{
+        width: 100%;
+        background: #0a2f55;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 2em;
+        padding: 12px;
+        text-transform: capitalize;
+    }
+    &__description{
+        overflow: hidden;
+        max-height: 200px;
+    color: #0a2f55;
+        flex-grow: 1;
+//background:$transparentWhite;
+
+.info{
+    margin: 12px 0;
+}
+p,b,span,h1,h2,h3,h4,h5,h6{
+    font-weight: lighter !important;
+    font-size: 16px !important;
+    color:$blue !important;
+}
+    }
+}

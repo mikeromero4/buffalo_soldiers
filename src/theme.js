@@ -11,11 +11,33 @@ export default {
         main: "#caa110", //gold
       },
       background: {
-        // paper: "#fff",
-        // default: "#fff",
+         paper: "#fff",
+         default: "#fff",
       },
     },
     overrides: {
+      MuiFormHelperText:{
+        root:{
+          color:'#0a2f55'
+        }
+      },
+      MuiInputBase:{
+        root:{
+          color:'#0a2f55'
+        }
+      },
+      MuiFormLabel:{
+        root:{
+          color:'#0a2f55'
+        }
+      },
+      MuiInput: {
+        underline: {
+          "&:before": {
+            borderBottom: `1px solid black`
+          }
+        }
+      },
       PrivateTabIndicator: {
         colorPrimary: {
           display: "none",

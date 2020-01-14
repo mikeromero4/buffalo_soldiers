@@ -1,0 +1,93 @@
+//StripeElement StripeElement--webkit-autofill StripeElement--complete
+
+.StripeElement, .StripeElement--webkit-autofill, .StripeElement--complete{
+    padding: 12px;
+    background: white !important;
+}
+.o-donations{
+    &__content{
+        padding-bottom: 24px;
+       border-bottom: 2px solid black;
+    }
+    &__cardInput{
+        margin-top: 12px;
+        padding-top: 12px;
+        display: inline-block;
+        width: 100%;
+    }
+    &__header{
+        color: #0a2f55;
+        background: #caa110;
+        font-size: 2em;
+        font-family: Goldsmith_Vintage;
+        font-weight: 100;
+        border: double #0a2f55 5px;
+        border-right: none;
+        border-left: none;
+        &.-secondary{
+            background: transparent;
+        }
+    &.-lg{
+        font-size: 3em;
+    }
+    }
+    &__amount{
+        font-size: 2em !important;
+        font-family: Goldsmith_Vintage;
+        width: -webkit-max-content;
+        width: max-content;
+        position: relative;
+        display: block;
+        margin: auto;
+        color: #0a2f55;
+        background: #ffffff3b;
+        border: 2px solid black;
+        border-radius: 8px;
+        display: flex;
+        padding: 12px;
+        align-items: baseline;
+        box-shadow: 2px 2px 2px #00000059;
+        .MuiInputBase-input{
+            width: 100px !important;
+        }
+    
+    .MuiInputBase-input{
+        font-size: 2em !important;
+    }
+    
+}
+&__image{
+    float:left;
+    margin-right: 24px;
+height:150px;
+}
+    &__note{
+        overflow: auto;
+        margin: 0;
+        font-size: 18px;
+        color: #ffffffd1;
+        background: #0a2f55;
+        padding: 24px;
+        text-align: left;
+        &.-t{
+            margin: 0;
+            font-size: 16px;
+            /* margin-top: 0; */
+            /* margin-bottom: 0; */
+            text-align: center;
+            padding: 8px;
+        }
+        p{
+            &:nth-child(1){
+                margin-top: 0;
+            }
+            padding:0;
+        }
+    }
+}
+.MuiFormLabel-root, .MuiInputBase-root, .MuiFormHelperText-root {
+   // color:#0a2f55 !important;
+}
+.MuiInputBase-input, .MuiInputBase-adornedStart{
+   // font-size: 1em !important;
+}

@@ -14,8 +14,8 @@ export function Section({sidebar,name,children,classes}) {
     }
   else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
   }
-  export function Main({children,sidebar,margin,reverseSidebar}) {
-    return <main className={"t-main" + (margin?" -withMargin":"") + (sidebar?" -withSidebar"+(reverseSidebar?' reverse':''):"")}>
+  export function Main({children,sidebar,margin,reverseSidebar,flush}) {
+    return <main className={"t-main" + (margin?" -withMargin":"") + (flush?" -flush":"") + (sidebar?" -withSidebar"+(reverseSidebar?' reverse':''):"")}>
       {sidebar?<div className = {"t-main__sidebar"}>{sidebar}</div>:""}
       <div className = "t-main__content  -inverseColors">{children}</div>
     </main>

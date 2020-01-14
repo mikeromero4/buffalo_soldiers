@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import SEO from "../components/utilities/seo"
-import { ButtonGroup, Button } from "@material-ui/core"
+import { ButtonGroup, Button,Select,MenuItem, InputLabel,RootRef} from "@material-ui/core"
 import { Main, Section } from "../components/templates/generic/common"
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart"
 
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart"
+
+import CheckOut from "../components/organisms/store/checkout" 
 
 function toArray(object) {
   let array = []
@@ -14,10 +16,10 @@ function toArray(object) {
   }
   return array
 }
-// let key='sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO'
-// let key2='pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq'
-let key = "sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8"
-let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
+let key='sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO'
+let key2='pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq'
+// let key = "sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8"
+// let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
 
 let Catalog = ({ items, loaded, addToCart }) => (
     <div className="storeCatalogContainer">
@@ -30,31 +32,44 @@ let Catalog = ({ items, loaded, addToCart }) => (
         <Item addToCart={addToCart} data={e} />
       ))
     )}
-  </div></div>
+  </div>
+  </div>
 )
-let Item = ({ addToCart, data: { id, name, image, price } }) => (
+let Item = ({ addToCart, data: { id, name, images, price,variations } }) => {
+  let refs=[]
+  for(let i=0;i<variations.length;i++){refs.push(React.createRef())}
+let sref=React.createRef()
+  return(
   <div className="storeItem">
     <div
       className="storeItem__image"
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${images[0]})` }}
     />
     <div className="storeItem__description">
       <span className="storeItem__name">{name}</span><br/>
-      <span className="storeItem__price">{"$" + (price / 100).toFixed(2)}</span>
+      <span className="storeItem__price">{price?"$" + (price / 100).toFixed(2):''}</span>
+      <InputLabel id="size">Size:</InputLabel>
+      <RootRef rootRef={sref}>
+      <select variant='outlined' labelId="size" id='size'>
+        {variations.map((e,i)=><option   value={i}>{e.size+': $' + (e.price / 100).toFixed(2)}</option>)}
+      
+      </select>
+      </RootRef>
     </div>
     <Button
       color="secondary"
       variant="outlined"
       fullWidth
       onClick={function() {
-        addToCart(id)
+        console.log(sref.current)
+        addToCart(id,variations[sref.current.value])
       }}
     >
       <AddShoppingCartIcon />
       Add to cart
     </Button>
   </div>
-)
+)}
 
 export default class extends React.Component {
   constructor(props) {
@@ -64,19 +79,24 @@ export default class extends React.Component {
       cart: {},
       inventory: [],
       stripe: null,
+      status:"shop"
     }
     this.addToCart = this.addToCart.bind(this)
+
+    this.setStatus = this.setStatus.bind(this)
   }
-  addToCart(item) {
+  addToCart(item,variation) {
+    console.log(variation)
+    let itemId=item+"&"+variation.sku
     let {cart}= this.state
-   
-    if (cart[item] == undefined) {
-      cart[item] = {
+    if (cart[itemId] == undefined ) {
+      cart[itemId] = {
         item: this.state.inventory[item],
+        variation:variation,
         quantity: 1,
       }
     } else {
-      cart[item].quantity++
+      cart[itemId].quantity++
     }
     this.setState({
       cart:cart
@@ -85,32 +105,12 @@ export default class extends React.Component {
   componentDidMount() {
     console.log(process.env.stripe || "nos")
     this.setState({
-      stripe: window.Stripe(key2, { betas: ["checkout_beta_3"] }),
+      stripe: window.Stripe(key2, { maxNetworkRetries: 2 }),
     })
-    let cc = this
-    let p = fetch("https://api.stripe.com/v1/skus", {
-      method: "GET",
-      withCredentials: true,
-      headers: {
-        Authorization: "Bearer " + key,
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    })
-    let pp = p.then(function(r) {
-      return r.json()
-    })
-    pp.then(function(data) {
-      console.log(data)
-      let newData = {}
-      data.data.forEach(({ price, image, attributes, id }) => {
-        newData[id] = { price, image, name: attributes.name }
-      })
-      cc.setState({
-        inventory: newData,
-        storeReady: true,
-      })
-    })
+    getInventory(this)
+  }
+  setStatus(status){
+this.setState({status:status})
   }
   render() {
     const { props } = this
@@ -118,31 +118,35 @@ export default class extends React.Component {
     return (
       <>
         <SEO title="Page two" />
-        <Main reverseSidebar sidebar={<Cart stripe={this.state.stripe} items={this.state.cart} />}>
-          
-          <Catalog
-            addToCart={this.addToCart}
-            loaded={this.state.storeReady}
-            items={this.state.inventory}
-          />
+        <Main reverseSidebar sidebar={<Cart setStatus = {this.setStatus} stripe={this.state.stripe} items={this.state.cart} />}>
+{this.state.status=="checkOut"?
+<CheckOut stripe = {this.state.stripe} cart = {this.state.cart}/>
+:
+<Catalog
+addToCart={this.addToCart}
+loaded={this.state.storeReady}
+items={this.state.inventory}
+/>
+}
+
         </Main>
       </>
     )
   }
 }
 
-function Cart({ items,stripe }) {
+function Cart({ items,stripe,setStatus }) {
   let cart = toArray(items)
   let totalPrice = 0
   let totalItems = 0
   cart.forEach((e)=>{
-    totalPrice+=e.item.price*e.quantity
+    totalPrice+=e.variation.price*e.quantity
     totalItems+=e.quantity
   })
   console.log(cart)
   return (
     <div className='shoppingCart'>
-      <h3>
+      <h3>In
         Cart <ShoppingCartIcon />{totalItems}
       </h3>
       {cart.length==0?'Your cart is empty.':''}<br/>
@@ -150,36 +154,122 @@ function Cart({ items,stripe }) {
         <div className = "shoppingCart__item">
               <div
       className="shoppingCart__image"
-      style={{ backgroundImage: `url(${e.item.image})` }}
+      style={{ backgroundImage: `url(${e.item.images[0]})` }}
     />
-          <div className="shoppingCart__info">{e.item.name} </div>
+          <div className="shoppingCart__info">{e.item.name} <br/>
+          {'('+e.variation.size}) </div>
+
+    <div>
+          <div className="shoppingCart__price">${ (e.variation.price / 100).toFixed(2)} </div>
           <input type='number' min="0" max="999" style = {{width:"50px"}} value={e.quantity}></input>
+        </div>
         </div>
       ))}
      <br/> Total price:${ (totalPrice / 100).toFixed(2)}
       <Button variant = "contained" fullWidth color = "secondary" onClick = {function(){
-        checkOut(stripe,cart)
+        setStatus("checkOut")
+        //checkOut(stripe,cart)
       }}>
         CheckOut
         </Button>
     </div>
   )
 }
-function checkOut(stripe, items) {
-  let itemData = items.map((e)=>({
-    sku:e.id,
-    quantity:e.quantity
-  }))
-  //cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w
-  stripe.redirectToCheckout({
-    billing_address_collection: 'required',
+//https://lzt188jvx2.execute-api.us-east-1.amazonaws.com/v1
+// function checkOut(stripe, items) {
+//   console.log(items)
+//   let itemData = items.map((e)=>({
+//     sku:e.variation.sku,
+//     quantity:e.quantity,
+//     size:e.variation.size
+//   }))
+// console.log(itemData)
+//   let session=fetch('https://lzt188jvx2.execute-api.us-east-1.amazonaws.com/v1',{
+//     method:'POST',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({items:itemData})
+//   }).then(function(response){
+//     return response.json()
+//   })
+//   session.then(function(data){
+//     console.log('success')
 
-    sessionId: 'cs_live_zGDcFqd6IMae0sASCH3iI7biiBtuw55904qZDdODeUZbLUviLo8VGv9w'
+//     console.log(data)
+//   },function(err){
+//     console.log(err)
+//   })
+//   // session.then(redirectToCheckOut,function(err){
+//     //   console.log(err)
+//     // })
+//   function redirectToCheckOut(data) {
+    
+//       console.log(data)
+//       stripe.redirectToCheckout({
+//         sessionId: data.body
+//         })
+//         .then(function(result) {
+//           if (result.error) {
+//             var displayError = document.getElementById("error-message")
+//             displayError.textContent = result.error.message
+//           }
+//         })
+    
+//   }
+// }
+function fetchJson(url){
+  let promise = fetch(url, {
+    method: "get",
+    withCredentials: true,
+    headers: {
+      Authorization: "Bearer " + key,
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+  })
+  let data = promise.then(function(response) {
+    return response.json()
+  })
+  return data
+}
+
+async function getInventory(cc){
+  let inventoryData=fetchJson("https://api.stripe.com/v1/products")
+  inventoryData.then(async function(data) {
+    let newData = {}
+    data.data.forEach(({name, images, id }) => {
+      newData[id] = { images, name,variations:[]}
     })
-    .then(function(result) {
-      if (result.error) {
-        var displayError = document.getElementById("error-message")
-        displayError.textContent = result.error.message
-      }
+    cc.setState({
+      inventory: newData,
+      storeReady: true,
     })
+    let skus= await getSkus(data)
+    console.log(skus)
+    skus.forEach((e)=>{
+      e.data.forEach((sku)=>{
+        console.log(newData)
+        let d=newData[sku.product]
+        //d.price=sku.price
+        d.variations.push({
+          size:sku.attributes.size,
+          price:sku.price,
+          sku:sku.id
+        })
+      })
+    })
+    cc.setState({
+      inventory: newData
+    })
+  })
+}
+
+function getSkus(data){
+  let promises=[]
+  data.data.forEach((e)=>{
+    promises.push(fetchJson("https://api.stripe.com/v1/skus?product="+e.id))
+    })
+    return Promise.all([...promises])
 }

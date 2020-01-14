@@ -9,12 +9,12 @@ import Footer from "./footer"
 import "./layout.scss"
 import SEO from "../../utilities/seo"
 
-const Layout = ({ children,path }) => {
+const Layout = ({ children,path,parallax }) => {
 //dont forget to add page name
   return (<><SEO title="Page name" /> 
     <ThemeProvider theme={theme}><>
     <CssBaseline />
-    <div className = "parallax">
+    <div className = {parallax?"parallax":''}>
     <div className = "page" >
       <Header path = {path}siteTitle='buffalo soldiers association' />
       <div className = "mainContent"  style={{position:'relative'}}>

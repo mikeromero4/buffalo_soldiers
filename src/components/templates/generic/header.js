@@ -46,7 +46,12 @@ let primaryNavigationItems = [
   },
 ]
 let secondaryNavigationItems = [
+
   {
+    name:"Home",
+    slug:"/"
+  }, 
+   {
     name:"about",
     slug:"/about/"
   },
@@ -59,13 +64,17 @@ let secondaryNavigationItems = [
     name:"fiddlers green",
     slug:"/fiddlers_green/"
   },
+  {
+    name:"Junior Buffalo Soldiers",
+    slug:"/about/"
+  },
     {
     name:"Store",
     slug:"/store/"
   },
   {
     name:"Discount Travel",
-    slug:"/membership/",
+    slug:"/discount_travel/",
 
   },
 ]
