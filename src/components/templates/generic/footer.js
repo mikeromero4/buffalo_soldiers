@@ -35,9 +35,9 @@ const siteMapData = {
 let Box = ({children})=><div className = "footerBox">{children}</div>
 
 let footerBoxes =  [
-    <Box>Gallery <PhotoLibraryIcon/></Box>,
-    <Box>contact  <ContactMailIcon/></Box>,
-    <Box>National Headquarters:
+    <Box key='bb1'>Gallery <PhotoLibraryIcon/></Box>,
+    <Box key='bb2'>contact  <ContactMailIcon/></Box>,
+    <Box key='bb3'>National Headquarters:
     3816 Caroline St, Houston, TX 77004 <LocationOnIcon/></Box>,
     //  "Contact",
     //  "Chapters",
@@ -48,7 +48,7 @@ function SiteMap({ data }) {
     let siteMap = []
     for (const list in data) {
         if (data.hasOwnProperty(list)) {
-            siteMap.push(<List name = {list} data = {data[list]}/>)
+            siteMap.push(<List key={'sm'+list} name = {list} data = {data[list]}/>)
         }
     }
   return (
@@ -61,7 +61,7 @@ function List({ data,name }) {
     return <div className="m-siteMap__group">
 <span className="m-siteMap__groupName"> {name}</span>
     <ul key = {name} className="m-siteMap__grouplist a-list">
-  {data.map(e => <li className = "m-siteMap__listItem a-listItem">{e}</li>)}
+  {data.map((e,i) => <li key={'ft'+i} className = "m-siteMap__listItem a-listItem">{e}</li>)}
   </ul>
   </div>
 }

@@ -111,11 +111,11 @@ export default class CustomizedSteppers extends React.Component {
     console.log("stepper mounted")
 }
 shouldComponentUpdate(nextProps, nextState) {
-  return this.props.activeStep !== nextProps.activeStep;
+  return this.props.activeStep !== nextProps.activeStep  || nextProps.error  !=  this.props.error;
 }
   render() {
     let {setActiveStep,activeStep}=this.props
-    const {steps,ContentHolder,progress} = this.props;
+    const {steps,ContentHolder,progress,error} = this.props;
 
 
     return (
@@ -125,6 +125,7 @@ shouldComponentUpdate(nextProps, nextState) {
          {this.steps}
         </Stepper>
         <ContentHolder><>
+       {error?<span style = {{color:"red",fontWeight:"bold",background:"white",padding:"6px",margin:"6px",display:"block"}}> {error}</span>:""}
         {activeStep === steps.length ? (
             <>
               <Typography >

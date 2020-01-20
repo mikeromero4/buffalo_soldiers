@@ -19,7 +19,8 @@ InputLabel,
   FormControlLabel,
   Radio,
 } from "@material-ui/core"
-import SimpleReactCalendar from "simple-react-calendar"
+import Confirm from "../components/molecules/forms/confirm"
+
 import PaymentForm from "../components/molecules/forms/paymentInformation"
 import Controller from "../components/molecules/forms/controller"
 
@@ -125,7 +126,11 @@ export default class extends React.Component {
       loaded: false,
       page: "events",
     }
+    this.dataHook=this.dataHook.bind(this)
     this.setPage = this.setPage.bind(this)
+  }
+  dataHook(data){
+    this.setState({data:data})
   }
   componentDidMount() {
     let component = this
@@ -194,6 +199,10 @@ export default class extends React.Component {
 class EventPage extends React.Component {
   constructor(props) {
     super(props)
+    this.dataHook=this.dataHook.bind(this)
+  }
+  dataHook(data){
+    this.setState({data:data})
   }
   componentDidMount() {
     document.body.scrollTop = 0
@@ -252,18 +261,10 @@ center=${event.location.lat},${event.location.lon}
   value={3}>4</option>
 </Select></FormControl></div></div> */}
 <br/>
-      <Controller>
-        <PaymentForm title='reserve your tickets now!' append={true} additionalFields={[
-              {
-                required:true,
-                id: "tickets",
-                name: "Tickets",
-                label:'amount of tickets to reserve',
-                options:[undefined,1,2,3,4,5],
-                sizes: { xs: 4, sm: 4 },
-              }
-          ]}/>
-      </Controller>
+<Controller dataHook = {this.dataHook}>
+    <PaymentForm name='payment'/>
+    <Confirm name='confirm'/>
+  </Controller>
     </div>
             </div>
             <div className="RSVP"><div>

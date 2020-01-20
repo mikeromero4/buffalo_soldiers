@@ -16,10 +16,10 @@ function toArray(object) {
   }
   return array
 }
-let key='sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO'
-let key2='pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq'
-// let key = "sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8"
-// let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
+// let key='sk_test_IWWa4eKPnLz174AKtXBoPUFQ00p5xIVNIO'
+// let key2='pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq'
+let key = "sk_live_BnKM3aWMlT4rJD1hDMMrmRTl00xO6OMax8"
+let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
 
 let Catalog = ({ items, loaded, addToCart }) => (
     <div className="storeCatalogContainer">
@@ -28,8 +28,8 @@ let Catalog = ({ items, loaded, addToCart }) => (
     {loaded == false ? (
       <span>loading catalog...</span>
     ) : (
-      toArray(items).map(e => (
-        <Item addToCart={addToCart} data={e} />
+      toArray(items).map((e,i) => (
+        <Item key= {'it'+i} addToCart={addToCart} data={e} />
       ))
     )}
   </div>
@@ -50,8 +50,8 @@ let sref=React.createRef()
       <span className="storeItem__price">{price?"$" + (price / 100).toFixed(2):''}</span>
       <InputLabel id="size">Size:</InputLabel>
       <RootRef rootRef={sref}>
-      <select variant='outlined' labelId="size" id='size'>
-        {variations.map((e,i)=><option   value={i}>{e.size+': $' + (e.price / 100).toFixed(2)}</option>)}
+      <select variant='outlined'  id='size'>
+        {variations.map((e,i)=><option key={'op'+i}  value={i}>{e.size+': $' + (e.price / 100).toFixed(2)}</option>)}
       
       </select>
       </RootRef>
@@ -150,8 +150,8 @@ function Cart({ items,stripe,setStatus }) {
         Cart <ShoppingCartIcon />{totalItems}
       </h3>
       {cart.length==0?'Your cart is empty.':''}<br/>
-      {cart.map(e => (
-        <div className = "shoppingCart__item">
+      {cart.map((e,i) => (
+        <div key ={'sh'+i} className = "shoppingCart__item">
               <div
       className="shoppingCart__image"
       style={{ backgroundImage: `url(${e.item.images[0]})` }}
@@ -161,7 +161,7 @@ function Cart({ items,stripe,setStatus }) {
 
     <div>
           <div className="shoppingCart__price">${ (e.variation.price / 100).toFixed(2)} </div>
-          <input type='number' min="0" max="999" style = {{width:"50px"}} value={e.quantity}></input>
+          <input type='number' onChange={function(){}} min="0" max="999" style = {{width:"50px"}} value={e.quantity}></input>
         </div>
         </div>
       ))}
@@ -250,7 +250,6 @@ async function getInventory(cc){
     console.log(skus)
     skus.forEach((e)=>{
       e.data.forEach((sku)=>{
-        console.log(newData)
         let d=newData[sku.product]
         //d.price=sku.price
         d.variations.push({

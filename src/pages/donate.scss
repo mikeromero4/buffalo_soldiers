@@ -15,16 +15,21 @@
         display: inline-block;
         width: 100%;
     }
+    &__holder{
+        border: double #0a2f55 5px;
+        border-right: none;
+        border-left: none;
+       }
     &__header{
         color: #0a2f55;
         background: #caa110;
         font-size: 2em;
         font-family: Goldsmith_Vintage;
         font-weight: 100;
-        border: double #0a2f55 5px;
-        border-right: none;
-        border-left: none;
+
         &.-secondary{
+            display:inline-block;
+            margin:10px;
             background: transparent;
         }
     &.-lg{

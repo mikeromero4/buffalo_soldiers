@@ -79,7 +79,7 @@ class InfoSectionPresentational extends React.Component {
       this.handleChange = this.handleChange.bind(this)
       this.checkProgress = this.checkProgress.bind(this)
   
-      this.handleBlur = this.handleBlur.bind(this)
+      // this.handleBlur = this.handleBlur.bind(this)
   
     }
     async submit(ev) {
@@ -87,15 +87,15 @@ class InfoSectionPresentational extends React.Component {
       let { token } = await this.props.stripe.createToken({ name: "Name" })
       console.log(token)
     }
-    handleBlur(event) {
-      console.log(event.target.value)
-      let{id,value} = event.target
-      let data=this.state.data
-      this.setState({data:{
-        ...data,
-        [id]:{...this.state.data[id],valid:this.validate(event.target)}
-      }})
-    }
+    // handleBlur(event) {
+    //   console.log(event.target.value)
+    //   let{id,value} = event.target
+    //   let data=this.state.data
+    //   this.setState({data:{
+    //     ...data,
+    //     [id]:{...this.state.data[id],valid:this.validate(event.target)}
+    //   }})
+    // }
   
     handleChange(event) {
       let{id,value} = event.target
@@ -174,7 +174,7 @@ class InfoSectionPresentational extends React.Component {
                     value={this.props.controller.data().personalInfo?this.props.controller.data().personalInfo[e.id]?.value:""}
                       error={error}
                       onChange={this.handleChange}
-                      onBlur={this.handleBlur}
+                    //  onBlur={this.handleBlur}
                       fullWidth
                       variant="standard"
                       select={e.options !== undefined}

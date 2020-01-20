@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import Stepper from "../../organisms/stepper/index"
-import {Button,Box} from '@material-ui/core';
-
+import {Button,Box,CircularProgress} from '@material-ui/core';
+import "./style.scss"
 
 export default class extends React.Component {
     constructor(props) {
@@ -9,17 +9,31 @@ export default class extends React.Component {
       this.state = {
         progress: 0,
         activeStep:0,
-        data: {},
+        data: [],
       }
       this.setActiveStep=this.setActiveStep.bind(this)
+      this.simulate= this.simulate.bind(this)
 
       this.handleBack=this.handleBack.bind(this)
       this.handleNext=this.handleNext.bind(this)
+      this.checkProgress=this.checkProgress.bind(this)
 
       this.controller = {
         setProgress: this.setProgress.bind(this),
+
+        allData: this.allData.bind(this),
         setData: this.setData.bind(this),
-        data: function() {
+        clearNextAction: this.clearNextAction.bind(this),
+        setNextAction : this.setNextAction.bind(this),
+        data: function(index) {
+          if (index!==undefined){
+            console.log(index)
+                        console.log(this.state.data)
+
+            console.log(this.state.data[index])
+              console.log("here")
+            return this.state.data[index]
+          }
           return this.state.data
         }.bind(this),
         progress: function() {
@@ -28,18 +42,24 @@ export default class extends React.Component {
         
       }
       this.steps=[]
+      let component=this
       React.Children.forEach(
         this.props.children, 
         (child,index) => {
             this.steps.push({
+             
               name: child.props.name || 'noname',
               icon:<div>asdf</div>,
           description: React.cloneElement(
             child, 
-            {key:'m'+index,controller:this.controller,...this.props}
+            { action:child.props.actionRequest!=undefined?((index,controller)=>{
+              return function(){return component.simulate(...child.props.actionRequest(index,controller))}
+            }):null,
+              key:'m'+index,index,controller:this.controller,...this.props}
           )
         })
           })
+          this.actions=[]
     }
     setActiveStep(fn){
       let x=fn(this.state.activeStep)
@@ -50,8 +70,48 @@ export default class extends React.Component {
       this.setState({ progress: progress })
     }
   }
-    setData(data) {
-      this.setState({ data: { ...this.state.data, ...data } },()=>{console.log(this.state.data)})
+  allData(){
+    let data=this.state.data.reduce((p,c)=>({...p,...c}))
+    return data
+  }
+    setData(data,index,fn) {
+      //since two components call setstate factoring in current state, and state updates are not immediate, to avoid cancelling eachother,
+      //create a recurseive que, 'actions' that will fire off the next setstate only after completing the first.
+     for(let key in data){
+       data[key].form=index
+     }
+      this.actions.push(()=>{
+        console.log(data)
+        console.log(this.state.data)
+      let newData=[...this.state.data]
+      newData[index]={...newData[index],...data}
+      this.setState({ data: newData },function(){
+        this.actions.shift()
+        if(fn){fn()}
+        if (this.actions.length > 0){
+            this.actions[this.actions.length-1]()
+        }
+        this.checkProgress()
+      })
+    })
+    if (this.actions.length==1){
+      this.actions[0]()
+    }
+    }
+    async checkProgress() {
+      let data = []
+      Object.keys(this.state.data[this.state.activeStep]).forEach(e =>{
+        if(this.state.data[this.state.activeStep][e].form==this.state.activeStep){
+          data.push({ id: e, ...this.state.data[this.state.activeStep][e] })
+        }
+      })
+      console.log(data)
+      let validForm = data.every(e => e.valid == true || e.required !== true)
+      if (validForm == true) {
+        this.controller.setProgress(this.state.activeStep + 1)
+      } else {
+        this.controller.setProgress(this.state.activeStep)
+      }
     }
     componentDidUpdate(props,state){
       let d1=state.data
@@ -60,28 +120,82 @@ export default class extends React.Component {
         this.props.dataHook(this.state.data)
       }
     }
-    handleNext() {
-      console.log("next to")
+    setNextAction(action){
+      this.setState({nextAction:action})
+    }
+    clearNextAction(){
+      this.setState({nextAction:undefined})
+    }
+    async handleNext() {
+    this.setState({error:""})
+    this.clearNextAction()
+
+    
+    if(this.state.waiting==true){return}
+    if (this.state.nextAction){
+      this.setState({waiting:true})
+      let response = await (this.state.nextAction())
+      console.log(response)
+      if (response.error){
+          this.setState({error:response.error,waiting:false})
+          return
+      }
+      else{
+        this.setData(response.data,response.index)
+        
+          this.setState({waiting:false})
+        
+
+      }  
+      }
       this.setActiveStep(prevActiveStep => prevActiveStep + 1);
     };
 
     handleBack() {
+      this.clearNextAction()
       this.setActiveStep(prevActiveStep => prevActiveStep - 1);
     };
 
     handleReset() {
       this.setActiveStep(0);
     };
+    
+async simulate(request,handler){
+  let session=fetch(request.url,{
+  method:'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    action: request.action,
+    input:{...request.input}
+  })
+})
+let data = (await (await session).json()).body
+
+
+let {error,body} = (handler(data))
+
+if (error){return{error}}
+              return {
+                data:{...body},
+                index:request.index
+              }
+}
     render(){
-     console.log(this.state.progress)
-     console.log(this.state.activeStep)
           let buttonProps = {
             activeStep:this.state.activeStep,
             steps:this.steps
             ,progress:this.state.progress,
             handleBack:this.handleBack,
             handleNext:this.handleNext}
-      return<> <Stepper  
+      return<div className =  {"processingContainer"}> 
+      
+     <div className = {"processingScreen" + (this.state.waiting?" active":"")}>processing...<br/><CircularProgress color="primary"  /></div>}
+      <Stepper  
+
+      error = {this.state.error}
       setActiveStep={this.setActiveStep}
       activeStep={this.state.activeStep}
       progress={this.state.progress}
@@ -90,7 +204,7 @@ export default class extends React.Component {
       } 
       steps={this.steps}/>
       <Buttons {...buttonProps}/>
-      </>
+      </div>
     }
 }
 
