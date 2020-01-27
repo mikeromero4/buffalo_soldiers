@@ -16,6 +16,32 @@ export default {
       },
     },
     overrides: {
+      MuiTablePagination:{
+        root:{
+          color:'#000'
+        }
+      },
+      MuiTableSortLabel:{
+        icon:{
+path:{
+          color:'#555 !important',
+           }   }
+      },
+      MuiTableSortLabel:{
+        active:{
+
+          color:'#caa110 !important',
+        }
+      },
+      MuiTableCell:{
+        color:'#ddd',
+// head:{
+//   color:'#000'
+// },
+        body:{
+          color:'#000'
+        }
+      },
       MuiFormHelperText:{
         root:{
           color:'#0a2f55'

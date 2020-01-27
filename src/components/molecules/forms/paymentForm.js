@@ -66,7 +66,7 @@ export default class extends React.Component {
        <div className="o-donations__content">
          <Box textAlign="center">
            <h3 className="o-donations__header">
-             {title || "Enter your shipping address:"}
+             {title || "Enter your payment information:"}
            </h3>
          </Box>
          <Form {...{ controller, fields, index }} />

@@ -15,12 +15,17 @@ class InfoSection extends React.Component {
   }
 
 componentDidMount(){
-    let form = this.props.index
+    let data = {}
+    if (this.props.controller.data()[this.props.index]) {
+        data = this.props.controller.data()[this.props.index]
+      } 
+      data.card = {...data.card,valid:false, name: 'card', required:true}
+     
+    this.props.controller.setData(data,this.props.index,()=>{
+        this.forceUpdate()
+    })
 
-    let newData = {
-        card: { valid:false,form,required:true },
-      }
-       this.props.controller.setData(newData,this.props.index)
+       //this.props.controller.setData(newData,this.props.index)
   
 }
   async handleChange(event) {
@@ -36,7 +41,7 @@ componentDidMount(){
       card: { valid:event.complete,value:token, form,required:true },
     }
      this.props.controller.setData(newData,this.props.index)
-    // this.forceUpdate()
+    this.forceUpdate()
   }
 
   render() {

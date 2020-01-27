@@ -1,0 +1,1193 @@
+[{
+    "city": "Wichita",
+    "state": "KS",
+    "zip": 67207,
+    "address": "2216 White Oak",
+    "name": "Wichita Kansas",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 37.653517,
+                "lng": -97.24022199999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 37.6548659802915,
+                    "lng": -97.23887301970849
+                },
+                "southwest": {
+                    "lat": 37.6521680197085,
+                    "lng": -97.2415709802915
+                }
+            }
+        },
+        "place_id": "ChIJb3impWv7uocReE2mTKDEAXQ",
+        "types": ["street_address"],
+        "formatted_address": "2216 S White Oak Dr, Wichita, KS 67207, USA"
+    }
+}, {
+    "city": "Indianapolis",
+    "state": "IN",
+    "zip": 46253,
+    "address": "P.O. Box 531187",
+    "name": "Dr John-Morton-Finney ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 39.927392,
+                    "lng": -85.9373789
+                },
+                "southwest": {
+                    "lat": 39.632177,
+                    "lng": -86.32812109999999
+                }
+            },
+            "location": {
+                "lat": 39.768403,
+                "lng": -86.158068
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 39.927392,
+                    "lng": -85.9373789
+                },
+                "southwest": {
+                    "lat": 39.632177,
+                    "lng": -86.32812109999999
+                }
+            }
+        },
+        "place_id": "ChIJA2p5p_9Qa4gRfOq5QPadjtY",
+        "types": ["locality", "political"],
+        "formatted_address": "Indianapolis, IN, USA"
+    }
+}, {
+    "city": "Birmingham",
+    "state": "AL",
+    "zip": 35238,
+    "address": "P.O. Box 383066",
+    "name": "Alabama",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 33.6787149,
+                    "lng": -86.57814979999999
+                },
+                "southwest": {
+                    "lat": 33.3837599,
+                    "lng": -87.1221241
+                }
+            },
+            "location": {
+                "lat": 33.5185892,
+                "lng": -86.8103567
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 33.6787149,
+                    "lng": -86.57814979999999
+                },
+                "southwest": {
+                    "lat": 33.3837599,
+                    "lng": -87.1221241
+                }
+            }
+        },
+        "place_id": "ChIJ07-FWN8RiYgRzlS66gl0UCU",
+        "types": ["locality", "political"],
+        "formatted_address": "Birmingham, AL, USA"
+    }
+}, {
+    "city": "Portland",
+    "state": "OR",
+    "zip": 97212,
+    "address": "P.O. Box 12113",
+    "name": "Moses Williams-Pacific Northwest ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 45.6528856,
+                    "lng": -122.4719641
+                },
+                "southwest": {
+                    "lat": 45.43254049999999,
+                    "lng": -122.8366901
+                }
+            },
+            "location": {
+                "lat": 45.5051064,
+                "lng": -122.6750261
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 45.6528856,
+                    "lng": -122.4719641
+                },
+                "southwest": {
+                    "lat": 45.43254049999999,
+                    "lng": -122.8366901
+                }
+            }
+        },
+        "place_id": "ChIJJ3SpfQsLlVQRkYXR9ua5Nhw",
+        "types": ["locality", "political"],
+        "formatted_address": "Portland, OR, USA"
+    }
+}, {
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": 89131,
+    "address": "7180 Gran Paradiso Drive ",
+    "name": "Southern Nevada",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 36.3100868,
+                    "lng": -115.2521014
+                },
+                "southwest": {
+                    "lat": 36.3098603,
+                    "lng": -115.2522393
+                }
+            },
+            "location": {
+                "lat": 36.3099853,
+                "lng": -115.2521552
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 36.3113225302915,
+                    "lng": -115.2508213697085
+                },
+                "southwest": {
+                    "lat": 36.30862456970851,
+                    "lng": -115.2535193302915
+                }
+            }
+        },
+        "place_id": "ChIJGyTv6ezsyIARZtQaUVpzF88",
+        "types": ["premise"],
+        "formatted_address": "7180 Gran Paradiso Dr, Las Vegas, NV 89131, USA"
+    }
+}, {
+    "city": "Lawton",
+    "state": "OK",
+    "zip": 73505,
+    "address": "1601 SW Sandra Cir. ",
+    "name": "Lawton/Fort Sill",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 34.5911918,
+                    "lng": -98.46302759999999
+                },
+                "southwest": {
+                    "lat": 34.5910192,
+                    "lng": -98.463231
+                }
+            },
+            "location": {
+                "lat": 34.59112289999999,
+                "lng": -98.4631131
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 34.59245448029149,
+                    "lng": -98.4617803197085
+                },
+                "southwest": {
+                    "lat": 34.58975651970849,
+                    "lng": -98.4644782802915
+                }
+            }
+        },
+        "place_id": "ChIJu-p7G8AfrYcRSRsxc7c9zBY",
+        "types": ["premise"],
+        "formatted_address": "1601 SW Sandra Cir, Lawton, OK 73505, USA"
+    }
+}, {
+    "city": "Clarksville",
+    "state": "TN",
+    "zip": 37042,
+    "address": "P.O. Box 2.0844",
+    "name": "Tennessee-Kentucky Line ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 36.641761,
+                    "lng": -87.2107339
+                },
+                "southwest": {
+                    "lat": 36.4788489,
+                    "lng": -87.482511
+                }
+            },
+            "location": {
+                "lat": 36.5297706,
+                "lng": -87.3594528
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 36.641761,
+                    "lng": -87.2107339
+                },
+                "southwest": {
+                    "lat": 36.4788489,
+                    "lng": -87.482511
+                }
+            }
+        },
+        "place_id": "ChIJ5af-L0DOZIgRHicF6Q-xQas",
+        "types": ["locality", "political"],
+        "formatted_address": "Clarksville, TN, USA"
+    }
+}, {
+    "city": "Decatur",
+    "state": "GA",
+    "zip": 30031,
+    "address": "P.O. Box 1765",
+    "name": "Greater Atlanta Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 33.7930255,
+                    "lng": -84.27812899999999
+                },
+                "southwest": {
+                    "lat": 33.751003,
+                    "lng": -84.3157389
+                }
+            },
+            "location": {
+                "lat": 33.7748275,
+                "lng": -84.2963123
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 33.7930255,
+                    "lng": -84.27812899999999
+                },
+                "southwest": {
+                    "lat": 33.751003,
+                    "lng": -84.3157389
+                }
+            }
+        },
+        "place_id": "ChIJ6SD-FDwH9YgRAHjRfNzgUjE",
+        "types": ["locality", "political"],
+        "formatted_address": "Decatur, GA 30030, USA"
+    }
+}, {
+    "city": "Thomasville",
+    "state": "GA",
+    "zip": 31792,
+    "address": "144 Waldon Rd.",
+    "name": "Greater Thomasville GA Area ",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 30.8423962,
+                "lng": -83.99199089999999
+            },
+            "location_type": "RANGE_INTERPOLATED",
+            "viewport": {
+                "northeast": {
+                    "lat": 30.8437451802915,
+                    "lng": -83.99064191970848
+                },
+                "southwest": {
+                    "lat": 30.8410472197085,
+                    "lng": -83.9933398802915
+                }
+            }
+        },
+        "place_id": "EikxNDQgV2FsZGVuIFN0LCBUaG9tYXN2aWxsZSwgR0EgMzE3OTIsIFVTQSIbEhkKFAoSCfsb7NsjtO2IEVN4-ZXn4wKqEJAB",
+        "types": ["street_address"],
+        "formatted_address": "144 Walden St, Thomasville, GA 31792, USA"
+    }
+}, {
+    "city": "Allen",
+    "state": "MD",
+    "zip": 21810,
+    "address": "P. O. Box 93",
+    "name": "Thomas E. Polk, Sr",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 38.28734230000001,
+                "lng": -75.68798249999999
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 38.2960998,
+                    "lng": -75.6719751
+                },
+                "southwest": {
+                    "lat": 38.2785837,
+                    "lng": -75.7039899
+                }
+            }
+        },
+        "place_id": "ChIJ72ltNMIHuYkRehABYALNjDs",
+        "types": ["locality", "political"],
+        "formatted_address": "Allen, MD 21810, USA"
+    }
+}, {
+    "city": "Ft. Washington",
+    "state": "MD",
+    "zip": 20744,
+    "address": "4007 Kilbourne Drive",
+    "name": "Henry V. Plummer",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 38.7826145,
+                    "lng": -76.93873889999999
+                },
+                "southwest": {
+                    "lat": 38.7824866,
+                    "lng": -76.9389182
+                }
+            },
+            "location": {
+                "lat": 38.7825508,
+                "lng": -76.9388067
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 38.7838995302915,
+                    "lng": -76.93747956970849
+                },
+                "southwest": {
+                    "lat": 38.7812015697085,
+                    "lng": -76.9401775302915
+                }
+            }
+        },
+        "place_id": "ChIJnU0LhHK7t4kRZDbbU3mnZFk",
+        "types": ["premise"],
+        "formatted_address": "4007 Kilbourne Dr, Fort Washington, MD 20744, USA"
+    }
+}, {
+    "city": "Chatsworth",
+    "state": "CA",
+    "zip": 91311,
+    "address": "21355 Kingsbury Street",
+    "name": "The New Buffalo Soldiers",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 34.2642636,
+                    "lng": -118.5969538
+                },
+                "southwest": {
+                    "lat": 34.2640976,
+                    "lng": -118.597127
+                }
+            },
+            "location": {
+                "lat": 34.2641741,
+                "lng": -118.5970657
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 34.26552958029149,
+                    "lng": -118.5956914197085
+                },
+                "southwest": {
+                    "lat": 34.26283161970849,
+                    "lng": -118.5983893802915
+                }
+            }
+        },
+        "place_id": "ChIJdfhCXrOcwoARWusyqsDcT4s",
+        "types": ["premise"],
+        "formatted_address": "21355 Kingsbury St, Chatsworth, CA 91311, USA"
+    }
+}, {
+    "city": "Minneapolis",
+    "state": "MN",
+    "zip": 55422,
+    "address": "P.O. Box 22204",
+    "name": "Greater Twin Cities ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 45.05125,
+                    "lng": -93.193794
+                },
+                "southwest": {
+                    "lat": 44.890144,
+                    "lng": -93.329163
+                }
+            },
+            "location": {
+                "lat": 44.977753,
+                "lng": -93.2650108
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 45.05125,
+                    "lng": -93.193794
+                },
+                "southwest": {
+                    "lat": 44.890144,
+                    "lng": -93.329163
+                }
+            }
+        },
+        "place_id": "ChIJvbt3k5Azs1IRB-56L4TJn5M",
+        "types": ["locality", "political"],
+        "formatted_address": "Minneapolis, MN, USA"
+    }
+}, {
+    "city": "Mobile",
+    "state": "Alabama",
+    "zip": 36689,
+    "address": "P.O. Box 82259",
+    "name": "Greater Mobile Alabama",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 30.6750118,
+                "lng": -88.18347659999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 30.6763607802915,
+                    "lng": -88.18212761970848
+                },
+                "southwest": {
+                    "lat": 30.6736628197085,
+                    "lng": -88.1848255802915
+                }
+            }
+        },
+        "place_id": "ChIJGxN1pMCym4gRdpgcCD5KqnU",
+        "types": ["establishment", "finance", "point_of_interest", "post_office"],
+        "formatted_address": "6157 Airport Blvd #310, Mobile, AL 36608, USA"
+    }
+}, {
+    "city": "Kansas City, M",
+    "state": "64",
+    "zip": 130,
+    "address": "P.O. Box 300384 ",
+    "name": "Alexanderavladison Kansas City",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 39.356662,
+                    "lng": -94.385522
+                },
+                "southwest": {
+                    "lat": 38.827176,
+                    "lng": -94.765917
+                }
+            },
+            "location": {
+                "lat": 39.0997265,
+                "lng": -94.5785667
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 39.356662,
+                    "lng": -94.385522
+                },
+                "southwest": {
+                    "lat": 38.827176,
+                    "lng": -94.765917
+                }
+            }
+        },
+        "place_id": "ChIJl5npr173wIcRolGqauYlhVU",
+        "types": ["locality", "political"],
+        "formatted_address": "Kansas City, MO, USA"
+    }
+}, {
+    "city": "San Diego",
+    "state": "CA",
+    "zip": 92174,
+    "address": "P.O, Box 740178 ",
+    "name": "San Diego Area",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 32.7141633,
+                "lng": -117.1569747
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 32.7155122802915,
+                    "lng": -117.1556257197085
+                },
+                "southwest": {
+                    "lat": 32.7128143197085,
+                    "lng": -117.1583236802915
+                }
+            }
+        },
+        "place_id": "ChIJeX_UxlhT2YARNw1N1kiEFrA",
+        "types": ["establishment", "finance", "point_of_interest", "post_office"],
+        "formatted_address": "815 E St, San Diego, CA 92101, USA"
+    }
+}, {
+    "city": "Marianna",
+    "state": "FL",
+    "zip": 32447,
+    "address": "P.O. Box 6257 ",
+    "name": "Ivlarianna Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 30.8029651,
+                    "lng": -85.2096119
+                },
+                "southwest": {
+                    "lat": 30.7353989,
+                    "lng": -85.28357609999999
+                }
+            },
+            "location": {
+                "lat": 30.7743596,
+                "lng": -85.2268735
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 30.8029651,
+                    "lng": -85.2096119
+                },
+                "southwest": {
+                    "lat": 30.7353989,
+                    "lng": -85.28357609999999
+                }
+            }
+        },
+        "place_id": "ChIJY6tSakYgk4gR3mrDQ2hDZnM",
+        "types": ["locality", "political"],
+        "formatted_address": "Marianna, FL, USA"
+    }
+}, {
+    "city": "Columbia",
+    "state": "SC",
+    "zip": 29207,
+    "address": "P,O. Box 10073",
+    "name": "Midland South Carolina",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 34.131598,
+                    "lng": -80.7041519
+                },
+                "southwest": {
+                    "lat": 33.94341989999999,
+                    "lng": -81.17097799999999
+                }
+            },
+            "location": {
+                "lat": 34.0007104,
+                "lng": -81.0348144
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 34.131598,
+                    "lng": -80.7041519
+                },
+                "southwest": {
+                    "lat": 33.94341989999999,
+                    "lng": -81.17097799999999
+                }
+            }
+        },
+        "place_id": "ChIJ49ExeWml-IgRlvp5s_QIKPM",
+        "types": ["locality", "political"],
+        "formatted_address": "Columbia, SC, USA"
+    }
+}, {
+    "city": "Washingto",
+    "state": "DC",
+    "zip": 20029,
+    "address": "P.O. Box 62501",
+    "name": "Greater Washington DC Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 38.995548,
+                    "lng": -76.909393
+                },
+                "southwest": {
+                    "lat": 38.7916449,
+                    "lng": -77.119759
+                }
+            },
+            "location": {
+                "lat": 38.9071923,
+                "lng": -77.0368707
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 38.995548,
+                    "lng": -76.909393
+                },
+                "southwest": {
+                    "lat": 38.7916449,
+                    "lng": -77.119759
+                }
+            }
+        },
+        "place_id": "ChIJW-T2Wt7Gt4kRKl2I1CJFUsI",
+        "types": ["locality", "political"],
+        "formatted_address": "Washington, DC, USA"
+    }
+}, {
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": 90249,
+    "address": "13608 Daphne Ave. ",
+    "name": "Greater Los Angeles Area ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 33.9078834,
+                    "lng": -118.3194373
+                },
+                "southwest": {
+                    "lat": 33.9077476,
+                    "lng": -118.3196224
+                }
+            },
+            "location": {
+                "lat": 33.9078514,
+                "lng": -118.3195515
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 33.90916448029149,
+                    "lng": -118.3181808697085
+                },
+                "southwest": {
+                    "lat": 33.90646651970849,
+                    "lng": -118.3208788302915
+                }
+            }
+        },
+        "place_id": "ChIJ9atMAeu1woARXxmizUXI4vI",
+        "types": ["premise"],
+        "formatted_address": "13608 Daphne Ave, Gardena, CA 90249, USA"
+    }
+}, {
+    "city": "New Orleans",
+    "state": "LA",
+    "zip": 70128,
+    "address": "5755 Louis Prima Dr. W. ",
+    "name": "Greater New Orleans Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 30.0386108,
+                    "lng": -89.9582113
+                },
+                "southwest": {
+                    "lat": 30.038453,
+                    "lng": -89.9584131
+                }
+            },
+            "location": {
+                "lat": 30.0385494,
+                "lng": -89.95832899999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 30.0398808802915,
+                    "lng": -89.9569632197085
+                },
+                "southwest": {
+                    "lat": 30.0371829197085,
+                    "lng": -89.9596611802915
+                }
+            }
+        },
+        "place_id": "ChIJ6--BG7QDnogR2p66-NP64Is",
+        "types": ["premise"],
+        "formatted_address": "5755 Louis Prima Dr W, New Orleans, LA 70128, USA"
+    }
+}, {
+    "city": "El Paso",
+    "state": "TX",
+    "zip": 79906,
+    "address": "P.O. Box 6551",
+    "name": "Donnie W. Brown",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 31.7846186,
+                "lng": -106.3351891
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 31.7859675802915,
+                    "lng": -106.3338401197085
+                },
+                "southwest": {
+                    "lat": 31.7832696197085,
+                    "lng": -106.3365380802915
+                }
+            }
+        },
+        "place_id": "ChIJa-WOhNdE54YRwhmbFxsYYmc",
+        "types": ["establishment", "finance", "point_of_interest", "post_office"],
+        "formatted_address": "3100 N Yarbrough Dr, El Paso, TX 79925, USA"
+    }
+}, {
+    "city": "Green Valley",
+    "state": "AZ",
+    "zip": 85614,
+    "address": "P.O. Box 1295 ",
+    "name": "Greater Southwest Arizona Area ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 31.899659,
+                    "lng": -110.9722021
+                },
+                "southwest": {
+                    "lat": 31.801913,
+                    "lng": -111.0932989
+                }
+            },
+            "location": {
+                "lat": 31.8542511,
+                "lng": -110.9937019
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 31.899659,
+                    "lng": -110.9722021
+                },
+                "southwest": {
+                    "lat": 31.801913,
+                    "lng": -111.0932989
+                }
+            }
+        },
+        "place_id": "ChIJvxRNeZOB1oYRx4K5jfKbQRE",
+        "types": ["locality", "political"],
+        "formatted_address": "Green Valley, AZ, USA"
+    }
+}, {
+    "city": "Houston",
+    "state": "TX",
+    "zip": 77004,
+    "address": "3816 Carolina Street ",
+    "name": "Greater Houston ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 29.7361615,
+                    "lng": -95.37788719999999
+                },
+                "southwest": {
+                    "lat": 29.7357863,
+                    "lng": -95.3783718
+                }
+            },
+            "location": {
+                "lat": 29.7359576,
+                "lng": -95.3781286
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 29.7373228802915,
+                    "lng": -95.37678051970849
+                },
+                "southwest": {
+                    "lat": 29.7346249197085,
+                    "lng": -95.3794784802915
+                }
+            }
+        },
+        "place_id": "ChIJawYuJ3K_QIYRqfBWcMLKEW8",
+        "types": ["premise"],
+        "formatted_address": "3816 Caroline St, Houston, TX 77004, USA"
+    }
+}, {
+    "city": "Salisbury",
+    "state": "NC",
+    "zip": 28145,
+    "address": "P.O. Box 1853",
+    "name": "Greater North Carolina",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 35.6621092,
+                "lng": -80.46465169999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 35.6634581802915,
+                    "lng": -80.46330271970848
+                },
+                "southwest": {
+                    "lat": 35.6607602197085,
+                    "lng": -80.46600068029149
+                }
+            }
+        },
+        "place_id": "ChIJS4tluCjzU4gR4d1VUAgj2L0",
+        "types": ["establishment", "finance", "local_government_office", "point_of_interest", "post_office"],
+        "formatted_address": "605 E Innes St, Salisbury, NC 28144, USA"
+    }
+}, {
+    "city": "Seattle",
+    "state": "Wk",
+    "zip": 98118,
+    "address": "P.O. Box 18404",
+    "name": "Greater Puget Sound ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 47.734145,
+                    "lng": -122.2244331
+                },
+                "southwest": {
+                    "lat": 47.4919119,
+                    "lng": -122.4596959
+                }
+            },
+            "location": {
+                "lat": 47.6062095,
+                "lng": -122.3320708
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 47.734145,
+                    "lng": -122.2244331
+                },
+                "southwest": {
+                    "lat": 47.4919119,
+                    "lng": -122.4596959
+                }
+            }
+        },
+        "place_id": "ChIJVTPokywQkFQRmtVEaUZlJRA",
+        "types": ["locality", "political"],
+        "formatted_address": "Seattle, WA, USA"
+    }
+}, {
+    "city": "Baltimore, M",
+    "state": "2I",
+    "zip": 208,
+    "address": "P.O. Bhox 5850 ",
+    "name": "Baltimore Metropolitan Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 39.3722059,
+                    "lng": -76.5294528
+                },
+                "southwest": {
+                    "lat": 39.1972069,
+                    "lng": -76.7115407
+                }
+            },
+            "location": {
+                "lat": 39.2903848,
+                "lng": -76.6121893
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 39.3722059,
+                    "lng": -76.5294528
+                },
+                "southwest": {
+                    "lat": 39.1972069,
+                    "lng": -76.7115407
+                }
+            }
+        },
+        "place_id": "ChIJt4P01q4DyIkRWOcjQqiWSAQ",
+        "types": ["locality", "political"],
+        "formatted_address": "Baltimore, MD, USA"
+    }
+}, {
+    "city": "Petersburg",
+    "state": "VG",
+    "zip": 23803,
+    "address": "403 Halifax Street",
+    "name": "Mark Matthews Chapter of Petersburg, Virginia",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 37.2209712,
+                "lng": -77.40732880000002
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 37.2223201802915,
+                    "lng": -77.40597981970852
+                },
+                "southwest": {
+                    "lat": 37.2196222197085,
+                    "lng": -77.40867778029153
+                }
+            }
+        },
+        "place_id": "ChIJUdDtdHamsYkRIFGI3jC9UdU",
+        "types": ["street_address"],
+        "formatted_address": "403 Halifax St, Petersburg, VA 23803, USA"
+    }
+}, {
+    "city": "Rio Linda",
+    "state": "CA",
+    "zip": 95673,
+    "address": "5929 West 6th Street ",
+    "name": "10th Cavalry/Buffalo Soldiers of Northern CA",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 38.6746539,
+                "lng": -121.476688
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 38.67600288029149,
+                    "lng": -121.4753390197085
+                },
+                "southwest": {
+                    "lat": 38.67330491970849,
+                    "lng": -121.4780369802915
+                }
+            }
+        },
+        "place_id": "ChIJYd6H2SQom4ARU2XrXEbanvA",
+        "types": ["street_address"],
+        "formatted_address": "5929 W 6th St, Rio Linda, CA 95673, USA"
+    }
+}, {
+    "city": "Commerce City",
+    "state": "CO",
+    "zip": 80037,
+    "address": "P.O. Box 196",
+    "name": "Denver Colorado",
+    "geocoding": {
+        "geometry": {
+            "location": {
+                "lat": 39.8857987,
+                "lng": -104.8284776
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 39.8871476802915,
+                    "lng": -104.8271286197085
+                },
+                "southwest": {
+                    "lat": 39.8844497197085,
+                    "lng": -104.8298265802915
+                }
+            }
+        },
+        "place_id": "ChIJGa9UXTFubIcRiTd3fgiW3c8",
+        "types": ["establishment", "point_of_interest"],
+        "formatted_address": "13611 E 104th Ave #800, Commerce City, CO 80022, USA"
+    }
+}, {
+    "city": "Ocoee",
+    "state": "FL",
+    "zip": 34761,
+    "address": "2506 Johio Shores Road",
+    "name": "Curley-Wells",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 28.577389,
+                    "lng": -81.5093481
+                },
+                "southwest": {
+                    "lat": 28.5772168,
+                    "lng": -81.50953299999999
+                }
+            },
+            "location": {
+                "lat": 28.577312,
+                "lng": -81.50945089999999
+            },
+            "location_type": "ROOFTOP",
+            "viewport": {
+                "northeast": {
+                    "lat": 28.5786518802915,
+                    "lng": -81.50809156970848
+                },
+                "southwest": {
+                    "lat": 28.5759539197085,
+                    "lng": -81.5107895302915
+                }
+            }
+        },
+        "place_id": "ChIJ9Qb0uQ5454gR1PKHdHmJ1WI",
+        "types": ["premise"],
+        "formatted_address": "2506 Johio Shores Rd, Ocoee, FL 34761, USA"
+    }
+}, {
+    "city": "Middletown",
+    "state": "DE",
+    "zip": 19709,
+    "address": "P.O. Box 191 ",
+    "name": "Greater Delaware Area",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 39.477598,
+                    "lng": -75.659685
+                },
+                "southwest": {
+                    "lat": 39.40754,
+                    "lng": -75.7575178
+                }
+            },
+            "location": {
+                "lat": 39.449556,
+                "lng": -75.7163207
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 39.477598,
+                    "lng": -75.659685
+                },
+                "southwest": {
+                    "lat": 39.40754,
+                    "lng": -75.7575178
+                }
+            }
+        },
+        "place_id": "ChIJ6YI5nc8Lx4kRwlAgbeT2nUI",
+        "types": ["locality", "political"],
+        "formatted_address": "Middletown, DE, USA"
+    }
+}, {
+    "city": "Greenwood",
+    "state": "FL",
+    "zip": 32443,
+    "address": "P.O. Box 177",
+    "name": "North Florida ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 30.899392,
+                    "lng": -85.144238
+                },
+                "southwest": {
+                    "lat": 30.855633,
+                    "lng": -85.1785269
+                }
+            },
+            "location": {
+                "lat": 30.87018909999999,
+                "lng": -85.1618737
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 30.899392,
+                    "lng": -85.144238
+                },
+                "southwest": {
+                    "lat": 30.855633,
+                    "lng": -85.1785269
+                }
+            }
+        },
+        "place_id": "ChIJG4UITxLZkogR27kmQJ0AIJY",
+        "types": ["locality", "political"],
+        "formatted_address": "Greenwood, FL, USA"
+    }
+}, {
+    "city": "Tampa",
+    "state": "FL",
+    "zip": 33675,
+    "address": "P.O. Box 76582",
+    "name": "'Woods & Wanton ",
+    "geocoding": {
+        "geometry": {
+            "bounds": {
+                "northeast": {
+                    "lat": 28.1714781,
+                    "lng": -82.2597409
+                },
+                "southwest": {
+                    "lat": 27.817487,
+                    "lng": -82.64882
+                }
+            },
+            "location": {
+                "lat": 27.950575,
+                "lng": -82.4571776
+            },
+            "location_type": "APPROXIMATE",
+            "viewport": {
+                "northeast": {
+                    "lat": 28.1714781,
+                    "lng": -82.2597409
+                },
+                "southwest": {
+                    "lat": 27.817487,
+                    "lng": -82.64882
+                }
+            }
+        },
+        "place_id": "ChIJ4dG5s4K3wogRY7SWr4kTX6c",
+        "types": ["locality", "political"],
+        "formatted_address": "Tampa, FL, USA"
+    }
+}]

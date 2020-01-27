@@ -7,10 +7,21 @@ let donations = [5, 10, 25, 50, 100, 250, 500]
 export default class extends React.Component {
   constructor(props) {
     super(props)
+    this.clickHandler= this.clickHandler.bind(this)
   }
-
+  async clickHandler(e) {
+    let data = this.props.controller.data()[this.props.index]
+   let form = this.props.index
+  
+   let newData = {
+     ...data,
+     donation: { valid:true,value:e, form,required:true },
+   }
+    this.props.controller.setData(newData,this.props.index)
+   this.forceUpdate()
+ }
   render() {
-    let { donation } = this.props.controller.data()
+    let donation = this.props.controller?.data(this.props.index)?.donation?.value 
     return (
       <div className="o-donations__content">
         <h1 className="ut-gold heading--special1"> Donate Now</h1>
@@ -34,11 +45,7 @@ export default class extends React.Component {
                   ? "outlined"
                   : "contained"
               }
-              onClick={function() {
-                this.forceUpdate()
-                this.props.controller.setProgress(1)
-                this.props.controller.setData({ donation: e })
-              }.bind(this)}
+              onClick={()=>{this.clickHandler(e)}}
             >
               ${e}.00
             </Button>
@@ -59,11 +66,7 @@ export default class extends React.Component {
             startAdornment={<div>$</div>}
             value={Math.max(0, Math.min(donation, 2000))}
             type="number"
-            onChange={function(e) {
-              this.forceUpdate()
-              this.props.controller.setProgress(1)
-              this.props.controller.setData({ donation: e.target.value })
-            }.bind(this)}
+            onChange={(e)=>{this.clickHandler(e.target.value)}}
           ></TextField>
         </div>
       </div>

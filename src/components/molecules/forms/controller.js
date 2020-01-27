@@ -18,6 +18,8 @@ export default class extends React.Component {
       this.handleNext=this.handleNext.bind(this)
       this.checkProgress=this.checkProgress.bind(this)
 
+      this.simulate=this.simulate.bind(this)
+
       this.controller = {
         setProgress: this.setProgress.bind(this),
 
@@ -66,6 +68,8 @@ export default class extends React.Component {
       this.setState({activeStep:x})
     }
     setProgress(progress) {
+    
+
       if(progress!=this.state.progress){
       this.setState({ progress: progress })
     }
@@ -159,6 +163,7 @@ export default class extends React.Component {
     handleReset() {
       this.setActiveStep(0);
     };
+
     
 async simulate(request,handler){
   let session=fetch(request.url,{
@@ -175,8 +180,12 @@ async simulate(request,handler){
 let data = (await (await session).json()).body
 
 
-let {error,body} = (handler(data))
-
+let {error,body,redirectTo} = (handler(data))
+console.log(this.controller)
+console.log('here')
+if(redirectTo){
+  this.setActiveStep(() =>redirectTo);
+}
 if (error){return{error}}
               return {
                 data:{...body},
@@ -192,7 +201,7 @@ if (error){return{error}}
             handleNext:this.handleNext}
       return<div className =  {"processingContainer"}> 
       
-     <div className = {"processingScreen" + (this.state.waiting?" active":"")}>processing...<br/><CircularProgress color="primary"  /></div>}
+     <div className = {"processingScreen" + (this.state.waiting?" active":"")}>processing...<br/><CircularProgress color="primary"  /></div>
       <Stepper  
 
       error = {this.state.error}
@@ -225,7 +234,7 @@ function Buttons({activeStep,steps,progress,handleBack,handleNext}){
         onClick={handleNext}
         
       >
-        {activeStep === steps.length - 1 ? 'Confirm & send donation' : 'Continue'}
+        {activeStep === steps.length - 1 ? 'Confirm & send' : 'Continue'}
       </Button>
     </>}
 

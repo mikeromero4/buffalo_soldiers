@@ -16,9 +16,26 @@
         width: 100%;
     }
     &__holder{
+        align-items: center;
+        display: flex;
         border: double #0a2f55 5px;
         border-right: none;
         border-left: none;
+        justify-content: center;
+        .o-donations__header.-secondary {
+            flex-basis: 200px;
+        }
+        &.-t2{
+            margin: 12px 0;
+            padding: 12px;
+            border-top: none;
+            border-bottom-style: solid;
+    border-bottom-width: 1px;
+            div{
+                flex-grow: 1;
+                text-align: left;
+            }
+        }
        }
     &__header{
         color: #0a2f55;

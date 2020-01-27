@@ -53,12 +53,14 @@ const useColorlibStepIconStyles = makeStyles({
     alignItems: 'center',
   },
   active: {
-      color:'#0a2f55',
-    border: '2px solid #ffffffbd;',
-    /* border-style: double; */
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
-    backgroundImage:'radial-gradient( rgb(245, 211, 64) 0%, rgb(237, 185, 47) 40%, #bf9500 100%)'
-  },
+    boxSizing: "initial",
+    color: "#ffffff",
+    border: "3px ridge #ffeeac",
+    borderStyle: "ridge",
+    boxShadow: "2px 2px 3px 0px rgba(0,0,0,.25)",
+    backgroundImage: "linear-gradient(162deg, rgb(240, 211, 111) 0%, rgb(231, 198, 79) 40%, #d8a800 90%)",
+    backgroundSize: "cover",
+},
   completed: {
     background:'#caa110'
   }

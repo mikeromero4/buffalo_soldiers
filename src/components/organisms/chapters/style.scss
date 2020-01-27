@@ -1,3 +1,47 @@
+.dialog-close{
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    color: #0a2f55;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+    vertical-align: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+}
+input {
+    font-size: 1.3em;
+      text-align: right;
+    width: 191px;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+tr.MuiTableRow-root.MuiTableRow-head{
+    background: #0a2f55;
+}
+tr.MuiTableRow-root.MuiTableRow-hover:hover {
+    background:white !important;
+cursor: pointer;
+}
+tr.MuiTableRow-root.MuiTableRow-hover:nth-child(even){
+    background:#f6efd7;
+}
+.location{
+
+    margin:12px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
 .chapters{
     display: flex;
     flex-direction: row;
@@ -12,7 +56,10 @@
 .map{
     border-radius: 5px;
     overflow: hidden;
-}
+}.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel-icon {
+    color: #caa110 !important;
+     
+   } 
 .marker{
     stroke:black;
     border-radius: 100px;
@@ -25,4 +72,35 @@
     margin-left: -25px;
     margin-top: -40.5px;
     color:#f8c40e;
+    position: relative;
+    &.active{
+       span{
+        border: 1px solid #c9c9c9;
+        box-shadow: 1px 1px 2px #00000038;
+           background: white;
+           border-radius: 4px;
+           font-weight: bolder;
+           color: black !important
+       } 
+    }
+    &.hover{
+        stroke:#f8c40e;
+   
+        span{
+            border: 1px solid #c9c9c9;
+            box-shadow: 1px 1px 2px #00000038;
+               background: #f8c40e;
+               border-radius: 4px;
+               font-weight: bolder;
+               color: #0a2f55 !important
+        } 
+     }
+    span{
+        z-index: 100;
+        width: max-content;
+        max-width: 200px;
+        position: absolute;
+        left: 40px;
+        
+    }
 }
