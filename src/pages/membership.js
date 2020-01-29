@@ -5,6 +5,10 @@ import {Box,Button,Paper} from "@material-ui/core"
 import { Main, Section } from "../components/templates/generic/common"
 import './membership.scss'
 import {Carousel} from  "react-responsive-carousel"
+import Controller from "../components/molecules/forms/controller"
+
+import Membership from "../components/molecules/forms/memberships"
+
 // If you are renewing our membership click here.  if you are a new member complete the form below and follow the instruction to submit at the bottom of the form.
 
 //including a Life Members only event at are annual reunions. The Life Member Belt Buckle is available for purchase by Life Members ONLY!  Click here to purchase a buckle. Your life membership status will be verified prior to shipment.  There are a limited supply of buckles remaining.  For more information on the Life Member Belt Buckle please contact Trooper Samuel Pitts here; Belt Buckle
@@ -75,23 +79,16 @@ export default (props) => (
   </div>
   </div>
     <Section name = "intro" classes={['-transparent']}>
-{/* 
-    <h1>Become a member</h1>
-    Membership  in the National  Association is open to all Veterans of any war,  living Original  Buffalo Soldiers, Descendants of a Buffalo Soldier, or any adult who wants to participate in the perpetuation,  education, and celebration of the Buffalo Soldiers. */}
-    <div width={200}>
 
 
-    
-                </div>
+<Controller>
+<Membership name ='membership'/>
 
-<div className='membershipOptions'>
+<Membership name ='info'/>
+<Membership name ='confirm'/>
 
- {memberships.map((e)=><div className='membershipOptions__option'>
-   <h3>{e.name}</h3>
-   <span>{e.description}</span>
-  <br/> <Button color='primary'>{e.name} Application</Button>
- </div>)}
-</div>
+</Controller>
+ 
    </Section> </Main>
   </>
 )

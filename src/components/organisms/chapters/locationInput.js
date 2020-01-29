@@ -118,6 +118,8 @@ export default class test extends React.Component {
   render() {
     return (
       <>
+      <br/>   
+
       <div>
         <input
           onKeyPress={e => {
@@ -142,7 +144,6 @@ export default class test extends React.Component {
         </Button>
       </div>
 
-<br/>   
 <span style = {{margin:"10px",display:"inline-block"}}>- or -</span>
 <br/> 
     <Button onClick = {getGeo.bind(this)} color = "secondary" variant="contained">Use your device's location</Button><br/>

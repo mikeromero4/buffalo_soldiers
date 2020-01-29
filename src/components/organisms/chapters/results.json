@@ -464,7 +464,7 @@
     }
 }, {
     "city": "Mobile",
-    "state": "Alabama",
+    "state": "AL",
     "zip": 36689,
     "address": "P.O. Box 82259",
     "name": "Greater Mobile Alabama",
@@ -491,11 +491,11 @@
         "formatted_address": "6157 Airport Blvd #310, Mobile, AL 36608, USA"
     }
 }, {
-    "city": "Kansas City, M",
-    "state": "64",
+    "city": "Kansas City",
+    "state": "MO",
     "zip": 130,
     "address": "P.O. Box 300384 ",
-    "name": "Alexanderavladison Kansas City",
+    "name": "Alexander avladison Kansas City",
     "geocoding": {
         "geometry": {
             "bounds": {
@@ -917,8 +917,8 @@
         "formatted_address": "Seattle, WA, USA"
     }
 }, {
-    "city": "Baltimore, M",
-    "state": "2I",
+    "city": "Baltimore",
+    "state": "MD",
     "zip": 208,
     "address": "P.O. Bhox 5850 ",
     "name": "Baltimore Metropolitan Area",

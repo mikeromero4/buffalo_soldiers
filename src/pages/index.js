@@ -12,12 +12,35 @@ export default () => (
    <>
 
 
-     <Main margin flush>
+     <Main margin >
       <Intro />
-      <div className='l-topSection l-topSection__seperation'>      <WideBox>
+      <Box       display="flex"
+          flexWrap='wrap-reverse'
+// width='max-content'
+mx='auto'
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-around"
+          mt = {1}
+        px={2}>
+      
+    <WideBox>
       <CallToAction/>
-    </WideBox> </div>
+    </WideBox> 
+    {/* <WideBox>
 
+    <Box>
+      We currently have
+      289 members.
+      Join us now!
+
+      <Button color='secondary' variant='contained'>
+
+      Become a member
+      </Button>
+    </Box>
+    </WideBox> */}
+      </Box>
 {/* 
     <Section name = "featured" classes={['-transparent']} sidebar = {  <FeaturedPreviews />  }>
       <PresidentsPen />
@@ -78,7 +101,7 @@ return<div className = "t-wideBox">
 
 }
  function CallToAction() {
-   return <Box p={2} textAlign='center'>
+   return <Box py={2} px={4}textAlign='center'>
    <p>
      The National Association is comprised of many Chartered Chapters all
      across the United States.

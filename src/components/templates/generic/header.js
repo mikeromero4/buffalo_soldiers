@@ -65,8 +65,8 @@ let secondaryNavigationItems = [
     slug:"/fiddlers_green/"
   },
   {
-    name:"Junior Buffalo Soldiers",
-    slug:"/about/"
+    name:"Youth",
+    slug:"/junior-buffalo-soldiers/"
   },
     {
     name:"Store",

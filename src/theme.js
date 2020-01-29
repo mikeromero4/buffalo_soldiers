@@ -83,6 +83,14 @@ path:{
       },
       MuiTabs: { flexContainer: { alignItems: "center",backgroundColor:'#0a2f55' } },
       //.MuiTab-textColorSecondary
+      MuiButton:{
+        textPrimary:{
+color:'#ffffff99'
+        },
+        root: {
+          color:'#ffffff99'
+        }
+      },
       MuiTab: {
         textColorSecondary: {
           color: "#000",
@@ -98,6 +106,7 @@ path:{
           borderRadius: "10px",
           // color: "#ffffffaa",
         },
+
         root: {
             // height: "min-content",
            '&$selected': {

@@ -2,8 +2,10 @@ import React from "react"
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import StoreIcon from '@material-ui/icons/Store';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import {Button} from '@material-ui/core'
 
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import {Link} from "gatsby"
 
 
 
@@ -35,7 +37,7 @@ const siteMapData = {
 let Box = ({children})=><div className = "footerBox">{children}</div>
 
 let footerBoxes =  [
-    <Box key='bb1'>Gallery <PhotoLibraryIcon/></Box>,
+    <Box key='bb1'><Button color='primary'><Link to='/gallery'>Gallery <PhotoLibraryIcon/></Link></Button></Box>,
     <Box key='bb2'>contact  <ContactMailIcon/></Box>,
     <Box key='bb3'>National Headquarters:
     3816 Caroline St, Houston, TX 77004 <LocationOnIcon/></Box>,

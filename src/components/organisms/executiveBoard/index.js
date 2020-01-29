@@ -64,7 +64,7 @@ let executiveMembers = [
   name:"Samuel Pitts",
 },
 ]
-export default()=><Paper>
+export default(props)=><Paper>
   <h1 className='heading--4'>
   executive board:
   </h1>
@@ -72,7 +72,7 @@ export default()=><Paper>
    <br/>
   <div style = {{width:"100%",height:"100%"}} className = "cardGrid">
 {
-  <GridList cellHeight={'auto'} spacing = {16} cols={1}>
+  <GridList cellHeight={'auto'} spacing = {16} cols={props.cols||1}>
   {executiveMembers.map(e => (
     <GridListTile  cols={1}>
       <Card>

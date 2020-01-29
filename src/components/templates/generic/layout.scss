@@ -4,6 +4,9 @@
   font-family: 'Goldsmith_Vintage';
   src: local('Goldsmith_Vintage'), url(../../../fonts/Goldsmith_Vintage.ttf) format('truetype');
 }
+a{
+  color:unset;
+}
 //transparent auto fill
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -14,6 +17,9 @@ input:-webkit-autofill:active {
 /* .MuiTab-textColorSecondary {
   color: rgba(255, 255, 255, 0.54) !important;
 } */
+.MuiTab-fullWidth {
+  flex-basis: unset !important;
+}
 .MuiButton-contained.Mui-disabled {
   color: rgba(255, 255, 255, 0.52) !important;
   background-color: rgba(134, 134, 134, 0.56) !important;
