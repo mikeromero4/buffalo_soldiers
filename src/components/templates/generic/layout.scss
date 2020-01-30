@@ -5,6 +5,7 @@
   src: local('Goldsmith_Vintage'), url(../../../fonts/Goldsmith_Vintage.ttf) format('truetype');
 }
 a{
+  text-decoration: none;
   color:unset;
 }
 //transparent auto fill
@@ -43,6 +44,49 @@ background: none !important;
 .ut-gold{
   font-family: Goldsmith_Vintage;
   font-weight: 100;
+}
+
+%section{
+  margin: $space-m 0;
+  //padding:12px;
+  background: $blue;
+  border-radius: 5px;
+  box-shadow: 2px 1px 2px #0000008a;
+}
+.t-wideBox{
+  @extend %section;
+  margin: 0;
+ // width: max-content;
+  //margin: $space-m auto;
+}
+.t-section{
+  @extend %section;
+  &.-withSidebar{
+      display:flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+  }
+  &.-transparent{
+      background-color: unset;
+      box-shadow: none;
+      padding: 0;
+  }
+  &:first-child{
+      margin-top:0;
+      padding-top:0;
+  }
+  &__sidebar{ 
+      padding-left: 12px;
+      // max-width: 300px;
+      min-width: 300px;
+      flex-basis:300px;
+      flex-grow: 1;
+  }
+  &__content{
+      min-width: 600px;
+      flex-basis:600px;
+      flex-grow: 1;
+  }
 }
 //carousel overides
 .carousel .slide{

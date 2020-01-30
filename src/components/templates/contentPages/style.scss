@@ -1,0 +1,77 @@
+.react-pdf__Page{
+    width: max-content;
+    margin: 24px auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px #0000005c;
+    canvas{
+        max-width: 850px;
+        width: 100% !important;
+        margin: auto;
+        height: unset !important;
+    }
+}
+.navigationListItem {
+  max-width: 250px;
+}
+.t-postItem {
+    a{
+        text-decoration: unset;
+    }
+    &__back {
+        height: 30px;
+        display: flex;
+      }
+}
+    .t-contentPage{
+        overflow: auto;
+  img {
+    margin-bottom: 12px;
+    &:nth-of-type(even) {
+      float: left;
+      margin-right: 12px;
+    }
+    &:nth-of-type(odd) {
+      float: right;
+      margin-left: 12px;
+    }
+  }
+
+}
+.t-postItem {
+  // max-height: 150px;
+  border-radius: 4px;
+  overflow: auto;
+  // box-shadow: 1px 2px 2px #00000052;
+
+  margin: auto;
+  margin: 24px auto;
+  img {
+    margin-right: 12px;
+  }
+  div {
+    overflow: hidden;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: row;
+    > div {
+      align-items: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      // text-align: right;
+    }
+  }
+  &__header {
+      text-decoration: underline;
+    width: 100%;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 1.6em;
+    text-transform: capitalize;
+  }
+  &__body {
+  }
+}

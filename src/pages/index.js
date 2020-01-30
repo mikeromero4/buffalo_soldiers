@@ -6,7 +6,7 @@ import PresidentsPen from "../content/presidentsPen/index"
 import img1 from "../images/6.jpg"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 import {Main,Section} from "../components/templates/generic/common"
-import "./sidebar.scss";
+// import "./sidebar.scss";
 import { relative } from "path"
 export default () => (
    <>

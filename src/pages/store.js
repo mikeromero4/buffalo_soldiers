@@ -105,7 +105,7 @@ export default class extends React.Component {
   componentDidMount() {
     console.log(process.env.stripe || "nos")
     this.setState({
-      stripe: window.Stripe(key2, { maxNetworkRetries: 2 }),
+      stripe: window.Stripe(key2, { maxNetworkRetries: 3 }),
     })
     getInventory(this)
   }
@@ -239,8 +239,8 @@ async function getInventory(cc){
   let inventoryData=fetchJson("https://api.stripe.com/v1/products")
   inventoryData.then(async function(data) {
     let newData = {}
-    data.data.forEach(({name, images, id }) => {
-      newData[id] = { images, name,variations:[]}
+    data.data.forEach(({name,active, images, id }) => {
+     if(active) {newData[id] = { images, name,variations:[]}}
     })
     cc.setState({
       inventory: newData,
@@ -250,6 +250,7 @@ async function getInventory(cc){
     console.log(skus)
     skus.forEach((e)=>{
       e.data.forEach((sku)=>{
+        if(newData[sku.product]==undefined){return}
         let d=newData[sku.product]
         //d.price=sku.price
         d.variations.push({

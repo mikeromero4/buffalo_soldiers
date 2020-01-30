@@ -1,18 +1,25 @@
 
 import React from "react"
-import { Link } from "gatsby"
-import { Featured, FeaturedItem,FeaturedItem__content,FeaturedItem__image,FeaturedItem__title } from "../components/molecules/featured/index"
-import {Paper,Button,Box,List,ListItem} from "@material-ui/core"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
+import ContentPage from '../components/templates/contentPages/index'
 
-import "./sidebar.scss";
+
 let list = [
   {
-    name:"history",
+    name:"history", 
     list:[
-      "Indian wars",
-      "Johnson County",
-      "World War 2"
+      {
+        name:"Indian wars",
+        description:"test"
+      },
+      {
+        name:"Johnson County",
+        description:"test"
+      },
+      {
+        name:"World War 2",
+        description:"test"
+      },
     ],
    
     description:<> <h1>Buffalo Soldier History</h1>
@@ -102,56 +109,5 @@ Trooper Reuben T. Hamilton
 </>
   },
 ]
-export default class extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {page:0}
-        this.setPage = (page)=>{
-          this.setState({page})
-        }
-    }
 
-    render() {
-        return (
-            <Main sidebar = {<List>
-        {list.map((e,i)=><><ListItem selected = {this.state.page==i} button onClick = {()=>{this.setPage(i)}} component="a" href='#test'>{e.name}
-            
-            </ListItem>
-            {e.list?<div style = {{paddingLeft:"24px"}}>
-              <List>{e.list.map((e2)=><ListItem button component="a" href='#test'>{e2}</ListItem>)}</List>
-            </div>:""}
-            </>)}
-
-
-            </List>}>
-            <Section name = "intro" classes={['-transparent']}>
-            <Box p = {2}><Paper><Box p = {4}>
-             {list[this.state.page].description}
-         </Box></Paper></Box>
-            </Section>
-            
-            </Main>
-        );
-    }
-};
-function Section({sidebar,name,children,classes}) {
-  if (sidebar){
-return <div id = {name} className = {"t-section -withSidebar"
-+(classes?' '+classes.reduce((p,c)=>p+c):'')}>
-<div className="t-section__sidebar">
-{sidebar}
-</div>
-<div className="t-section__content">
-  {children}
-</div>
-</div>
-  }
-else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
-}
-
-function Main({children,sidebar}) {
-return <main className={"t-main" + (sidebar?" -withSidebar":"")}>
-  {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
-  <div className = "t-main__content">{children}</div>
-</main>
-}
+export default ()=><ContentPage {...{name:"about",list}}/>

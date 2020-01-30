@@ -1,21 +1,59 @@
 
 import React from "react"
-import { Link } from "gatsby"
-import { Featured, FeaturedItem,FeaturedItem__content,FeaturedItem__image,FeaturedItem__title } from "../components/molecules/featured/index"
-import {Paper,Button,Box,List,ListItem} from "@material-ui/core"
-import ExecutiveBoard from "../components/organisms/executiveBoard/index"
+import ContentPage from '../components/templates/contentPages/index'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import {Paper,Box,List,Button} from "@material-ui/core"
+import {Link} from "gatsby"
+import { Document, Page, Outline } from 'react-pdf';
 
-import "./sidebar.scss";
+
+const contentful = require("contentful")
+let key = "eWhI0H7MtQjMVqh1Z8BvS8XpZTgE5sEcyMyyu23W6SE"
+const client = contentful.createClient({
+  space: "an8q9497b29q",
+  accessToken: key,
+})
+function processPosts(data) {
+
+  function postExtractor(post) {
+    let {
+      title:name,
+      summary,
+      heroImage,
+      body,
+    } = post.fields
+    return {
+      name,
+      summary,
+      hero:heroImage.fields.file.url,
+      description: documentToReactComponents(body,{
+        renderNode: {
+          'embedded-asset-block': (node) =>{
+
+            console.log(node)
+            if(node.data.target.fields.file.contentType=="application/pdf"){
+              return  <PdfViewer {...{node}}/>
+            }
+            return <img width = {300} class="img-fluid" src={`${node.data.target.fields.file.url}`}/>
+          }
+        }
+      }),
+    }
+  }
+  let posts = data.toPlainObject().items.map(postExtractor)
+  console.log(posts)
+  return posts
+}
 let list = [
   {
     name:"News Bulletin", 
    list :[
       {
-        name:"post1",
+        name:"The new Buffalo soldiers website is live!",
         description:"this is my first post"
       },
       {
-        name:"post2",
+        name:"Registration is open for this years annual union (2020)",
         description:"and this is my second post"
       }
    ],
@@ -52,68 +90,79 @@ History
     description:"test"
   },
 ]
-export default class few extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {page:[0]}
-        this.setPage = (page)=>{
-          this.setState({page})
-        }
-    }
 
-    render() {
-      let{state:{page},setPage} = this
-        return (
-            <Main sidebar = {<DynamicList {...{page,setPage} }/>}>
-            <Section name = "intro" classes={['-transparent']}>
-            <Box p = {2}><Paper><Box p = {4}>
-            <Content {...{page}}/>
-         </Box></Paper></Box>
-            </Section>
-            
-            </Main>
-        );
-    }
-};
-function Section({sidebar,name,children,classes}) {
-  if (sidebar){
-return <div id = {name} className = {"t-section -withSidebar"
-+(classes?' '+classes.reduce((p,c)=>p+c):'')}>
-<div className="t-section__sidebar">
-{sidebar}
-</div>
-<div className="t-section__content">
-  {children}
-</div>
-</div>
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {list:[...list]}
   }
-else return <div id = {name} className = {"t-section"+(classes?' '+classes.reduce((p,c)=>p+c):'')}>{children}</div>
+componentDidMount(){
+syncData.bind(this)('post',0)
+syncData.bind(this)('chaplainsCornerPost',1)
 }
+  render() {
+    return <ContentPage {...{name:"news",list:this.state.list}}/>;
+  }
+};
+function syncData(type,index){
+  let component = this
+  client
+  .getEntries({ content_type: type})
+  .then(response => {
+    console.log(response)
+    let list = [...component.state.list]
+    list[index].list =  processPosts(response)
+    list[index].description = <ul>
+      {list[index].list.map((e,i)=><li className = "t-postItem">
+        <Link to={"/news?page="+index+"_" + i}>
+          <div className='t-postItem__media'>
+            <img width={250} src={e.hero}/>
+<div>
 
-function Main({children,sidebar}) {
-return <main className={"t-main" + (sidebar?" -withSidebar":"")}>
-  {sidebar?<div className = "t-main__sidebar">{sidebar}</div>:""}
-  <div className = "t-main__content">{children}</div>
-</main>
-}
-
-function  DynamicList({page,setPage}) {
-  return <List>
-  {list.map((e,i)=><><ListItem selected = {page[0]==i} button onClick = {()=>{setPage([i])}} component="a" href='#test'>{e.name}
+          <h2 className = "t-postItem__header">{e.name}</h2>
+          <div className = "t-postItem__body">{e.summary}<br/></div>
+          <Button color='secondary' variant='contained'>Read More</Button> 
+          </div>
+        </div>
+          
+        </Link>
+      <hr/>
+      </li>)
       
-      </ListItem>
-      {e.list?<div style = {{paddingLeft:"24px"}}>
-        <List>{e.list.map((e2,i2)=><ListItem selected = {page[1]==i2} button onClick = {()=>{setPage([i,i2])}} component="a" href='#test'>{e2.name}</ListItem>)}</List>
-      </div>:""}
-      </>)}
-
-
-      </List>
+      }
+        </ul>
+          console.log(list)
+          component.setState({ list, loaded: true })
+        })
+  .catch(console.error)
 }
-function Content({page}) {
-if (page.length==1){
-  return list[page[0]].description
-}
-  return list[page[0]].list[page[1]].description
+class PdfViewer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={}
+    this.onDocumentLoadSuccess=({numPages })=>{
+      this.setState({pages:numPages })
+    }
+  }
 
+  render() {
+    const {node} = this.props;
+    let pages=[]
+    if(this.state.pages){
+      for(let i=1;i<this.state.pages;i++){
+        pages.push(<Page width={900} pageNumber={i} />)
+      }
+    }
+    console.log('hereherehereherehereherehereherehereherehereherehereherehereherehere')
+
+console.log(pages)
+
+console.log(this.state.pages)
+return <Document
+              file={`${node.data.target.fields.file.url}`}
+              onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+              {pages}
+            </Document>
+  }
 }

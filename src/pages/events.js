@@ -109,7 +109,12 @@ function processEvents(data) {
       membersOnly,
       price,
       locationName,
-      description: documentToReactComponents(description),
+      description: documentToReactComponents(description,{
+        renderNode: {
+          'embedded-asset-block': (node) =>
+            <img style = {{float:"left"}} width = {200} class="img-fluid" src={`${node.data.target.fields.file.url}`}/>
+        }
+      }),
       image: photo.fields.file.url,
     }
   }

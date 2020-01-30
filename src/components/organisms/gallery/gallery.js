@@ -43,7 +43,13 @@ const IndexPage = () => {
     return<>
       <h1>Image gallery</h1>
       <Gallery lightboxProps={{
-          toolbarButtons:[<Button>View Gallery</Button>]
+        imageLoadErrorMessage:<div>Image not loaded.</div>,
+        nextLabel: "next image",
+        prevLabel: "previous image",
+        zoomInLabel: "Zoom",
+        zoomOutLabel: "D\xE9zoomer",
+        closeLabel: "close",
+          toolbarButtons:[<Button>View Gallery 1c</Button>]
       }} images={fullSize} thumbs={thumbs.slice(0,2)} />
       </>
     }
