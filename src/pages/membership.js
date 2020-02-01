@@ -95,7 +95,7 @@ export default class extends React.Component {
       <Section name = "intro" classes={['-transparent']}>
 
 
-      <Box p = {4}><Paper><Box p = {4}>
+      <Box key='b1' p = {4}><Paper><Box key='b2' p = {4}>
   <Controller dataHook={this.dataHook}>
   <Membership name ='membership'/>
 
