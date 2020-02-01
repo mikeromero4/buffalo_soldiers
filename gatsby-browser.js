@@ -3,8 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-const ReactDOM = require('react-dom')
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import Layout from "./src/components/templates/generic/layout";
 
+const ReactDOM = require("react-dom")
 const React = require("react")
 const Layout = require("./src/components/templates/generic/layout").default
 exports.shouldUpdateScroll = ({
@@ -18,7 +21,7 @@ console.log(location)
 
   return [0,0]
 }
-export function replaceHydrateFunction() {
+exports.replaceHydrateFunction=() =>{
   return (element, container, callback) => {
       ReactDOM.render(element, container, callback)
   }
