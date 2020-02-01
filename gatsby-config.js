@@ -5,6 +5,12 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add options here
+      },
+    },
     `gatsby-plugin-stripe`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
