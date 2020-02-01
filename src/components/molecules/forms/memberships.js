@@ -6,7 +6,7 @@ let memberships=[
     description:`The Regular Membership fee into the Association is $50.00 per person. To remain in the Association, an annual renewal fee of $50.00 is required. Anual members aquire an official destinguished status at the second year of membership.`
      },
      {name:'Lifetime Membership',
-     description:`Life Membership allows you to pay a one time membership fee into the Association. Upon approval, lifetime members immediately become distinguished members and recieve a life membership card and framed certificate`
+     description:`Life Membership allows you to pay a one time membership fee into the Association. Upon approval, lifetime members immediately become distinguished members and recieve a life membership card and framed certificate. Lifetime membersship costs $300.00 if you are 62 and older or $400.00 if you are age 61 and younger `
     },
          {
     name:'Honorary Membership',
@@ -18,18 +18,24 @@ export default class extends React.Component {
     super(props)
     this.clickHandler= this.clickHandler.bind(this)
   }
-  async clickHandler(e) {
+
+   async clickHandler(e) {
     let data = this.props.controller.data()[this.props.index]
    let form = this.props.index
   
    let newData = {
      ...data,
-     donation: { valid:true,value:e, form,required:true },
+     membership: { valid:true,value:e, form,required:true },
    }
     this.props.controller.setData(newData,this.props.index)
+    this.props.controller.setProgress(1)
    this.forceUpdate()
  }
   render() {
+    let membership = this.props.controller.data(0)?.membership?.value || undefined
+    console.log("here")
+    console.log(membership)
+    console.log(this.props.controller.data(0))
     return (
       <div className="o-donations__content">
         <Box  textAlign="center">
@@ -38,12 +44,14 @@ export default class extends React.Component {
           </h3>
          
         </Box>
-        <div className='membershipOptions'>
+        <div className={'membershipOptions'}>
 
-        {memberships.map((e)=><div className='membershipOptions__option'>
+        {memberships.map((e)=><div className={'membershipOptions__option' + (membership==e.name?" -selected":"")}>
    <h3>{e.name}</h3>
    <span>{e.description}</span>
-  <br/> <Button color='primary'>{e.name} Application</Button>
+  <br/> <br/><Button onClick = {()=>{
+    this.clickHandler(e.name)
+  }} variant='contained' color='primary'>{e.name} Application</Button>
  </div>)}
       </div>
       </div>

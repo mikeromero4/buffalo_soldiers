@@ -5,8 +5,37 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import {Paper,Box,List,Button} from "@material-ui/core"
 import {Link} from "gatsby"
 import { Document, Page, Outline } from 'react-pdf';
+import pdf1 from "../content/pdfs/t1.pdf"
+class PdfViewer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={}
+    this.onDocumentLoadSuccess=({numPages })=>{
+      this.setState({pages:numPages })
+    }
+  }
 
+  render() {
+    const {url} = this.props;
+    let pages=[]
+    if(this.state.pages){
+      for(let i=1;i<this.state.pages;i++){
+        pages.push(<Page width={900} pageNumber={i} />)
+      }
+    }
+    console.log('hereherehereherehereherehereherehereherehereherehereherehereherehere')
 
+console.log(pages)
+
+console.log(this.state.pages)
+return <Document
+              file={`${url}`}
+              onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+              {pages}
+            </Document>
+  }
+}
 const contentful = require("contentful")
 let key = "eWhI0H7MtQjMVqh1Z8BvS8XpZTgE5sEcyMyyu23W6SE"
 const client = contentful.createClient({
@@ -32,7 +61,7 @@ function processPosts(data) {
 
             console.log(node)
             if(node.data.target.fields.file.contentType=="application/pdf"){
-              return  <PdfViewer {...{node}}/>
+              return  <PdfViewer {...{url:node.data.target.fields.file.url}}/>
             }
             return <img width = {300} class="img-fluid" src={`${node.data.target.fields.file.url}`}/>
           }
@@ -44,9 +73,11 @@ function processPosts(data) {
   console.log(posts)
   return posts
 }
+console.log(PdfViewer)
 let list = [
   {
     name:"News Bulletin", 
+    summary:'Stay updated on all current buffalo soldier news!',
    list :[
       {
         name:"The new Buffalo soldiers website is live!",
@@ -87,7 +118,8 @@ History
   },
   {
     name:"Annual Newsletter",
-    description:"test"
+    description: <PdfViewer {...{url:pdf1}}/>
+
   },
 ]
 
@@ -104,6 +136,7 @@ syncData.bind(this)('chaplainsCornerPost',1)
     return <ContentPage {...{name:"news",list:this.state.list}}/>;
   }
 };
+
 function syncData(type,index){
   let component = this
   client
@@ -135,34 +168,4 @@ function syncData(type,index){
           component.setState({ list, loaded: true })
         })
   .catch(console.error)
-}
-class PdfViewer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state={}
-    this.onDocumentLoadSuccess=({numPages })=>{
-      this.setState({pages:numPages })
-    }
-  }
-
-  render() {
-    const {node} = this.props;
-    let pages=[]
-    if(this.state.pages){
-      for(let i=1;i<this.state.pages;i++){
-        pages.push(<Page width={900} pageNumber={i} />)
-      }
-    }
-    console.log('hereherehereherehereherehereherehereherehereherehereherehereherehere')
-
-console.log(pages)
-
-console.log(this.state.pages)
-return <Document
-              file={`${node.data.target.fields.file.url}`}
-              onLoadSuccess={this.onDocumentLoadSuccess}
-            >
-              {pages}
-            </Document>
-  }
 }

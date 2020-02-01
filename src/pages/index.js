@@ -21,7 +21,7 @@ mx='auto'
           flexDirection="row"
           alignItems="center"
           justifyContent="space-around"
-          mt = {1}
+          mt = {4}
         px={2}>
       
     <WideBox>
@@ -51,8 +51,9 @@ mx='auto'
 
 
     <Section name = "featured" classes={['-transparent']}  >
-      <Section name = "intro" classes={['-transparent']} sidebar = {<>
+      <Section name = "intro" classes={['-transparent']} smallSidebar sidebar = {<>
       <div style={{
+        width:"250px",
         height:'100%',
         position:'relative',
         overflow:'scroll',
@@ -68,7 +69,10 @@ mx='auto'
               <div style={{
                 marginTop: '-40px'
               }}>
+                <Link to="./about?page=3">
+
                 <Button color='secondary' variant='contained' fullWidth >Full List</Button>
+                </Link>
               </div>
             </>
             }>
@@ -128,7 +132,7 @@ function FeaturedPreviews({horizontal}) {
          <FeaturedItem__image img='https://i1.wp.com/www.910hcav.org/wp-content/uploads/2016/09/Atanta-Chp.jpg?w=700'/>
          <FeaturedItem__content> 
             <span>Become a member to participate in our events, reunions and more! </span>
-            <Button variant='contained' color='secondary'>Learn More</Button>
+            <Link style={{width:'100%'}} to="./membership"> <Button fullWidth variant='contained' color='secondary'>Learn More</Button></Link>
             </FeaturedItem__content>
         </FeaturedItem>
       <FeaturedItem>
@@ -136,7 +140,7 @@ function FeaturedPreviews({horizontal}) {
          <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
          <FeaturedItem__content>
             <span>Keep the Buffalo Soldier legacy alive through the generations!</span>
-            <Button variant='contained' color='secondary'>Learn More</Button>
+           <Link style={{width:'100%'}} to="./junior-buffalo-soldiers"> <Button fullWidth variant='contained' color='secondary'>Learn More</Button></Link>
             </FeaturedItem__content>
         </FeaturedItem>
         <FeaturedItem>
@@ -144,7 +148,7 @@ function FeaturedPreviews({horizontal}) {
          <FeaturedItem__image img="https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
          <FeaturedItem__content>
             <span>Keep updated on current news and events!</span>
-            <Button variant='contained' color='secondary'>Learn More</Button>
+          <Link style={{width:'100%'}} to="./events">  <Button fullWidth variant='contained' color='secondary'>Learn More</Button></Link>
             </FeaturedItem__content>
         </FeaturedItem>
 
@@ -173,12 +177,12 @@ function Intro() {
             Armed Forces; <em>The Buffalo Soldiers</em>. Our Mission is to
             perpetuate, educate and celebrate their rich legacy and herritage!
             </span>
-            <a className="importantLink">
+            <Link className="importantLink" to="./about">
               <Button variant='outlined' color='secondary'>
 
               Learn more about Buffalo Soldier History
               </Button>
-            </a>
+            </Link>
         </div>
 
       </div>

@@ -122,6 +122,7 @@ export default class test extends React.Component {
 
       <div>
         <input
+        className = "locationInput"
           onKeyPress={e => {
             if (e.key == "Enter") {
               this.getLocation(this.state.input)

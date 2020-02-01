@@ -6,11 +6,11 @@ export default()=><div
 className = "presidentsPen">
  
  <Paper elevation = {4}>
-    <Box  p = {8}>
+    <Box py = {2} px = {10}>
   
 
   <div style = {{display:"flex"}}>
-  <h3 className = "heading--2 -special">Greetings from Our President </h3>
+  <h3 className = "ut-gold heading--2 ">Greetings from Our President </h3>
   <div style = {{float:"left",position:"relative"}}>
 
  </div>

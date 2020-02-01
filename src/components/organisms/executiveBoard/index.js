@@ -16,6 +16,10 @@ let executiveMembers = [
   name:"Bruce Mitchell",
 },
 {
+  role:"Treasurer",	
+  name:"Larry Thornton",
+},
+{
   role:"Secretary",	
   name:"Marilyn Johnson",
 },
@@ -23,10 +27,7 @@ let executiveMembers = [
   role:"Asst. Secretary",	
   name:"Diane Butler",
 },
-{
-  role:"Treasurer",	
-  name:"Larry Thornton",
-},
+
 {
   role:"Asst. Treasurer",	
   name:"Leanna Rogers",
@@ -65,21 +66,19 @@ let executiveMembers = [
 },
 ]
 export default(props)=><Paper>
-  <h1 className='heading--4'>
+  <h1 style = {{padding:"12px"}} className='ut-gold heading--3'>
   executive board:
   </h1>
-  <br/>
-   <br/>
   <div style = {{width:"100%",height:"100%"}} className = "cardGrid">
 {
-  <GridList cellHeight={'auto'} spacing = {16} cols={props.cols||1}>
+  <GridList cellHeight={'auto'} spacing = {4} cols={props.cols||1}>
   {executiveMembers.map(e => (
     <GridListTile  cols={1}>
       <Card>
         <CardActionArea>
          
         <CardContent>
-        <h1 className = "heading--4">{e.name}</h1>
+        <h3>{e.name}</h3>
           <span>{e.role}</span>
     
     </CardContent>

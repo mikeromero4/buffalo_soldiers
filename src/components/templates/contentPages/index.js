@@ -31,7 +31,8 @@ page = (p1? p2? [p1,p2]: [p1] : page)
           return (<>
             <Main sidebar = {<DynamicList {...{name,list,page,setPage} }/>}>
             <Section name = "intro" classes={['-transparent']}>
-            <Box p = {2}>{page.length==1?"":<Link className = "t-postItem__back" to = {name + "?page=" + page[0]}><Button variant='contained' color='secondary'><ArrowBackIcon/>{list[page[0]].name}</Button></Link>}<Paper><Box p = {4}>
+            <Box p = {3}>{page.length==1?"":<Link className = "t-postItem__back" to = {name + "?page=" + page[0]}><Button style={{color:'#ffffffd6'}}variant='contained' color='primary'><ArrowBackIcon/>{list[page[0]].name}</Button></Link>}
+            <Paper><Box py={4}px = {8}>
             <Content {...{name,list,page}}/>
          </Box></Paper></Box>
             </Section>
@@ -53,7 +54,7 @@ function  DynamicList({list,page,setPage,name}) {
       
       </ListItem ></Link>
       {e.list?<div style = {{paddingLeft:"24px"}}>
-        <List style={{color:'#ffffffbb'}}>{e.list.map((e2,i2)=><Link to={name + "?page=" + i+'_'+i2}>
+        <List style={{color:'#ffffffcc'}}>{e.list.map((e2,i2)=><Link to={name + "?page=" + i+'_'+i2}>
         <ListItem className = {"navigationListItem"} 
         selected = {page[1]==i2 && page[0]==i} 
         button onClick = {()=>{setPage([i,i2])}} 
@@ -80,7 +81,8 @@ if (page.length==1){
   <h1>{list[page[0]]?.list?.[page[1]]?.name}</h1>
 <h3>{list[page[0]]?.list?.[page[1]]?.summary}</h3>
 <hr/>
-  <p>{list[page[0]]?.list?.[page[1]]?.description}</p>
+  <p><img src={list[page[0]]?.list?.[page[1]]?.hero} width={300}/>
+{list[page[0]]?.list?.[page[1]]?.description}</p>
 </div>
 
 

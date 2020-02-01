@@ -41,7 +41,6 @@ const IndexPage = () => {
         const thumbs = data.images.edges.map(edge => edge.node.thumb.fluid)
         console.log(data)
     return<>
-      <h1>Image gallery</h1>
       <Gallery lightboxProps={{
         imageLoadErrorMessage:<div>Image not loaded.</div>,
         nextLabel: "next image",
@@ -50,7 +49,11 @@ const IndexPage = () => {
         zoomOutLabel: "D\xE9zoomer",
         closeLabel: "close",
           toolbarButtons:[<Button>View Gallery 1c</Button>]
-      }} images={fullSize} thumbs={thumbs.slice(0,2)} />
+      }} images={fullSize} 
+      // thumbs={thumbs.slice(0,2)} Control/
+
+      thumbs={thumbs} 
+/>
       </>
     }
     }

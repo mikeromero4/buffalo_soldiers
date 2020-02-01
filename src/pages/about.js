@@ -6,7 +6,7 @@ import ContentPage from '../components/templates/contentPages/index'
 
 let list = [
   {
-    name:"history", 
+    name:"Buffalo Soldier History", 
     list:[
       {
         name:"Indian wars",
@@ -22,7 +22,7 @@ let list = [
       },
     ],
    
-    description:<> <h1>Buffalo Soldier History</h1>
+    description:<> 
     <p>Buffalo Soldiers were members of the 10th Cavalry Regiment of the United States Army. This nickname was given to the Black Cavalry by Native American tribes who fought in the Indian Wars. The term eventually became synonymous with all of the African-American regiments formed in 1866</p>
    <img style = {{float:"left",marginRight:"24px"}} src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Buffalo_soldiers1.jpg/375px-Buffalo_soldiers1.jpg"/> During the Civil War, the U.S. government formed regiments known as the United States Colored Troops, composed of black soldiers and Native Americans. The USCT was disbanded in the fall of 1865. In 1867 the Regular Army was set at ten regiments of cavalry and 45 regiments of infantry. The Army was authorized to raise two regiments of black cavalry (the 9th and 10th (Colored) Cavalry) and four regiments of black infantry (the 38th, 39th, 40th, and 41st (Colored) Infantry), who were mostly drawn from USCT veterans. The first draft of the bill that the House Committee on Military Affairs sent to the full chamber on March 7, 1866 did not include a provision for regiments of black cavalry, however, this provision was added by Senator Benjamin Wade prior to the bill's passing on July 28, 1866.[8] In 1869 the Regular Army was kept at ten regiments of cavalry but cut to 25 regiments of Infantry, reducing the black complement to two regiments (the 24th and 25th (Colored) Infantry). The 38th and 41st were reorganized as the 25th, with headquarters in Jackson Barracks in New Orleans, Louisiana, in November 1869. The 39th and 40th were reorganized as the 24th, with headquarters at Fort Clark, Texas, in April 1869. The two black infantry regiments represented 10 percent of the size of all twenty-five infantry regiments. Similarly, the two black cavalry units represented 20 percent of the size of all ten cavalry regiments.[8]
 

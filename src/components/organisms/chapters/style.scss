@@ -17,13 +17,14 @@
     align-items: center;
     margin: 6px;
 }
-input {
+input.locationInput {
     font-size: 1.3em;
       text-align: right;
     width: 191px;
     padding: 0 8px;
     vertical-align: middle;
 }
+
 tr.MuiTableRow-root.MuiTableRow-head{
     background: #0a2f55;
 }

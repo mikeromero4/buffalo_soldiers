@@ -38,9 +38,11 @@ let Box = ({children})=><div className = "footerBox">{children}</div>
 
 let footerBoxes =  [
     <Box key='bb1'><Button color='primary'><Link to='/gallery'>Gallery <PhotoLibraryIcon/></Link></Button></Box>,
-    <Box key='bb2'>contact  <ContactMailIcon/></Box>,
-    <Box key='bb3'>National Headquarters:
+
+    <Box key='bb3'>contact  <ContactMailIcon/></Box>,
+    <Box key='bb4'>National Headquarters:
     3816 Caroline St, Houston, TX 77004 <LocationOnIcon/></Box>,
+    <Box key='bb2'><Button color='primary'><Link to='/report'>Report </Link></Button></Box>,
     //  "Contact",
     //  "Chapters",
     //  "Donate",

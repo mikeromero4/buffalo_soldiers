@@ -6,6 +6,7 @@ import { Main, Section } from "../components/templates/generic/common"
 import './membership.scss'
 import {Carousel} from  "react-responsive-carousel"
 import Controller from "../components/molecules/forms/controller"
+import PaymentForm from "../components/molecules/forms/paymentForm"
 
 import Membership from "../components/molecules/forms/memberships"
 
@@ -28,7 +29,7 @@ let memberships=[
 description:`The Regular Membership fee into the Association is $50.00 per person. To remain in the Association, an annual renewal fee of $50.00 is required. Anual members aquire an official destinguished status at the second year of membership.`
  },
  {name:'Lifetime Membership',
- description:`Life Membership allows you to pay a one time membership fee into the Association. Upon approval, lifetime members immediately become distinguished members and recieve a life membership card and framed certificate`
+ description:`Life Membership allows you to pay a one time membership fee into the Association. Upon approval, lifetime members immediately become distinguished members and recieve a life membership card and framed certificate. Lifetime membersship costs $300.00 if you are 62 and older or $400.00 if you are age 61 and younger `
 },
      {
 name:'Honorary Membership',
@@ -49,46 +50,61 @@ description:`Any person who has performed distinguished service for the United S
 // },
 ]
 
-export default (props) => (
-  < >
-    <SEO title="Page two" />
-    <Main margin flush>
-    <div className='l-topSection'>
-      <div className='l-topSection__content'>
-    <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='200px'>
-                
-                    <div>
-                        <img height={500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
-                    </div>
-                    <div>
-                        <img height={500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
-                    </div>   
-                     <div>
-                        <img style={{marginBottom:'-50px'}} height={550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
-                    </div>
-                </Carousel>
-<div className="floatCenter">
-  <div className='o-carousel__banner'>
-    <h1 className='ut-gold hearder--2 o-carousel__bannerText -h'> Become a Member</h1>
-    <span className='o-carousel__bannerText -p'>Membership  in the National  Association is open to all Veterans of any war,  living Original  Buffalo Soldiers, Descendants of a Buffalo Soldier, or any adult who wants to participate in the perpetuation,  education, and celebration of the Buffalo Soldiers.</span>
-  </div></div>
-</div>
-<div className='l-topSection__seperation'>
-  {/* {memberships.map(e=><Button>{e.name}</Button>)} */}
-  
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+    this.dataHook = this.dataHook.bind(this)
+  }
+  dataHook(data) {
+    this.setState({ data: data })
+  }
+  render() {
+    const {
+      props,
+    } = this;
+
+    return < >
+      <SEO title="Page two" />
+      <Main margin flush>
+      <div className='l-topSection'>
+        <div className='l-topSection__content'>
+      <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='200px'>
+                  
+                      <div>
+                          <img height={500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
+                      </div>
+                      <div>
+                          <img height={500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
+                      </div>   
+                       <div>
+                          <img style={{marginBottom:'-50px'}} height={550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
+                      </div>
+                  </Carousel>
+  <div className="floatCenter">
+    <div className='o-carousel__banner'>
+      <h1 className='ut-gold hearder--2 o-carousel__bannerText -h'> Become a Member</h1>
+      <span className='o-carousel__bannerText -p'>Membership  in the National  Association is open to all Veterans of any war,  living Original  Buffalo Soldiers, Descendants of a Buffalo Soldier, or any adult who wants to participate in the perpetuation,  education, and celebration of the Buffalo Soldiers.</span>
+    </div></div>
   </div>
-  </div>
-    <Section name = "intro" classes={['-transparent']}>
+  <div className='l-topSection__seperation'>
+    {/* {memberships.map(e=><Button>{e.name}</Button>)} */}
+    
+    </div>
+    </div>
+      <Section name = "intro" classes={['-transparent']}>
 
 
-<Controller>
-<Membership name ='membership'/>
+      <Box p = {4}><Paper><Box p = {4}>
+  <Controller dataHook={this.dataHook}>
+  <Membership name ='membership'/>
 
-<Membership name ='info'/>
-<Membership name ='confirm'/>
+  <PaymentForm name ='info'/>
+  <Membership name ='confirm'/>
 
-</Controller>
- 
-   </Section> </Main>
-  </>
-)
+  </Controller>
+ </Box> </Paper> </Box>
+     </Section> </Main>
+    </>;
+  }
+};
