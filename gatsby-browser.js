@@ -21,11 +21,11 @@ console.log(location)
 
   return [0,0]
 }
-exports.replaceHydrateFunction=() =>{
-  return (element, container, callback) => {
-      ReactDOM.render(element, container, callback)
-  }
-}
+// exports.replaceHydrateFunction=() =>{
+//   return (element, container, callback) => {
+//       ReactDOM.render(element, container, callback)
+//   }
+// }
 exports.wrapPageElement = ({ element, props }) => {
   console.log(props)
     // props provide same data to Layout as Page element will get
