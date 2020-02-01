@@ -9,6 +9,7 @@ import image from '../images/fiddlers-green.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 
 
+
 export default props => (
   <>
     <SEO title="Page two" />
