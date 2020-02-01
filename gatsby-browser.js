@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+const ReactDOM = require('react-dom')
+
 const React = require("react")
 const Layout = require("./src/components/templates/generic/layout").default
 exports.shouldUpdateScroll = ({
@@ -15,6 +17,11 @@ console.log(location)
   window.scrollTo(0,0)
 
   return [0,0]
+}
+export function replaceHydrateFunction() {
+  return (element, container, callback) => {
+      ReactDOM.render(element, container, callback)
+  }
 }
 exports.wrapPageElement = ({ element, props }) => {
   console.log(props)
