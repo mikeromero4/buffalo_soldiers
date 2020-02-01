@@ -5,7 +5,7 @@ import { height } from "@material-ui/system"
 //https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/cowboy-and-horse-1357-12601-300x300.png
 //https://www.pinclipart.com/picdir/big/180-1805729_transparent-horses-cowboy-clipart-freeuse-download-cowboy-on.png
 import grass from "../images/grass.png"
-import image from '../images/fiddlers-green.jpg'
+import image from '../images/fiddlersGreen.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 
 
