@@ -130,7 +130,7 @@ class Comp extends React.Component {
     //     })
     //   })
     // })
-        component.setLocation('FONTANA')
+        component.setLocation('Fontana, CA')
 
         component.setOrigin({
           lat: 34.092232+ Math.random() * 0.002,

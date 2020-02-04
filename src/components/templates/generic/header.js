@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { useMediaQuery } from 'react-responsive'
 
 import {ButtonGroup,Button} from '@material-ui/core'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';import { navigate } from "gatsby"
@@ -79,17 +80,29 @@ let secondaryNavigationItems = [
   },
 ]
 
-const Header = ({ siteTitle,path }) => (
-  <header style={{position:'relative',zIndex:100}}>
+const Header = ({ siteTitle,path }) => {
+let small= useMediaQuery(
+  {
+  query: '(max-width: 480px)'
+})
+console.log(small)
+console.log('aasdfasdfjlkasfdnjklasfdjnhlkasfdhjlksdafhjlk')
 
-        {/* <PrimaryNavigation primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/> */}
-        <NavigationItems  primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/>
-
-
-        <NavigationItems currentPage = {path} handleChange = {handleChange} list = {secondaryNavigationItems}/>
-
-  </header>
-)
+  return (
+    <header style={{position:'relative',zIndex:100}}>
+ <div className='logo-tHolder' ><img className='logo -t' height={150} src={image3}/></div>
+          {/* <PrimaryNavigation primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/> */}
+          <NavigationItems className='primaryNavigation'  primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems
+          .slice((useMediaQuery({
+      query: '(max-width: 480px)'
+    })==false?0:1),primaryNavigationItems.length)}/>
+  
+  
+          <NavigationItems className='secondaryNavigation' currentPage = {path} handleChange = {handleChange} list = {secondaryNavigationItems}/>
+  
+    </header>
+  )
+}
 function PrimaryNavigation(props) {
   return <div style={{background:'#0a2f55'}}>
 

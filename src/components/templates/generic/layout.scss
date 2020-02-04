@@ -45,7 +45,9 @@ background: none !important;
   font-family: Goldsmith_Vintage;
   font-weight: 100;
 }
+.primaryNavigation{
 
+}
 %section{
   // margin: $space-m 0;
   margin: 32px 0;
@@ -301,6 +303,9 @@ padding-left: 0;
         margin: auto;
         background: $tan;
         padding: 24px;
+        @media only screen and (max-width: 480px) {
+          padding: 6px;
+        }
         padding-top: 0;
     }
 
@@ -624,6 +629,24 @@ padding-top: 0;
     border: 2px solid #f7c10c;
     background: #0a2f55;
     border-radius: 100px;
+    &-tHolder{
+      display: none;      
+
+    @media only screen and (max-width: 480px) {
+      width: 100%;
+      background: $blue;
+display:inline-block;      
+text-align: center;
+    }
+  }
+}
+.MuiTabs-flexContainer {
+justify-content: space-around;
+}
+.MuiTab-root {
+  @media only screen and (max-width: 480px) {
+    font-size: 0.6rem !important;      
+        }
 }
 .bg1{
   height:100%;
