@@ -115,20 +115,27 @@ class Comp extends React.Component {
   }
   componentDidMount() {
     let component = this
-    let promise = fetch(
-      "http://api.ipstack.com/check?access_key=0329a849fe2abda0869327aa61232634"
-    )
-    promise.then(e => {
-      e.json().then(e => {
-        console.log(e.city)
-        component.setLocation(e.city)
+    // https://ipapi.co/47.152.57.188/json/ 
+    // let promise = fetch(
+    //   "https://api.ipstack.com/check?access_key=0329a849fe2abda0869327aa61232634"
+    // )
+    // promise.then(e => {
+    //   e.json().then(e => {
+    //     console.log(e.city)
+    //     component.setLocation(e.city)
+
+    //     component.setOrigin({
+    //       lat: e.latitude + Math.random() * 0.002,
+    //       lng: e.longitude,
+    //     })
+    //   })
+    // })
+        component.setLocation('FONTANA')
 
         component.setOrigin({
-          lat: e.latitude + Math.random() * 0.002,
-          lng: e.longitude,
+          lat: 34.092232+ Math.random() * 0.002,
+          lng: -117.435051,
         })
-      })
-    })
   }
   // _onBoundsChange = (center, zoom /* , bounds, marginBounds */) => {
   //     this.props.onCenterChange(center);
