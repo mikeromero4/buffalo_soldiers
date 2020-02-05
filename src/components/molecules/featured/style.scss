@@ -1,8 +1,10 @@
 @import '../../atoms/variables.scss';
 .featured{
+    justify-content: center;
     display:flex;
     height: max-content;
     flex-direction:row;
+    flex-wrap: wrap;
     &.-reverse{
         flex-direction:row-reverse;
     }
@@ -13,12 +15,14 @@
         }
     }
     &Item{
+        max-width: 500px;
+        min-width: 300px;
         padding:$space-xs;
         margin: 0 $space-s $space-m $space-s;
         color: black;
         background: rgb(231, 227, 214);
         flex-grow: 1;
-        flex-basis: 50%;
+        flex-basis: 10px;
         border-radius: 5px;
         box-shadow: 2px 3px 5px #0000007a;
         &__image{
