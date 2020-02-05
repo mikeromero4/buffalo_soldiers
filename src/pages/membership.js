@@ -7,6 +7,8 @@ import './membership.scss'
 import {Carousel} from  "react-responsive-carousel"
 import Controller from "../components/molecules/forms/controller"
 import PaymentForm from "../components/molecules/forms/paymentForm"
+import { useMediaQuery } from 'react-responsive'
+
 
 import Membership from "../components/molecules/forms/memberships"
 
@@ -50,7 +52,7 @@ description:`Any person who has performed distinguished service for the United S
 // },
 ]
 
-export default class extends React.Component {
+class Comp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -63,6 +65,7 @@ export default class extends React.Component {
     const {
       props,
     } = this;
+    let{small}=this.props
 
     return < >
       <SEO title="Page two" />
@@ -95,17 +98,23 @@ export default class extends React.Component {
       <Section name = "intro" classes={['-transparent']}>
 
 
-      <Box className='b1' key='b1' p = {4}><Paper><Box className='b2' key='b2' p = {4}>
-  {/* <Controller dataHook={this.dataHook}>
+      <Box p = {small?1:4}><Paper><Box p = {small?1:4}>
+  <Controller dataHook={this.dataHook}>
   <Membership name ='membership'/>
 
   <PaymentForm name ='info'/>
   <Membership name ='confirm'/>
 
-  </Controller> */}
-  test box
+  </Controller>
  </Box> </Paper> </Box>
      </Section> </Main>
     </>;
   }
 };
+export default(props)=>{
+  let small= useMediaQuery(
+    {
+    query: '(max-width: 680px)'
+  })
+  return <Comp {...props} small={small}/>
+}

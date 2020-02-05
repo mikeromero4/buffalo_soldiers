@@ -612,6 +612,11 @@ overflow: hidden;
 
 
 }
+@media only screen and (max-width: 850px) {
+  .MuiTab-root {
+    min-width: unset !important;
+  }
+  }
 .media__content{
 
   color:black;
@@ -640,7 +645,7 @@ padding-top: 0;
     &-tHolder{
       display: none;      
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 680px) {
       width: 100%;
       background: $blue;
 display:inline-block;      
@@ -649,8 +654,11 @@ text-align: center;
   }
 }
 .MuiTabs-flexContainer {
-  flex-wrap: wrap;
+  @media only screen and (max-width: 680px) {
+    
+    flex-wrap: wrap;
 justify-content: space-around;
+  }
 }
 .MuiTab-root {
   @media only screen and (max-width: 480px) {

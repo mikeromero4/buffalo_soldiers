@@ -24,6 +24,7 @@
       }
 }
     .t-contentPage{
+      min-width: 500px;
         overflow: auto;
         ul{
           margin:0;
@@ -65,7 +66,11 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
+    align-items: center;
     > div {
+      min-width: 250px;
+      flex-basis: 50px;
+      flex-grow: 1;
       align-items: end;
       display: flex;
       flex-direction: column;

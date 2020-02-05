@@ -169,8 +169,8 @@ class Comp extends React.Component {
 
           mb={small?6:0}
 
-          pb={small?4:0}
           p={small?0:4}
+          pb={4}
           flexDirection="row"
           alignItems="center"
           justifyContent="space-around"

@@ -13,6 +13,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useMediaQuery } from 'react-responsive'
+
 
 
 let donationMethods = [
@@ -45,7 +47,7 @@ let message = <div>
 <br/>tgpLarryt@aol.com
 </div>
 
-export default class extends React.Component {
+class Comp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -56,6 +58,7 @@ export default class extends React.Component {
   }
 
   render() {
+    let{small}=this.props
     return (
       <>
         {" "}
@@ -78,9 +81,9 @@ export default class extends React.Component {
               backgroundImage: "url(" + img + ")",
             }}
           >
-            <Box margin="auto" p={4} width={800}>
+            <Box margin="auto" p={small?1:4} maxWidth={800}>
               <Paper>
-                <Box p={2}>
+                <Box p={small?1:2}>
                   <Controller dataHook={this.dataHook}>
                     <Donate name="donation" />
                     <PaymentForm name="info" />
@@ -90,8 +93,8 @@ export default class extends React.Component {
                 </Box>
               </Paper>
             </Box>
-            <Box p = {8}> <Paper>
-              <Box p = {2}>
+            <Box p = {small?1:8}> <Paper>
+              <Box p = {small?1:2}>
               
 
             <ExpansionPanel>
@@ -145,4 +148,11 @@ export default class extends React.Component {
       </>
     )
   }
+}
+export default(props)=>{
+  let small= useMediaQuery(
+    {
+    query: '(max-width: 680px)'
+  })
+  return <Comp {...props} small={small}/>
 }

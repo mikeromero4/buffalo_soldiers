@@ -83,7 +83,7 @@ let secondaryNavigationItems = [
 const Header = ({ siteTitle,path }) => {
 let small= useMediaQuery(
   {
-  query: '(max-width: 480px)'
+  query: '(max-width: 680px)'
 })
   return (
     <header style={{position:'relative',zIndex:100}}>

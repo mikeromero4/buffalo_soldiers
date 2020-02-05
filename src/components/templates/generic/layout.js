@@ -25,8 +25,8 @@ componentDidUpdate(){
     return (<><SEO title="Page name" /> 
       <ThemeProvider theme={theme}><>
       <CssBaseline />
-      <div className = {parallax?"parallax":''}>
-      <div className = "page" >
+      <div key='d1' className = {parallax?"parallax":''}>
+      <div key='d2' className = "page" >
         <Header path = {path}siteTitle='buffalo soldiers association' />
         <div className = "mainContent"  style={{position:'relative'}}>
 

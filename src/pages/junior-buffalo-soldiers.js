@@ -3,14 +3,20 @@ import "../style/lightbox.css"
 import Gallery from '../components/organisms/gallery/gallery'
 import { Main } from "../components/templates/generic/common"
 import { Box, Paper,Grid } from "@material-ui/core"
+import { useMediaQuery } from 'react-responsive'
+
 
 const IndexPage = () => {
+    let small= useMediaQuery(
+        {
+        query: '(max-width: 680px)'
+      })
     return  <Main margin flush>
     <div className="l-topSection">
     <h2 className = "heading--2 ut-gold heading--special1"> Junior Buffalo soldiers</h2>
           </div>
-<Box p = {4}><Paper><Box p = {4}>
-          <img width = {400} style = {{float:"right",marginLeft:"12px"}} src = "https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
+<Box p = {small?1:4}><Paper><Box p = {small?1:4}>
+          <img width = {400} style = {{float:"right",marginLeft:"12px",maxWidth:'100%'}} src = "https://i0.wp.com/www.910hcav.org/wp-content/uploads/2018/09/Denver-JR-BS-2.jpg?resize=600%2C399&ssl=1"/>
           <h2>Educating our Youth to Continue to Keep the Legacy Alive!</h2>
           <p>
               Jr. Buffalo Soldiers believes that the Buffalo Soldiers have truly given us “A Glorious Past, and Blazed a Brilliant Future” with their “Fierce Fighting Spirits”and the ultimate sacrifice of their lives that we can forever be proud of.
