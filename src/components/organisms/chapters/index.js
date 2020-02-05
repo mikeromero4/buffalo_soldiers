@@ -10,6 +10,8 @@ import { withTheme } from "@material-ui/core/styles"
 import data2 from "./results.json"
 import Dialogue from "./dialogue"
 import LocationInput from "./locationInput"
+import { useMediaQuery } from 'react-responsive'
+
 let mapW=400,mapH=550
 let data = data2.map(e => {
   let { lng, lat } = e.geocoding.geometry.location
@@ -19,6 +21,7 @@ let data = data2.map(e => {
     ...e,
   }
 })
+
 
 class Comp extends React.Component {
   constructor(props) {
@@ -149,7 +152,7 @@ class Comp extends React.Component {
   }
   render() {
     console.log(this.state.open)
-    const { theme } = this.props
+    const { theme,small } = this.props
     return (
       <>
         <Dialogue
@@ -162,8 +165,12 @@ class Comp extends React.Component {
           display="flex"
           flexWrap='wrap-reverse'
 
-          mx={4}
-          p={4}
+          mx={small?0:4}
+
+          mb={small?6:0}
+
+          pb={small?4:0}
+          p={small?0:4}
           flexDirection="row"
           alignItems="center"
           justifyContent="space-around"
@@ -218,7 +225,7 @@ class Comp extends React.Component {
             )}
           </Box>
         </Box>
-        <Box textAlign="center" m={2} p={2}>
+        <Box textAlign="center" m={small?0:2} p={small?0:2}>
           <Paper elevation={4}>
             <Table
               handleClickOpen={this.handleClickOpen}
@@ -250,7 +257,14 @@ class Comp extends React.Component {
 }
 // let Tt = controllable(Comp, ['center', 'zoom', 'hoverKey', 'clickKey']);
 
-export default withTheme(Comp)
+export default(props)=>{
+  let CC=withTheme(Comp)
+  let small= useMediaQuery(
+    {
+    query: '(max-width: 680px)'
+  })
+  return <CC {...props} small={small}/>
+}
 
 function calculateDistance(pointA, pointB) {
   const lat1 = pointA.latitude
