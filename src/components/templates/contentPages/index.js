@@ -7,8 +7,10 @@ import {Link} from "gatsby"
 import { Location } from "@reach/router"
 import queryString from "query-string"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { useMediaQuery } from 'react-responsive'
 
-export default class comp extends React.Component {
+
+class Comp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {page:[0]}
@@ -18,7 +20,7 @@ export default class comp extends React.Component {
     }
 
     render() {
-    
+     
       let{props:{list,name},state:{page},setPage} = this
         return ( <Location>
         {({ location, navigate }) => {
@@ -31,8 +33,8 @@ page = (p1? p2? [p1,p2]: [p1] : page)
           return (<>
             <Main sidebar = {<DynamicList {...{name,list,page,setPage} }/>}>
             <Section name = "intro" classes={['-transparent']}>
-            <Box p = {3}>{page.length==1?"":<Link className = "t-postItem__back" to = {name + "?page=" + page[0]}><Button style={{color:'#ffffffd6'}}variant='contained' color='primary'><ArrowBackIcon/>{list[page[0]].name}</Button></Link>}
-            <Paper><Box py={4}px = {8}>
+            <Box p = {this.props.small?1:3}>{page.length==1?"":<Link className = "t-postItem__back" to = {name + "?page=" + page[0]}><Button style={{color:'#ffffffd6'}}variant='contained' color='primary'><ArrowBackIcon/>{list[page[0]].name}</Button></Link>}
+            <Paper><Box py={4}px = {this.props.small?1:8}>
             <Content {...{name,list,page}}/>
          </Box></Paper></Box>
             </Section>
@@ -46,7 +48,13 @@ page = (p1? p2? [p1,p2]: [p1] : page)
         
     }
 };
-
+export default(props)=>{
+  let small= useMediaQuery(
+    {
+    query: '(max-width: 780px)'
+  })
+  return <Comp {...props} small={small}/>
+}
 function  DynamicList({list,page,setPage,name}) {
   return <List style={{color:'#f8c40e'}}>
   {list.map((e,i)=><><Link to={name + "?page=" + i}><ListItem className = {"navigationListItem"} selected = {page[0]==i && page.length==1} button 

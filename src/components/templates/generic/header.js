@@ -85,17 +85,12 @@ let small= useMediaQuery(
   {
   query: '(max-width: 480px)'
 })
-console.log(small)
-console.log('aasdfasdfjlkasfdnjklasfdjnhlkasfdhjlksdafhjlk')
-
   return (
     <header style={{position:'relative',zIndex:100}}>
  <div className='logo-tHolder' ><img className='logo -t' height={150} src={image3}/></div>
           {/* <PrimaryNavigation primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/> */}
           <NavigationItems className='primaryNavigation'  primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems
-          .slice((useMediaQuery({
-      query: '(max-width: 480px)'
-    })==false?0:1),primaryNavigationItems.length)}/>
+          .slice((small==false?0:1),primaryNavigationItems.length)}/>
   
   
           <NavigationItems className='secondaryNavigation' currentPage = {path} handleChange = {handleChange} list = {secondaryNavigationItems}/>

@@ -95,6 +95,9 @@ background: none !important;
       min-width: 600px;
       flex-basis:600px;
       flex-grow: 1;
+      @media only screen and (max-width: 780px) {
+        min-width: unset;
+      }
   }
 }
 //carousel overides
@@ -646,6 +649,7 @@ text-align: center;
   }
 }
 .MuiTabs-flexContainer {
+  flex-wrap: wrap;
 justify-content: space-around;
 }
 .MuiTab-root {

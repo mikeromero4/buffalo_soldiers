@@ -169,8 +169,8 @@ class Comp extends React.Component {
           justifyContent="space-around"
         >
           <Box           flexGrow={1}
-          flexBasis={20}
-          minWidth={350}  mr={2} textAlign="center">
+          flexBasis={350}
+            textAlign="center">
             <h1>Find your local chapter</h1>
 
             <p style={{ marginBottom: "24px" }}>
@@ -186,8 +186,7 @@ class Comp extends React.Component {
           </Box>
           <Box     
           flexGrow={1}
-          flexBasis={20}
-          minWidth={400} 
+          flexBasis={400}
           height={mapW} width={mapH}>
             {this.state.coords ? (
               <Map
