@@ -1,4 +1,9 @@
 @import "../components/atoms/colors.scss";
+.react-calendar{
+    width: 100% !important;
+    margin: auto;
+    max-width: 450px !important;
+}
 .react-calendar__month-view__weekdays__weekday abbr {
     white-space: nowrap;
     color: black;

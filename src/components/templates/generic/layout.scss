@@ -18,6 +18,9 @@ input:-webkit-autofill:active {
 /* .MuiTab-textColorSecondary {
   color: rgba(255, 255, 255, 0.54) !important;
 } */
+.MuiDrawer-paper{
+  width: 300px;
+}
 .MuiTab-fullWidth {
   flex-basis: unset !important;
 }
@@ -67,7 +70,8 @@ background: none !important;
   &.-withSidebar{
       display:flex;
       flex-direction: row-reverse;
-      flex-wrap: wrap-reverse;
+      flex-wrap: wrap;
+      align-items: baseline;
   }
   &.-transparent{
       background-color: unset;

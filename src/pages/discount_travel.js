@@ -24,7 +24,7 @@ export default () =>
     get discounted flights, and other travel accommidations using our vertex360 discounts using the link below!
     <a target='_blank' 
     href='https://myvortex365.com/AKABuffaloSoldiers'>
-      <img src={url}  style={{display:'block',height:'150px',width:'100%',maxWidth:'550px',margin:'auto'}}/>
+      <img src={url}  style={{display:'block',width:'100%',maxWidth:'550px',margin:'auto'}}/>
       </a>
      </Box> </Paper></Box>
    </Section> </Main>
