@@ -18,8 +18,34 @@ input:-webkit-autofill:active {
 /* .MuiTab-textColorSecondary {
   color: rgba(255, 255, 255, 0.54) !important;
 } */
+.hamburgerMenu{
+  background-color: goldenrod;
+  width: 100%;
+  text-align: left;
+  button{
+    margin: auto;
+  }
+}
 .MuiDrawer-paper{
   width: 300px;
+  width: 70vw;
+height: unset !important;
+  .MuiTab-fullWidth {
+    margin: 1px 0;
+  }
+.drawer__close{
+  padding: 6px 24px;
+  background: #caa110;
+  text-align: right;
+  font-size: 24px;
+  /* border: 2px solid; */
+  color: #0a2f55;
+}
+  .drawer__bottom{
+    background: goldenrod;
+    height: 20px;
+flex-grow: 1;
+  }
 }
 .MuiTab-fullWidth {
   flex-basis: unset !important;

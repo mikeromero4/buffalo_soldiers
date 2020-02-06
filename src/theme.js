@@ -81,7 +81,14 @@ path:{
           color:"#262265",
         }
       },
-      MuiTabs: { flexContainer: { alignItems: "center",backgroundColor:'#0a2f55' } },
+      MuiTabs: { 
+        flexContainer: { 
+        alignItems: "center",
+      backgroundColor:'#0a2f55' },
+      flexContainerVertical:{
+        alignItems: "stretch",
+
+      }},
       //.MuiTab-textColorSecondary
       MuiButton:{
         textPrimary:{

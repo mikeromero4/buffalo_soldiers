@@ -81,6 +81,7 @@ const Header = class extends React.Component {
     super(props);
     this.state={open:false}
     this.toggle=(state)=>{
+      console.log('testtoggle')
       this.setState({open:!this.state.open})
     }
   }
@@ -91,25 +92,32 @@ const Header = class extends React.Component {
       <Drawer
       
               variant="temporary"
-              anchor={"right"}
+              anchor={"left"}
               open={this.state.open}
               onClose={this.toggle}
               ModalProps={{
                 keepMounted: true // Better open performance on mobile.
               }}
-              >
-                <NavigationItems vertical className='secondaryNavigation' currentPage = {path} 
-            handleChange = {handleChange} list = {secondaryNavigationItems}/>
+              ><div className='drawer__close'>
+                X
+              </div>
+                <NavigationItems vertical primary className='secondaryNavigation' currentPage = {path} 
+            handleChange = {function(){
+              this.toggle()
+            }.bind(this)
+            } list = {secondaryNavigationItems}/>
+            <div className='drawer__bottom'>
+
+            </div>
                 </Drawer>
       <header style={{position:'relative',zIndex:100}}>
    <div className='logo-tHolder' ><img className='logo -t' height={150} src={image3}/></div>
-            {/* <PrimaryNavigation primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems}/> */}
-            <NavigationItems className='primaryNavigation'  primary = {true} currentPage = {path} handleChange = {handleChange} list = {primaryNavigationItems
+            <NavigationItems className='primaryNavigation'  primary = {true} currentPage = {path}  list = {primaryNavigationItems
             .slice((small==false?0:1),primaryNavigationItems.length)}/>
 
     
           {small? <HamburgerMenu toggle={this.toggle}/>:<NavigationItems className='secondaryNavigation' currentPage = {path} 
-            handleChange = {handleChange} list = {secondaryNavigationItems}/>}
+             list = {secondaryNavigationItems}/>}
     
       </header>
       </>
@@ -117,9 +125,11 @@ const Header = class extends React.Component {
   }
 };
 function HamburgerMenu({toggle}){
-  return <Button onClick={toggle}>
+  return <div className='hamburgerMenu'>
+    <Button color='primary' onClick={toggle}>
     <MenuIcon/>
   </Button>
+  </div>
 }
 function PrimaryNavigation(props) {
   return <div style={{background:'#0a2f55'}}>
@@ -157,11 +167,12 @@ function NavigationItems(props) {
 
     <Tabs
     orientation={props.vertical?'vertical':'horizontal'}
-    variant={"fullWidth"} 
+    variant={props.primary && !props.vertical?'standard':"fullWidth"} 
     indicatorColor={props.primary?'primary':"secondary"}
   value={props.currentPage}
-  onChange={function(_,index){
+  onChange={(_,index)=>{
     handleChange(index)
+if(props.handleChange){props.handleChange()}
   }}
  textColor={props.primary?'primary':"secondary"}
  
@@ -185,7 +196,7 @@ function NavigationItems(props) {
           </Button>
           </Tab>
         }
-    else{return<Tab  icon={e.icon} key={e.name} label={e.name} value={e.slug} />}
+    else{return<Tab icon={e.icon} key={e.name} label={e.name} value={e.slug} />}
       })
   }
 </Tabs></div>
