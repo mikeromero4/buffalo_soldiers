@@ -72,16 +72,16 @@ class Comp extends React.Component {
       <Main margin flush>
       <div className='l-topSection'>
         <div className='l-topSection__content'>
-      <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='200px'>
+      <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='100px'>
                   
                       <div>
-                          <img height={500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
+                          <img height={small?300:500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
                       </div>
                       <div>
-                          <img height={500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
+                          <img height={small?300:500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
                       </div>   
                        <div>
-                          <img style={{marginBottom:'-50px'}} height={550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
+                          <img style={{marginBottom:'-50px'}} height={small?300:550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
                       </div>
                   </Carousel>
   <div className="floatCenter">
