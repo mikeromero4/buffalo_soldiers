@@ -490,15 +490,14 @@ margin: auto;
   }
 }
 .poem{
-  height: 100vh;
-  padding: 12px;
-  background: #231f20;   
+  align-self: stretch;
+    flex-basis: 10px;
+  padding: 12px; 
   width: 80%;
-  margin: auto;
   p{
   text-align: center;
     overflow: hidden;
-    padding: 30px;
+    padding: 10px;
     margin: 0;
     /* font-weight: bolder; */
     /* padding: 0; */
@@ -506,13 +505,13 @@ margin: auto;
     /* line-height: 1.5; */
     border-radius: 10px;
     background: $blue;
-    border:5px double $gold;
+    // border:5px double $gold;
     width: -webkit-max-content;
     width: 400px;
     text-align: center;
     color: #ffffff;
-    box-shadow: 0 0 18px 0px black;
-    text-shadow: 1px 1px 0px #b38d08;
+    // box-shadow: 0 0 18px 0px black;
+    // text-shadow: 1px 1px 0px #b38d08;
     margin: 12px auto;
 
   }

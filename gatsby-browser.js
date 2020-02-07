@@ -30,7 +30,9 @@ exports.wrapPageElement = ({ element, props }) => {
   console.log(props)
     // props provide same data to Layout as Page element will get
     // including location, data, etc - you don't need to pass it
-    let parallax=props.path.includes('fiddlers')
-    return <Layout parallax={parallax}{...props}>{element}</Layout>
+    // let parallax=props.path.includes('fiddlers')
+    return <Layout {...props}>{element}</Layout>
+    // return <Layout parallax={parallax}{...props}>{element}</Layout>
+
   }
 // You can delete this file if you're not using it

@@ -8,6 +8,6 @@ const Layout = require("./src/components/templates/generic/layout").default
 
 exports.wrapPageElement = ({ element, props }) => {
   console.log(props)
-    let parallax=props.path.includes('fiddlers')
-    return <Layout parallax={parallax}{...props}>{element}</Layout>
+    // let parallax=props.path.includes('fiddlers')
+    return <Layout {...props}>{element}</Layout>
   }

@@ -8,6 +8,7 @@ import grass from "../images/grass.png"
 import image from '../images/fiddlersGreen.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 import { Main } from "../components/templates/generic/common"
+import { Parallax, Background } from 'react-parallax';
 
 
 
@@ -16,16 +17,23 @@ export default props => (
           <div className="l-topSection">
             <div className="l-topSection__seperation">
               <p className="o-donations__note -t">
-    <h2 className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
                 </p>
             </div>
           </div>
-          <div style={{display:'flex'}}>
-
-    <img style={{width:'100%'}} src={image}/>
-
-   <div className='poem'>
-
+           
+          <div style={{display:'flex',flexDirection:"row-reverse",background: '#0a2f55'}}>
+<div style = {{
+  alignSelf: "center",
+  flexBasis: "10px",
+  flexGrow: 1,
+}}>
+      <img style={{width:'100%'}} src={image}/>
+</div>
+   <div style = {{
+  flexBasis: "10px",
+}} className='poem'>
+    <h2 className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
+ 
         <p>
           When a cavalryman dies, he begins a long march to his ultimate
           destination. About halfway along the road, he enters a broad meadow
@@ -48,10 +56,27 @@ export default props => (
           </div>
 
       <div>
- <Box p={10}>
+ <Box p={4}>
+ 
 <Paper>
 <Box p={4}>
-  <h1>Fiddlers green form</h1>
+  
+                  <div style={{display:'flex',flexDirection:"row",background: '#0a2f55'}}>
+
+  
+  <Parallax
+            blur={1}
+            bgImage={"https://cdn.shopify.com/s/files/1/0992/8352/products/20171113_122224_2048x.jpg?v=1510597747"}
+            bgImageAlt="the cat"
+            strength={400}
+        >
+            Put some text content here - even an empty div with fixed dimensions to have a height
+            for the parallax.
+            <div style={{ height: '400px' }} />
+        </Parallax>
+<div>
+<h1>Fiddlers green form</h1>
+
 <form>
 
 Your name: <TextField/>
@@ -78,6 +103,8 @@ Chapter name: <TextField/>
 <Button variant='underlined' color='secondary'>
   submit
 </Button>
+</div>
+</div>
 </Box>
 
 </Paper>
