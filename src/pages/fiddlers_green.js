@@ -21,8 +21,9 @@ export default props => (
             </div>
           </div>
            
-          <div style={{display:'flex',flexDirection:"row-reverse",background: '#0a2f55'}}>
+          <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row-reverse",background: '#0a2f55'}}>
 <div style = {{
+  minWidth:'430px',
   alignSelf: "center",
   flexBasis: "10px",
   flexGrow: 1,
@@ -30,6 +31,7 @@ export default props => (
       <img style={{width:'100%'}} src={image}/>
 </div>
    <div style = {{
+     minWidth:'430px',
   flexBasis: "10px",
 }} className='poem'>
     <h2 className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
@@ -56,10 +58,10 @@ export default props => (
           </div>
 
       <div>
- <Box p={4}>
+ <Box p={2}>
  
 <Paper>
-<Box p={4}>
+<Box p={1}>
   <div>
     <h1 className = "heading--2 ut-gold heading--special1">New Fiddlers Green Notification</h1>
 
@@ -80,23 +82,25 @@ export default props => (
 <br/>Near a good old-time canteen.
 <br/>And this eternal resting place
 <br/>Is known as Fiddler’s Green. 
-<br/>(1910-2020)</h2>
+{/* <br/>(1910-2020) */}
+</h2>
               </div>
         </Parallax>
-<div>
+<div style = {{padding:"6px"}}>
 
 <form>
 <table>
 
 
-<tr><td>Your name: </td><td><TextField name = "name"/></td></tr>
-<tr><td>E-mail: </td><td><TextField name = "e-mail"/></td></tr>
-<tr><td>Deceased name: </td><td><TextField name = "deceased"/></td></tr>
-<tr><td>Chapter name: </td><td><TextField name = "Chapter"/></td></tr>
-</table>
-<br/><br/>Association affiliation:
+<tr><td className = "label">Your name: </td><td><TextField name = "name"/></td></tr>
+<tr><td className = "label">E-mail: </td><td><TextField name = "e-mail"/></td></tr>
+<tr><td className = "label">Deceased name: </td><td><TextField name = "deceased"/></td></tr>
+<tr><td className = "label">Chapter name: </td><td><TextField name = "Chapter"/></td></tr>
 
-<br/><Checkbox
+
+  </table>
+  Association affiliation:<br/>
+  <Checkbox
   value="Original Buffalo Soldier"
   />Original Buffalo Soldier
 <br/>  <Checkbox
@@ -106,7 +110,7 @@ export default props => (
   value='Family Member of an Association Member '
   />Family Member of an Association Member 
 </form>
-<Button variant='underlined' color='secondary'>
+<Button fullWidth variant='outlined' color='secondary'>
   submit
 </Button>
 </div>

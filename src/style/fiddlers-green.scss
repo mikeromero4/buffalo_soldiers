@@ -1,10 +1,32 @@
 .o-fiddlersGreen__form{
-  
+  flex-wrap: wrap;
     padding:12px;
     background:#262265;
+    .MuiTextField-root{
+        width: 100% !important;
+    }
+    table{
+        tr{
+            display: flex;
+            align-items: flex-end;
+            padding: 4px 0;
+        }
+        td{
+flex-grow:1;
+            &.label{
+                flex-grow:0;
+
+            }
+        }
+    }
     >div{
+        min-width: 400px;
         flex-basis: 10px;
         flex-grow:1;
+        @media only screen and (max-width: 480px) {
+            min-width: 300px;
+
+        }
     }
     .react-parallax{
         color:#ffffffb8;
@@ -36,5 +58,17 @@
     }
 }
 .poem{
+    display: flex;
+    flex-basis: 10px;
+    flex-direction: column;
+    justify-content: center;
       font-family: sans-serif;
+}
+.poemContainer{
+    >div{
+        @media only screen and (max-width: 480px) {
+            min-width: 300px !important;
+
+        }
+    }
 }

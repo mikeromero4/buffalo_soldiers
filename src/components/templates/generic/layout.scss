@@ -22,6 +22,7 @@ input:-webkit-autofill:active {
   background-color: goldenrod;
   width: 100%;
   text-align: left;
+  box-shadow: 0 2px 2px #000000b5;
   button{
     margin: auto;
   }
@@ -506,8 +507,8 @@ margin: auto;
     border-radius: 10px;
     background: $blue;
     // border:5px double $gold;
-    width: -webkit-max-content;
-    width: 400px;
+    // width: -webkit-max-content;
+    // width: 400px;
     text-align: center;
     color: #ffffff;
     // box-shadow: 0 0 18px 0px black;
