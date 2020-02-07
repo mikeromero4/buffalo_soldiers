@@ -22,8 +22,7 @@ let primaryNavigationItems = [
   {
     name:"chapters",
     slug:"/chapters/",
-    icon:<ListAltIcon/>,
-    dropdown:['test','test2']
+    icon:<ListAltIcon/>
   },
   {
     name:"Events",
@@ -172,7 +171,7 @@ function NavigationItems(props) {
 
     <Tabs
     orientation={props.vertical?'vertical':'horizontal'}
-    variant={props.primary && !props.vertical?'standard':"fullWidth"} 
+    variant={props.primary && !props.vertical?'standard': props.vertical?'scrollable':"fullWidth"} 
     indicatorColor={props.primary?'primary':"secondary"}
   value={props.currentPage}
   onChange={(_,index)=>{
