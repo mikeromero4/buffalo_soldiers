@@ -12,7 +12,8 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import MenuIcon from '@material-ui/icons/Menu';
-let image3= 'http://sandiegobuffalosoldiers.org/wp-content/uploads/2016/05/Buffalo-SD-logo2.jpg'
+import image3 from '../../../images/logo.jpg'
+// let image3= 'http://sandiegobuffalosoldiers.org/wp-content/uploads/2016/05/Buffalo-SD-logo2.jpg'
 let primaryNavigationItems = [
   {
     name:'',
