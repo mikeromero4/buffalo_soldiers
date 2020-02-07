@@ -17,27 +17,27 @@ import { useMediaQuery } from 'react-responsive'
 
 
 
-let donationMethods = [
-  "cash",
-  "gift cards & gift certificates",
-  "in-kind product@donations",
-  "vacation stays, as silent auction items",
-  "event tickets (sports, concerts, etc) as silent auction items",
-  "stock and bonds",
-  "sports memorabilia",
-  "antique furniture",
-  "coin / stamp collections",
-  "cars & other type of automobiles",
-  "real estate / single-family homes",
-  "real estate / income property",
-  "real estate / commercial property",
-  "horses / livestock",
-  "insurance policy",
-  "buds",
-  "farm equipment",
-  "tools / and other equipment",
-  "musical instruments",
-  "art / collections"
+let donationMethods = [    
+  "guns",
+"gift cards & gift certificates",
+"company products",
+"vacation stays, as silent auction items",
+"event tickets (sports, concerts, etc)",
+"stock and bonds",
+"sports memorabilia",
+"antique furniture",
+"coin / stamp collections",
+"cars & other type of automobiles",
+"real estate / single-family homes",
+"real estate / income property",
+"real estate / commercial property",
+"horses / livestock",
+"insurance policy",
+"boats",
+"farm equipment",
+"tools / and other equipment",
+"musical instruments",
+"art / collections"
 ]
 let message = <div>
   All donations are tax-deductible and help to ensure the ongoing financial stability of the 9th and 10th (horse) cavalry Association.
@@ -113,7 +113,7 @@ class Comp extends React.Component {
           {donationMethods.map((e,i)=><Grid item xs={6}>{i+1}. {e}</Grid>)}
           </Grid>
           <hr/><br/>
-          <span style = {{textAlign:"Center"}}>
+          <span style = {{textAlign:"Center",fontWeight:'bold'}}>
           {message}
           </span>
           </Box>

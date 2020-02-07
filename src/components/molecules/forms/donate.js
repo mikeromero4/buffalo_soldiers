@@ -36,7 +36,7 @@ export default class extends React.Component {
             Museum.
           </p>
         </Box>
-        <Box display="flex" justifyContent="space-between">
+        <Box flexWrap='wrap' display="flex" justifyContent="space-evenly">
           {donations.map(e => (
             <Button
               color="primary"

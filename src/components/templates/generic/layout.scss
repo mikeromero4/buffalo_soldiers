@@ -22,7 +22,7 @@ input:-webkit-autofill:active {
   background-color: goldenrod;
   width: 100%;
   text-align: left;
-  box-shadow: 0 2px 2px #000000b5;
+  box-shadow: rgba(0, 0, 0, 0.57) 2px 2px 9px;
   button{
     margin: auto;
   }
@@ -99,6 +99,12 @@ background: none !important;
       flex-direction: row-reverse;
       flex-wrap: wrap;
       align-items: baseline;
+      &.-reverse{
+        flex-wrap: wrap-reverse;
+        .t-section__sidebar{ 
+          padding-top: 24px;
+        }
+      }
   }
   &.-transparent{
       background-color: unset;
@@ -112,14 +118,20 @@ background: none !important;
   &__sidebar{ 
       padding-left: 12px;
       // max-width: 300px;
+      align-self: stretch;
       min-width: 300px;
       flex-basis:300px;
       flex-grow: 1;
+      @media only screen and (max-width: 480px) {
+        padding-left: 0px;
+      }
       &.-small{
+        
         min-width: unset;
       flex-basis:unset;
-      flex-grow: 0;
+      flex-grow: 1;
       min-height: 485px;
+
       }
   }
   &__content{

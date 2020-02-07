@@ -6,10 +6,13 @@ import PresidentsPen from "../content/presidentsPen/index"
 import img1 from "../images/6.jpg"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 import {Main,Section} from "../components/templates/generic/common"
+
 // import "./sidebar.scss";
 import { relative } from "path"
-export default () => (
-   <>
+export default () => {
+
+  
+  return (<>
 
 
      <Main margin >
@@ -51,9 +54,9 @@ mx='auto'
 
 
     <Section name = "featured" classes={['-transparent']}  >
-      <Section name = "intro" classes={['-transparent']} smallSidebar sidebar = {<>
+      <Section name = "intro" classes={['-transparent','-reverse']} smallSidebar sidebar = {<>
       <div style={{
-        width:"250px",
+        // width:"250px",
         height:'100%',
         position:'relative',
         overflow:'scroll',
@@ -98,6 +101,7 @@ mx='auto'
     </Main>
     </>
 )
+}
 function WideBox(props) {
 return<div className = "t-wideBox">
   {props.children}

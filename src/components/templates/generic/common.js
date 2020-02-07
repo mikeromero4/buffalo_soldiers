@@ -1,10 +1,14 @@
 import React from "react"
 
-export function Section({smallSidebar,sidebar,name,children,classes}) {
+export function Section({smallSidebar,sidebar,name,children,classes,reverse}) {
     if (sidebar){
   return <div id = {name} className = {"t-section -withSidebar"
-  +(classes?' '+classes.reduce((p,c)=>p+c):'')}>
-  <div className={"t-section__sidebar" + (smallSidebar?" -small":"")}>
+  +(classes?' '+classes.reduce((p,c)=>p+' '+c):'')}>
+  <div className={"t-section__sidebar" 
+  + (smallSidebar?" -small":"")
+  + (reverse?" -reverse":"")
+  
+  }>
   {sidebar}
   </div>
   <div className="t-section__content">

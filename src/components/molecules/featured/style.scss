@@ -17,7 +17,7 @@
     &Item{
         max-width: 500px;
         min-width: 300px;
-        padding:$space-xs;
+        padding:6px;
         margin: 0 $space-s $space-m $space-s;
         color: black;
         background: rgb(231, 227, 214);
@@ -25,6 +25,9 @@
         flex-basis: 10px;
         border-radius: 5px;
         box-shadow: 2px 3px 5px #0000007a;
+        @media only screen and (max-width: 480px) {
+            margin: 24px 0;
+          }
         &__image{
             width:100%;
             height:225px;
