@@ -10,6 +10,9 @@
 const ReactDOM = require("react-dom")
 const React = require("react")
 const Layout = require("./src/components/templates/generic/layout").default
+exports.onPrefetchPathname=(o)=>{
+console.log(o)
+}
 exports.shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition
