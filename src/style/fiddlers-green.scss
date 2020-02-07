@@ -1,0 +1,40 @@
+.o-fiddlersGreen__form{
+  
+    padding:12px;
+    background:#262265;
+    >div{
+        flex-basis: 10px;
+        flex-grow:1;
+    }
+    .react-parallax{
+        color:#ffffffb8;
+    }
+    .stanza{
+        font-weight: 100;
+    text-align: center;
+    color: white;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2{
+        font-weight:100;
+
+    }
+    }
+    form{
+        background:#ffffffb8;
+        padding:12px;
+        margin-left:12px;
+        textInput{
+            display:flex;
+        }
+    }
+    h1{
+        color:#ffffffb8;
+    }
+}
+.poem{
+      font-family: sans-serif;
+}

@@ -9,7 +9,7 @@ import image from '../images/fiddlersGreen.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 import { Main } from "../components/templates/generic/common"
 import { Parallax, Background } from 'react-parallax';
-
+import "../style/fiddlers-green.scss"
 
 
 export default props => (
@@ -60,8 +60,11 @@ export default props => (
  
 <Paper>
 <Box p={4}>
-  
-                  <div style={{display:'flex',flexDirection:"row",background: '#0a2f55'}}>
+  <div>
+    <h1 className = "heading--2 ut-gold heading--special1">New Fiddlers Green Notification</h1>
+
+
+                  <div className = "o-fiddlersGreen__form" style={{display:'flex',flexDirection:"row",background: '#0a2f55'}}>
 
   
   <Parallax
@@ -70,24 +73,27 @@ export default props => (
             bgImageAlt="the cat"
             strength={400}
         >
-            Put some text content here - even an empty div with fixed dimensions to have a height
-            for the parallax.
-            <div style={{ height: '400px' }} />
+          
+            <div className = "stanza" >
+              <h2>In a shady meadow green,
+<br/>Are the souls of all dead troopers camped
+<br/>Near a good old-time canteen.
+<br/>And this eternal resting place
+<br/>Is known as Fiddler’s Green. 
+<br/>(1910-2020)</h2>
+              </div>
         </Parallax>
 <div>
-<h1>Fiddlers green form</h1>
 
 <form>
+<table>
 
-Your name: <TextField/>
 
-E-mail: <TextField/>
-<br/><br/>
-
-Deceased name: <TextField/>
-
-Chapter name: <TextField/>
-
+<tr><td>Your name: </td><td><TextField name = "name"/></td></tr>
+<tr><td>E-mail: </td><td><TextField name = "e-mail"/></td></tr>
+<tr><td>Deceased name: </td><td><TextField name = "deceased"/></td></tr>
+<tr><td>Chapter name: </td><td><TextField name = "Chapter"/></td></tr>
+</table>
 <br/><br/>Association affiliation:
 
 <br/><Checkbox
@@ -103,6 +109,7 @@ Chapter name: <TextField/>
 <Button variant='underlined' color='secondary'>
   submit
 </Button>
+</div>
 </div>
 </div>
 </Box>
