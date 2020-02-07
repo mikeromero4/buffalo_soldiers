@@ -7,32 +7,24 @@ import { height } from "@material-ui/system"
 import grass from "../images/grass.png"
 import image from '../images/fiddlersGreen.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
+import { Main } from "../components/templates/generic/common"
 
 
 
 export default props => (
-  <>
-    <SEO title="Page two" />
-    <span className="fiddlersGreenTitle">Fiddlers Green</span>
-    <div className="p__holder" style={{}}>
-      <div className="p2">
-        <div style={{
-            backgroundImage: `url(${image})`,
-          }}/>
-      </div>
-      <div style={{position:'relative'}}>
-      <div className="p1">
-        <div
-          style={{
-            backgroundSize:'60%',
-            backgroundImage: `url(${grass})`,
-          }}
-          className="pi1"
-        >
-          
-        </div>
-        </div>
-        <div className='poem'>
+    <Main margin flush>
+          <div className="l-topSection">
+            <div className="l-topSection__seperation">
+              <p className="o-donations__note -t">
+    <h2 className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
+                </p>
+            </div>
+          </div>
+          <div style={{display:'flex'}}>
+
+    <img style={{width:'100%'}} src={image}/>
+
+   <div className='poem'>
 
         <p>
           When a cavalryman dies, he begins a long march to his ultimate
@@ -53,6 +45,7 @@ export default props => (
           green, and enjoy the companionship and reminiscences of old friends.
         </p>
         </div>
+          </div>
 
       <div>
  <Box p={10}>
@@ -90,8 +83,7 @@ Chapter name: <TextField/>
 </Paper>
 
  </Box>
-      </div>
-      </div>
+
     </div>
-  </>
+  </Main>
 )
