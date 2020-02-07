@@ -90,9 +90,9 @@ const Header = class extends React.Component {
   render() {
     const { siteTitle,path,small } = this.props;
     return (<>
-  {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
+  {/* {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
   return <Link to={e.slug}>{e.name}</Link>
-    })}
+    })} */}
       <Drawer
       
               variant="temporary"
