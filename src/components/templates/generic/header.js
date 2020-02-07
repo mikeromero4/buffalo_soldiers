@@ -91,9 +91,9 @@ const Header = class extends React.Component {
   render() {
     const { siteTitle,path,small } = this.props;
     return (<>
-  {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
+  {/* {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
   return <Link to={e.slug}>{e.name}</Link>
-    })}
+    })} */}
       <Drawer
       
               variant="temporary"
@@ -176,7 +176,7 @@ function NavigationItems(props) {
     indicatorColor={props.primary?'primary':"secondary"}
   value={props.currentPage}
   onChange={(_,index)=>{
-   // handleChange(index)
+    handleChange(index)
 if(props.handleChange){props.handleChange()}
   }}
  textColor={props.primary?'primary':"secondary"}
@@ -201,7 +201,7 @@ if(props.handleChange){props.handleChange()}
           </Button>
           </Tab>
         }
-      else{return<Tab component={'a'} icon={e.icon} key={e.name} label={<Link to={e.slug.slice(0,e.slug.length-1)}>{e.name}</Link>} value={e.slug} >
+      else{return<Tab  icon={e.icon} key={e.name} label={<Link to={e.slug.slice(0,e.slug.length-1)}>{e.name}</Link>} value={e.slug} >
       </Tab>
       }
       })
