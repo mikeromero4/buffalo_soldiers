@@ -50,6 +50,7 @@
     "typeface-roboto-slab": "0.0.72"
   },
   "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^2.1.21",
     "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "^1.19.1"
   },

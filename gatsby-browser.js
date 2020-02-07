@@ -10,25 +10,27 @@
 const ReactDOM = require("react-dom")
 const React = require("react")
 const Layout = require("./src/components/templates/generic/layout").default
-exports.onPrefetchPathname=(o)=>{
-console.log(o)
-}
+// exports.onPrefetchPathname=(o)=>{
+// console.log(o)
+// o.loadPage()
+// // o.getResourcesForPathname()
+// }
 exports.shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition
 }) => {
   const currentPosition = getSavedScrollPosition(location)
   const queriedPosition = getSavedScrollPosition({ pathname: `/random` })
-console.log(location)
+  console.log(location)
   window.scrollTo(0,0)
 
   return [0,0]
 }
-// exports.replaceHydrateFunction=() =>{
-//   return (element, container, callback) => {
-//       ReactDOM.render(element, container, callback)
-//   }
-// }
+exports.replaceHydrateFunction=() =>{
+  return (element, container, callback) => {
+      ReactDOM.render(element, container, callback)
+  }
+}
 exports.wrapPageElement = ({ element, props }) => {
   console.log(props)
     // props provide same data to Layout as Page element will get

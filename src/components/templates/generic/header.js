@@ -90,9 +90,9 @@ const Header = class extends React.Component {
   render() {
     const { siteTitle,path,small } = this.props;
     return (<>
-  {/* {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
+  {  [...primaryNavigationItems,...secondaryNavigationItems].map((e)=>{
   return <Link to={e.slug}>{e.name}</Link>
-    })} */}
+    })}
       <Drawer
       
               variant="temporary"
@@ -200,7 +200,7 @@ if(props.handleChange){props.handleChange()}
           </Button>
           </Tab>
         }
-      else{return<Tab  icon={e.icon} key={e.name} label={<Link to={e.slug.slice(0,e.slug.length-1)}>{e.name}</Link>} value={e.slug} >
+      else{return<Tab  icon={e.icon} key={e.name} label={<Link to={e.slug}>{e.name}</Link>} value={e.slug} >
       </Tab>
       }
       })
