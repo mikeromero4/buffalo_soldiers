@@ -3,7 +3,8 @@ import Stepper from "../../organisms/stepper/index"
 import {Button,Box,CircularProgress} from '@material-ui/core';
 import "./style.scss"
 
-export default class extends React.Component {
+import { useMediaQuery } from 'react-responsive'
+class Comp extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
@@ -57,7 +58,7 @@ export default class extends React.Component {
             { action:child.props.actionRequest!=undefined?((index,controller)=>{
               return function(){return component.simulate(...child.props.actionRequest(index,controller))}
             }):null,
-              key:'m'+index,index,controller:this.controller,...this.props}
+              key:'m'+index,index,small:this.props.small,controller:this.controller,...this.props}
           )
         })
           })
@@ -216,7 +217,13 @@ if (error){return{error}}
       </div>
     }
 }
-
+export default(props)=>{
+  let small= useMediaQuery(
+    {
+    query: '(max-width: 680px)'
+  })
+  return <Comp {...props} small={small}/>
+}
 function Buttons({activeStep,steps,progress,handleBack,handleNext}){
   return               <Box mt={4}  px={4} pt={1} pb={0} width='100%' display = "inline-flex" flexDirection = "row" justifyContent = "space-between">
   {activeStep === steps.length ? (<Button fullWidth variant="contained"

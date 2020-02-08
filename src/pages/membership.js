@@ -8,6 +8,7 @@ import {Carousel} from  "react-responsive-carousel"
 import Controller from "../components/molecules/forms/controller"
 import PaymentForm from "../components/molecules/forms/paymentForm"
 import { useMediaQuery } from 'react-responsive'
+import Confirm from "../components/molecules/forms/confirm2"
 
 
 import Membership from "../components/molecules/forms/memberships"
@@ -75,13 +76,13 @@ class Comp extends React.Component {
       <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='100px'>
                   
                       <div>
-                          <img height={small?300:500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
+                          <img height={small?400:500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
                       </div>
                       <div>
-                          <img height={small?300:500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
+                          <img height={small?400:500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
                       </div>   
                        <div>
-                          <img style={{marginBottom:'-50px'}} height={small?300:550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
+                          <img style={{marginBottom:'-50px'}} height={small?400:550} className='membershipImage' src="http://realhistoryww.com/world_history/ancient/Misc/Buffalo_soldiers/Indian_95.JPG" />
                       </div>
                   </Carousel>
   <div className="floatCenter">
@@ -103,7 +104,7 @@ class Comp extends React.Component {
   <Membership name ='membership'/>
 
   <PaymentForm name ='info'/>
-  <Membership name ='confirm'/>
+  <Confirm name ='confirm'/>
 
   </Controller>
  </Box> </Paper> </Box>

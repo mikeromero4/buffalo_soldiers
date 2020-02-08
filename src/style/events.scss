@@ -65,6 +65,7 @@ abbr{
 .singleEvent{
     // padding: 12px;
     .top{
+        flex-wrap: wrap-reverse;
     display:flex;
     flex-direction:row;
     .description{
@@ -83,6 +84,10 @@ padding: 24px;
         margin: 24px auto;
         color: #0a2f55;
         box-shadow: 3px 2px 2px #0000007a;
+        @media only screen and (max-width: 480px) {
+padding: 6px;
+margin: 6px;
+        }
 
     }
     .eventInformation{
@@ -91,10 +96,14 @@ padding: 24px;
         flex-shrink: 1;
         padding: 24px;
         flex-basis: 100px;
-        flex-grow: 1;
+        flex-grow: 3;
         background: #ffffffa6;
         color: black;
         box-shadow: 2px 2px 2px 1px #0000007d;
+        @media only screen and (max-width: 480px) {
+            padding: 6px;
+            margin: 6px;
+                    }
 .info{
     padding: 24px;
     background: #0a2f55;
@@ -104,6 +113,7 @@ padding: 24px;
 }
     }
     .RSVP{
+        flex-grow: 1;
         min-width: 425px; 
     border-left: 9px double #caa110;
     border-bottom: 9px double #caa110;
@@ -112,9 +122,12 @@ padding: 24px;
     /* flex-shrink: 1; */
     /* align-self: baseline; */
     color: white;
-    flex-basis: 425px;
+    flex-basis: 40px;
     background: $blue;
     box-shadow: 3px 2px 2px black;
+    @media only screen and (max-width: 480px) {
+min-width: unset;
+    }
     .info{
         .MuiSvgIcon-root {
             margin-right: 6px;

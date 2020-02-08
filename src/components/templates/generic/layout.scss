@@ -48,6 +48,12 @@ height: unset !important;
 flex-grow: 1;
   }
 }
+.MuiStepper-root {
+  @media only screen and (max-width: 480px) {
+
+  padding: 12px 0 !important;
+}
+}
 .MuiTab-fullWidth {
   flex-basis: unset !important;
 }
@@ -102,7 +108,9 @@ background: none !important;
       &.-reverse{
         flex-wrap: wrap-reverse;
         .t-section__sidebar{ 
+          @media only screen and (max-width: 480px) {
           padding-top: 24px;
+          }
         }
       }
   }
@@ -119,16 +127,16 @@ background: none !important;
       padding-left: 12px;
       // max-width: 300px;
       align-self: stretch;
-      min-width: 300px;
-      flex-basis:300px;
+      min-width: 200px;
+      flex-basis:200px;
       flex-grow: 1;
       @media only screen and (max-width: 480px) {
         padding-left: 0px;
+        min-width: unset;
+        flex-basis:unset;
       }
       &.-small{
         
-        min-width: unset;
-      flex-basis:unset;
       flex-grow: 1;
       min-height: 485px;
 

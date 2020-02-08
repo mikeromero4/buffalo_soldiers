@@ -24,6 +24,13 @@
       }
 }
     .t-contentPage{
+      >.single{
+        padding: 0 24px;
+        background: white;
+        @media only screen and (max-width: 480px) {
+padding: 0;
+        }
+      }
    //   min-width: 500px;
         overflow: auto;
         ul{
@@ -66,15 +73,22 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    background: white;
+    padding: 6px;
+    // align-items: center;
+    img{
+      margin:0 !important;
+      margin-right: 6px;
+    }
     > div {
+      background: white;
       min-width: 250px;
       flex-basis: 50px;
       flex-grow: 1;
       align-items: end;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       // text-align: right;
     }
   }

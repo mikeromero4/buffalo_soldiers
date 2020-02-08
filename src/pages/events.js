@@ -21,7 +21,7 @@ InputLabel,
 } from "@material-ui/core"
 import Confirm from "../components/molecules/forms/confirm"
 
-import PaymentForm from "../components/molecules/forms/paymentInformation"
+import PaymentForm from "../components/molecules/forms/paymentForm"
 import Controller from "../components/molecules/forms/controller"
 
 import { Main, Section } from "../components/templates/generic/common"

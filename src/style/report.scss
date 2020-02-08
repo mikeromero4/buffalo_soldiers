@@ -1,3 +1,31 @@
 input{
   //  font-size: 2em;
 }
+.item{
+  width: 500px;
+  display: flex;
+    justify-content: space-between;
+    &:nth-child(odd){
+      background:#ffffff96;
+    }
+}
+.total{
+  width: max-content;
+    display: block;
+    margin: 24px 0;
+    text-decoration: underline;
+    width: 100%;
+    text-align: right;
+}
+.doubleLabel{
+  font-weight: bolder;
+  text-align: right;
+  width: max-content;
+  display: inline-block;
+  margin: 24px 0;
+  width: 100%;
+}
+.double{
+    text-decoration: underline;
+    border-bottom: 1px solid;
+}

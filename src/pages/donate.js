@@ -110,7 +110,7 @@ class Comp extends React.Component {
 
        <hr/>
           <Grid container spacing={3}>
-          {donationMethods.map((e,i)=><Grid item xs={6}>{i+1}. {e}</Grid>)}
+          {donationMethods.map((e,i)=><Grid item xs={small?12:6}>{small?i+1:(i+((i%2)==1?19:0))/2+1}. {e}</Grid>)}
           </Grid>
           <hr/><br/>
           <span style = {{textAlign:"Center",fontWeight:'bold'}}>

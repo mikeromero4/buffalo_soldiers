@@ -34,7 +34,7 @@ page = (p1? p2? [p1,p2]: [p1] : page)
             <Main sidebar = {<DynamicList {...{name,list,page,setPage} }/>}>
             <Section name = "intro" classes={['-transparent']}>
             <Box p = {this.props.small?1:3}>{page.length==1?"":<Link className = "t-postItem__back" to = {name + "?page=" + page[0]}><Button style={{color:'#ffffffd6'}}variant='contained' color='primary'><ArrowBackIcon/>{list[page[0]].name}</Button></Link>}
-            <Paper><Box py={4}px = {this.props.small?1:8}>
+            <Paper><Box py={4}px = {this.props.small?1:3}>
             <Content {...{name,list,page}}/>
          </Box></Paper></Box>
             </Section>
@@ -89,7 +89,7 @@ if (page.length==1){
   <h1>{list[page[0]]?.list?.[page[1]]?.name}</h1>
 <h3>{list[page[0]]?.list?.[page[1]]?.summary}</h3>
 <hr/>
-  <p><img src={list[page[0]]?.list?.[page[1]]?.hero} width={300}/>
+  <p className='single'><img src={list[page[0]]?.list?.[page[1]]?.hero} width={300}/>
 {list[page[0]]?.list?.[page[1]]?.description}</p>
 </div>
 
