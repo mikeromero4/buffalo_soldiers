@@ -25,8 +25,9 @@
 }
     .t-contentPage{
       >.single{
-        padding: 0 24px;
+        padding: 12px 24px;
         background: white;
+        overflow: auto;
         @media only screen and (max-width: 480px) {
 padding: 0;
         }

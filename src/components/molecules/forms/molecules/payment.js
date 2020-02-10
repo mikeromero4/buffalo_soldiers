@@ -55,7 +55,8 @@ componentDidMount(){
 let Tt=injectStripe(InfoSection)
 export default ({ controller, title, additionalFields, append,index }) => {
   return (
-    <StripeProvider apiKey="pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF">
+    // pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF
+    <StripeProvider apiKey="pk_test_InINzDHBEOsFgTTZXdZvB0og008pNICPQq">
       <Elements>
         <Tt
         index={index}

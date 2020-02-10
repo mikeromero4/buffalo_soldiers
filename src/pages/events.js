@@ -19,7 +19,7 @@ InputLabel,
   FormControlLabel,
   Radio,
 } from "@material-ui/core"
-import Confirm from "../components/molecules/forms/confirm"
+import Confirm from "../components/molecules/forms/confirmEvent"
 
 import PaymentForm from "../components/molecules/forms/paymentForm"
 import Controller from "../components/molecules/forms/controller"
@@ -86,10 +86,11 @@ function processEvents(data) {
       day: days[date.getDay()],
       year: date.getFullYear(),
       month: ml[date.getMonth()],
+      monthId: date.getMonth(),
       time: time.slice(0, 4) + time.slice(7, time.length),
     }
   }
-  function eventExtractor(event) {
+  function eventExtractor(event,index) {
     let {
       startTime,
       endTime,
@@ -103,6 +104,7 @@ function processEvents(data) {
     } = event.fields
     let date = [formatDate(new Date(startTime)), formatDate(new Date(endTime))]
     return {
+      index,
       name,
       date,
       location,
@@ -129,9 +131,42 @@ export default class extends React.Component {
     this.state = {
       events: [],
       loaded: false,
+      filters:[],
+      range:{},
       page: "events",
     }
-    this.dataHook=this.dataHook.bind(this)
+    this.resetFilters=()=>{
+      this.setState({
+        ...this.state,
+        filters:[],
+        range:{},
+      })
+    }
+
+
+    this.filterManager={
+      addFilter:(newFilter)=>{
+        this.setState({filters:[...this.state.filters,newFilter]})
+      },
+      removeFilter:(removedFilter)=>{
+        let filters=[...this.state.filters]
+        let index
+        filters.forEach((e,i)=>{
+          if(e.name==removedFilter.name){
+            index=i
+          }
+        })
+        if(index!==undefined){
+          filters.splice(index,1)
+          this.setState({filters})
+        }
+        
+      },
+      setRange:(range)=>{
+        this.setState({range})
+      },
+    }
+      this.dataHook=this.dataHook.bind(this)
     this.setPage = this.setPage.bind(this)
   }
   dataHook(data){
@@ -152,7 +187,9 @@ export default class extends React.Component {
     })
   }
   render() {
+    console.log(this.state)
     const { props } = this
+    let events=applyFilters(this.state.events,[this.state.range,...this.state.filters])
     return (
       <Location>
         {({ location, navigate }) => {
@@ -178,10 +215,12 @@ export default class extends React.Component {
                 {page.id == "events" ? (
                   <Section
                     classes={["-transparent", " eventPage"]}
-                    sidebar={<Filters events={this.state.events} />}
+                    sidebar={<Filters filterManager={this.filterManager} events={this.state.events} />}
                   >
-                    {this.state.loaded ? (
-                      <Events setPage={this.setPage} data={this.state.events} />
+                    {this.state.loaded ? 
+                    events.length==0?'No events to display. Try changing your filters.'
+                    :(
+                      <Events resetFilters={this.resetFilters} setPage={this.setPage} data={events} />
                     ) : (
                       <div style={{ padding: "12px", textAlign: "center" }}>
                         loading events...
@@ -201,10 +240,44 @@ export default class extends React.Component {
     )
   }
 }
+function applyFilters(events,filters){
+  if(filters.length==0){return events}
+  let filteredEvents=[]
+  events.forEach((event)=>{
+    let filtered=false
+    console.log(filters)
+    filters.forEach(({filter})=>{
+      if(filter && filter(event)){filtered=true}
+    })
+    if(filtered==false){filteredEvents.push(event)}
+  })
+  console.log(filteredEvents)
+  return filteredEvents
+}
 class EventPage extends React.Component {
   constructor(props) {
     super(props)
     this.dataHook=this.dataHook.bind(this)
+           this.paymentAction=function(index, controller) {
+      let allData = controller.allData()
+     let{card:{value:{id:card}}} = (allData)
+     
+     return [{
+       url:"https://lzt188jvx2.execute-api.us-east-1.amazonaws.com/v1",
+       input:{card},
+       action:'charge',
+       index,
+     },
+       function(allData) {
+         console.log(allData)
+         let error
+         if(allData.type=="StripeCardError"){error=allData.raw.message;return { error,redirectTo:1 }}
+         let body = {order:{...allData}
+         }
+         return { body, error }
+       },
+     ]
+   }.bind(this)
   }
   dataHook(data){
     this.setState({data:data})
@@ -242,33 +315,13 @@ center=${event.location.lat},${event.location.lon}
             
                         <div className='description'> Details: <br/>{event.description}</div>
                         <div className='bottom'>
-                     {/* <div className='ticketAmount'> <span>  How many tickets would you like to reserve?</span><div style={{width:'100px'}}>
-                           <FormControl fullWidth color="primary" variant="standard ">
-                  <InputLabel htmlFor={"input"}>{'tickets'}</InputLabel>
-                        
- <Select
- // onChange={this.handleChange}
- inputProps={{name:'tickets2'}}
-  id={'input'}
- native
-    fullWidth
-  //  value={undefined}
-   variant="standard"
-    name={'input'}
-  >
-  <option             
-  value={undefined}></option>
-  <option             
-  value={1}>2</option>
-  <option             
-  value={2}>3</option>
-  <option             
-  value={3}>4</option>
-</Select></FormControl></div></div> */}
+                 
 <br/>
 <Controller dataHook = {this.dataHook}>
     <PaymentForm name='payment'/>
-    <Confirm name='confirm'/>
+
+    
+    <Confirm actionRequest={this.paymentAction} name='confirm'/>
   </Controller>
     </div>
             </div>
@@ -307,15 +360,60 @@ center=${event.location.lat},${event.location.lon}
   }
 }
 let filters = [
-  ["members only", "free"],
-  ["this month", "next month", "this year", "next year", "last year"],
+  [
+    {
+      name:"members only",
+      filter:(e)=>{
+if(e.membersOnly){return false}
+return true
+      }
+    }, 
+    {
+      name:"free",
+      filter:(e)=>{
+        if(e.price>0){return true}
+        return false
+
+      }
+    }
+  ],
+  [{
+    name:"this month",
+    filter:(e)=>{
+      if(e.date[0].monthId==1){return false}
+      return true
+    }
+  }, 
+  {
+    name:"next month",
+    filter:(e)=>{
+      if(e.date[0].monthId==2){return false}
+      return true
+    }
+  }, 
+  {
+    name:"this year",
+    filter:(e)=>{
+      if(e.date[0].year==2020){return false}
+      return true
+    }
+  }, 
+  {
+    name:"next year",
+    filter:(e)=>{
+      if(e.date[0].year==2021){return false}
+      return true
+    }
+  }],
+
 ]
 function updateMonth(data) {
   console.log(this)
 }
 class Filters extends Component {
   render() {
-    let { events } = this.props
+    console.log(this.props)
+    let { events,filterManager } = this.props
     return (
       <>
         <Calendar
@@ -336,12 +434,27 @@ class Filters extends Component {
           Filters:
           {filters[0].map(e => (
             <div>
-              <Checkbox />
-              {e}
+              <Checkbox 
+              onChange={(e2)=>{
+                if(e2.target.checked==true){
+                  console.log('add'+e.name)
+                  filterManager.addFilter(e)
+                }
+                else{
+                  console.log('remove'+e.name)
+                  filterManager.removeFilter(e)
+                }
+              }}/>
+              {e.name}
             </div>
           ))}
           Time Range:
           <RadioGroup
+            onChange={(e)=>{
+              console.log(e.target.value)
+              let selected=(filters[1].find((e2)=>e2.name==e.target.value))
+              filterManager.setRange(selected)
+            }}
             defaultValue="this year"
             color="secondary"
             aria-label="gender"
@@ -351,9 +464,9 @@ class Filters extends Component {
               <div>
                 <FormControlLabel
                   labelPlacement="end"
-                  value={e}
+                  value={e.name}
                   control={<Radio color="secondary" />}
-                  label={e}
+                  label={e.name}
                 />
               </div>
             ))}
@@ -374,8 +487,9 @@ function inRange(eventDates, date) {
     )
   )
 }
-function Events({ data, setPage }) {
+function Events({ data, setPage,resetFilters }) {
   let events = ""
+  console.log(data)
   if (data.length > 0) {
     events = data.map((e, i) => {
       let [startDate, endDate] = formatDuration(e.date)
@@ -400,10 +514,11 @@ function Events({ data, setPage }) {
               </div>
                 <div className="event__buttons">
                   <Link
-                    onClick={function() {
-                      setPage(i)
+                    onClick={()=> {
+resetFilters()
+                      setPage(e.index)
                     }}
-                    to={"events?id=" + i}
+                    to={"events?id=" + e.index}
                   >
                     <Button fullWidth color="secondary" variant="contained">
                       More Info / Rsvp

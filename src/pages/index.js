@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Featured, FeaturedItem,FeaturedItem__content,FeaturedItem__image,FeaturedItem__title } from "../components/molecules/featured/index"
 import {Button,Box} from "@material-ui/core"
 import PresidentsPen from "../content/presidentsPen/index"
-import img1 from "../images/6.jpg"
+import img1 from "../images/blur.png"
 import ExecutiveBoard from "../components/organisms/executiveBoard/index"
 import {Main,Section} from "../components/templates/generic/common"
 
@@ -16,34 +16,9 @@ export default () => {
 
 
      <Main margin >
+       
       <Intro />
-      <Box       display="flex"
-          flexWrap='wrap-reverse'
-// width='max-content'
-mx='auto'
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="space-around"
-          mt = {4}
-        px={2}>
-      
-    <WideBox>
-      <CallToAction/>
-    </WideBox> 
-    {/* <WideBox>
-
-    <Box>
-      We currently have
-      289 members.
-      Join us now!
-
-      <Button color='secondary' variant='contained'>
-
-      Become a member
-      </Button>
-    </Box>
-    </WideBox> */}
-      </Box>
+    
 {/* 
     <Section name = "featured" classes={['-transparent']} sidebar = {  <FeaturedPreviews />  }>
       <PresidentsPen />
@@ -81,6 +56,33 @@ mx='auto'
             }>
       <PresidentsPen />
       </Section>
+      <Box       display="flex"
+          flexWrap='wrap-reverse'
+// width='max-content'
+mx='auto'
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-around"
+          my = {4}
+        px={2}>
+      
+    <WideBox>
+      <CallToAction/>
+    </WideBox> 
+    {/* <WideBox>
+
+    <Box>
+      We currently have
+      289 members.
+      Join us now!
+
+      <Button color='secondary' variant='contained'>
+
+      Become a member
+      </Button>
+    </Box>
+    </WideBox> */}
+      </Box>
       <FeaturedPreviews /> 
     
     </Section>
@@ -182,9 +184,9 @@ function Intro() {
             perpetuate, educate and celebrate their rich legacy and herritage!
             </span>
             <Link className="importantLink" to="./about">
-              <Button variant='outlined' color='secondary'>
+              <Button fullWidth variant='outlined' color='primary'>
 
-              Learn more about Buffalo Soldier History
+              Learn more
               </Button>
             </Link>
         </div>

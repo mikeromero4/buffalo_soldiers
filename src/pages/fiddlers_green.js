@@ -5,7 +5,8 @@ import { height } from "@material-ui/system"
 //https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/cowboy-and-horse-1357-12601-300x300.png
 //https://www.pinclipart.com/picdir/big/180-1805729_transparent-horses-cowboy-clipart-freeuse-download-cowboy-on.png
 import grass from "../images/grass.png"
-import image from '../images/fiddlersGreen.jpg'
+import image from '../images/fgw.png'
+import image2 from '../images/crosses.jpg'
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 import { Main } from "../components/templates/generic/common"
 import { Parallax, Background } from 'react-parallax';
@@ -20,7 +21,12 @@ export default props => (
                 </p>
             </div>
           </div>
-           
+          <div style={{position:'relative'}}>
+
+          <h2 style={{position:'absolute',top:'12px',width:"100%",textAlign:"center",fontSize:"40px"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
+
+          <img style={{width:'100%'}} src={image}/>
+          </div>
           <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row-reverse",background: '#0a2f55'}}>
 <div style = {{
   minWidth:'430px',
@@ -28,7 +34,7 @@ export default props => (
   flexBasis: "10px",
   flexGrow: 1,
 }}>
-      <img style={{width:'100%'}} src={image}/>
+      <img style={{width:'100%'}} src={image2}/>
 </div>
    <div style = {{
      minWidth:'430px',

@@ -1,11 +1,12 @@
 @import './variables.scss';
 .heading {
   &--special1{
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-family: Goldsmith_Vintage;
     text-align: center;
     font-size: 69px;
-    text-decoration: underline;
+    border-bottom: 4px double;
+    line-height: 1em;
     font-weight: 100;
     margin-top: 2px;
   }

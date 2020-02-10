@@ -8,7 +8,7 @@ import {Carousel} from  "react-responsive-carousel"
 import Controller from "../components/molecules/forms/controller"
 import PaymentForm from "../components/molecules/forms/paymentForm"
 import { useMediaQuery } from 'react-responsive'
-import Confirm from "../components/molecules/forms/confirm2"
+import Confirm from "../components/molecules/forms/confirmMembership"
 
 
 import Membership from "../components/molecules/forms/memberships"

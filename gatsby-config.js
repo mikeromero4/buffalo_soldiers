@@ -15,7 +15,7 @@ module.exports = {
         // Add options here
       },
     },
-    `gatsby-plugin-remove-trailing-slashes`,
+    // `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-stripe`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,

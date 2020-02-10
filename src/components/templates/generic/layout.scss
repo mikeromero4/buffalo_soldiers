@@ -355,9 +355,18 @@ padding-left: 0;
     background: $blue;
     max-width: 100%;
     .t-main__content{
-        max-width: 1200px;
+      
+      background-size: 50%;
+    // background-image: url("https://st.depositphotos.com/1000434/3153/i/950/depositphotos_31532283-stock-photo-seamless-paper-texture.jpg");
+        // background-image: url("https://i1.wp.com/elegantwoodkw.co/wp-content/uploads/2017/04/Seamless-brown-paper-texture.jpg?fit=724%2C724&ssl=1");
+        // background-image: url("https://i.pinimg.com/originals/7a/0b/3c/7a0b3c54222629944f9197e47a5fcebc.jpg");
+        background-image: url(https://tabormenno.files.wordpress.com/2012/09/vintage-brown-paper-texture-seamless-500x500.jpg);
+        background-color: #3d5667;
+    
+        background-blend-mode: hard-light;
+    max-width: 1200px;
         margin: auto;
-        background: $tan;
+        // background-color: $tan;
         padding: 24px;
         @media only screen and (max-width: 480px) {
           padding: 6px;
@@ -378,10 +387,14 @@ padding-left: 0;
     // flex-basis: 300px;
   }
   &__content{
+       background-size: 30%;
+    // background-image: url("https://lh3.googleusercontent.com/proxy/1-DNTH7iD3Giarf1_M64kTtSuHy6r_hHBjCKFBAhA-rUOZgDaj9p5D2cpJOKGAUbA9lcv58RS6ooLIB1kDSwIir5nd5Vv9gvxqg-ESduRhAyZ3IRretKfkVDDmPOI5jJ_rsItYy8InhB8AJV5XHEAchV");
+    background-image: url("https://i1.wp.com/elegantwoodkw.co/wp-content/uploads/2017/04/Seamless-brown-paper-texture.jpg?fit=724%2C724&ssl=1");
+
    flex-basis: 100px;
     flex-grow: 10;
     &.-inverseColors{
-      background:$tan;
+      background-color:$tan;
     }
   }
 }
@@ -622,6 +635,7 @@ border-top: 16px solid $blue;
   margin:auto;
 }
 .content_title{
+  text-align: center;
   padding: 12px;
     background: #0a2f55;
     border-bottom: 2px solid #caa110;
@@ -631,7 +645,7 @@ border-top: 16px solid $blue;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.658);
     border-width: 1.5px;
     /* border-radius: 5px; */
-    margin: 0 6px;
+    // margin: 0 6px;
 }
 .content_body{
   padding: 12px;
@@ -648,17 +662,17 @@ border-top: 16px solid $blue;
   }
 }
 .media--large{
-  box-shadow: 2px 2px 2px #0000008a;
+  // box-shadow: 2px 2px 2px #0000008a;
     border-top-left-radius: 0;
     border-radius: 5px;
     border-top-right-radius: 0;
   justify-content: space-around;
   flex-wrap: wrap;
   display:flex;
-  background: $transparentWhite;
+  // background: $transparentWhite;
   flex-direction: row-reverse;
 align-items: stretch;
-overflow: hidden;
+// overflow: hidden;
 
 
 }
@@ -668,21 +682,24 @@ overflow: hidden;
   }
   }
 .media__content{
-
-  color:black;
+  border-radius: 6px;
+  color: black;
   max-width: 550px;
   min-width: 300px;
-flex-grow: 1;
-flex-basis:33%;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
+  flex-grow: 1;
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px #00000061;
+  margin-top: 24px;
 }
 .media__image{
-  padding: 12px;
+  // padding: 12px;
   padding-left: 0;
   height: unset;
-  max-width: 750px;
+  // max-width: 750px;
 flex-grow: 2;
 flex-basis:66%;
 padding-top: 0;
@@ -716,8 +733,10 @@ justify-content: space-around;
         }
 }
 .bg1{
-  height:100%;
-  width: 100%;
+  margin: -16px;
+  height: 105%;
+  width: 104%;
+  margin-top: 0;
 }
 img{
   margin: 0;
