@@ -258,13 +258,17 @@ class EventPage extends React.Component {
   constructor(props) {
     super(props)
     this.dataHook=this.dataHook.bind(this)
-           this.paymentAction=function(index, controller) {
+
+           this.paymentAction=(index, controller)=> {
+             console.log(props.event)
+             let event =props.event.name
+             let amount =props.event.price*100
       let allData = controller.allData()
-     let{card:{value:{id:card}}} = (allData)
+     let{email:{value:email},card:{value:{id:card}}} = (allData)
      
      return [{
        url:"https://lzt188jvx2.execute-api.us-east-1.amazonaws.com/v1",
-       input:{card},
+       input:{amount,card,email,description:'Event ticket: '+event.charAt(0).toUpperCase() + event.slice(1)},// capitalize event name
        action:'charge',
        index,
      },
@@ -277,7 +281,7 @@ class EventPage extends React.Component {
          return { body, error }
        },
      ]
-   }.bind(this)
+   }
   }
   dataHook(data){
     this.setState({data:data})
@@ -317,11 +321,11 @@ center=${event.location.lat},${event.location.lon}
                         <div className='bottom'>
                  
 <br/>
-<Controller dataHook = {this.dataHook}>
+<Controller message = "You have successfully RSVP'd to this event. See you there! We've e-mailed you a receipt." dataHook = {this.dataHook}>
     <PaymentForm name='payment'/>
 
     
-    <Confirm actionRequest={this.paymentAction} name='confirm'/>
+    <Confirm event = {event} actionRequest={this.paymentAction} name='confirm'/>
   </Controller>
     </div>
             </div>

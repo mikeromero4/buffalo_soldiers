@@ -48,6 +48,9 @@ height: unset !important;
 flex-grow: 1;
   }
 }
+.MuiStep-root{
+  text-transform: capitalize;
+}
 .MuiStepper-root {
   @media only screen and (max-width: 480px) {
 
@@ -357,13 +360,14 @@ padding-left: 0;
     .t-main__content{
       
       background-size: 50%;
+      //1st background-image: url("https://lh3.googleusercontent.com/proxy/1-DNTH7iD3Giarf1_M64kTtSuHy6r_hHBjCKFBAhA-rUOZgDaj9p5D2cpJOKGAUbA9lcv58RS6ooLIB1kDSwIir5nd5Vv9gvxqg-ESduRhAyZ3IRretKfkVDDmPOI5jJ_rsItYy8InhB8AJV5XHEAchV");
+
     // background-image: url("https://st.depositphotos.com/1000434/3153/i/950/depositphotos_31532283-stock-photo-seamless-paper-texture.jpg");
         // background-image: url("https://i1.wp.com/elegantwoodkw.co/wp-content/uploads/2017/04/Seamless-brown-paper-texture.jpg?fit=724%2C724&ssl=1");
         // background-image: url("https://i.pinimg.com/originals/7a/0b/3c/7a0b3c54222629944f9197e47a5fcebc.jpg");
         background-image: url(https://tabormenno.files.wordpress.com/2012/09/vintage-brown-paper-texture-seamless-500x500.jpg);
-        background-color: #3d5667;
-    
-        background-blend-mode: hard-light;
+        background-color: #3d3419;
+    background-blend-mode: luminosity;
     max-width: 1200px;
         margin: auto;
         // background-color: $tan;
@@ -387,10 +391,12 @@ padding-left: 0;
     // flex-basis: 300px;
   }
   &__content{
-       background-size: 30%;
     // background-image: url("https://lh3.googleusercontent.com/proxy/1-DNTH7iD3Giarf1_M64kTtSuHy6r_hHBjCKFBAhA-rUOZgDaj9p5D2cpJOKGAUbA9lcv58RS6ooLIB1kDSwIir5nd5Vv9gvxqg-ESduRhAyZ3IRretKfkVDDmPOI5jJ_rsItYy8InhB8AJV5XHEAchV");
-    background-image: url("https://i1.wp.com/elegantwoodkw.co/wp-content/uploads/2017/04/Seamless-brown-paper-texture.jpg?fit=724%2C724&ssl=1");
-
+    // background-image: url("https://i1.wp.com/elegantwoodkw.co/wp-content/uploads/2017/04/Seamless-brown-paper-texture.jpg?fit=724%2C724&ssl=1");
+    background-image: url(https://tabormenno.files.wordpress.com/2012/09/vintage-brown-paper-texture-seamless-500x500.jpg);
+    background-color: #3d3419;
+background-blend-mode: luminosity;  
+    background-size: 50%;
    flex-basis: 100px;
     flex-grow: 10;
     &.-inverseColors{
@@ -586,7 +592,7 @@ border-top: 16px solid $blue;
     display: flex;
 }
 .footerBox{    
-  max-width: 400px;
+  max-width: 200px;
   margin: 20px;
   padding: 20px;
   align-self: flex-start;
@@ -595,7 +601,7 @@ border-top: 16px solid $blue;
 }
 .m-siteMap{
   flex-wrap:wrap;
-  flex-grow:1; 
+  flex-grow:10; 
       text-align: center;
     display: flex;
     padding: 20px;

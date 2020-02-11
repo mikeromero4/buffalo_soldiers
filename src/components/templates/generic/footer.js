@@ -11,26 +11,40 @@ import {Link} from "gatsby"
 
 const siteMapData = {
   About: [
-    "History",
-    'executive board',
-    'Hall of honor',
-    "National headquarters",
-    "Privacy Policy",
+    {name:"History",
+    slug:"/about/"},
+    {name:'executive board',
+    slug:'/about?page=3'},
+    {name:'Hall of honor',
+    slug:'/about?page=4'},
+    {name:"National headquarters",
+    slug:"/about?page=2"},
+    {name:"Privacy Policy",
+    slug:"/Privacy Policy/"},
     
   ],
 
   News: [
-    "News Bulletin",
-    "Chaplain's Corner", 
-    "Fiddlers Green",
-    "newsletter",
+    {name:"News Bulletin",
+    slug:"/News/"},
+    {name:"Chaplain's Corner", 
+    slug:"/news?page=1"},
+    {name:"Fiddlers Green",
+    slug:"/Fiddlers_green/"},
+    {name:"newsletter",
+    slug:"//news?page=2"},
 ],
   Community: [
-    "Ladies auxiliary",
-    "Junior Buffalo soldiers",
-    "Reunion",
-    "events",
-    "Membership"
+    {name:"Ladies auxiliary",
+    slug:"/Ladies auxiliary/"},
+    {name:"Junior Buffalo soldiers",
+    slug:"/junior-buffalo-soldiers/"},
+    {name:"Reunion",
+    slug:"/Reunion/"},
+    {name:"events",
+    slug:"/events/"},
+    {name:"Membership",
+    slug:"/Membership/"}
   ],
 
 }
@@ -65,7 +79,7 @@ function List({ data,name }) {
     return <div className="m-siteMap__group">
 <span className="m-siteMap__groupName"> {name}</span>
     <ul key = {name} className="m-siteMap__grouplist a-list">
-  {data.map((e,i) => <li key={'ft'+i} className = "m-siteMap__listItem a-listItem">{e}</li>)}
+  {data.map((e,i) => <li key={'ft'+i} className = "m-siteMap__listItem a-listItem"><Link to={e.slug}>{e.name}</Link></li>)}
   </ul>
   </div>
 }

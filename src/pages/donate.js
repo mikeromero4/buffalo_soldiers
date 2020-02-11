@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../components/utilities/seo"
 import PaymentForm from "../components/molecules/forms/paymentForm"
-import Confirm from "../components/molecules/forms/confirm2"
+import Confirm from "../components/molecules/forms/confirmDonation"
 import Donate from "../components/molecules/forms/donate"
 import Controller from "../components/molecules/forms/controller"
 import { Box, Paper,Grid } from "@material-ui/core"
@@ -52,6 +52,27 @@ class Comp extends React.Component {
     super(props)
     this.state = {}
     this.dataHook = this.dataHook.bind(this)
+        this.paymentAction=(index, controller)=> {
+let allData = controller.allData()
+console.log(allData)
+let{donation:{value:amount},email:{value:email},card:{value:{id:card}}} = (allData)
+
+return [{
+url:"https://lzt188jvx2.execute-api.us-east-1.amazonaws.com/v1",
+input:{amount:amount*100,card,email,description:'Donation of $' + amount + ".00"},// capitalize event name
+action:'charge',
+index,
+},
+function(allData) {
+  console.log(allData)
+  let error
+  if(allData.type=="StripeCardError"){error=allData.raw.message;return { error,redirectTo:1 }}
+  let body = {order:{...allData}
+  }
+  return { body, error }
+},
+]
+}
   }
   dataHook(data) {
     this.setState({ data: data })
@@ -68,7 +89,7 @@ class Comp extends React.Component {
             <div className="l-topSection__seperation">
               <p className="o-donations__note -t">
                 Want to honor our loved ones and living Troops, or those who
-                have gone to Fiddlers Green? consider a Memorial donation to the
+                have gone to Fiddlers Green? Consider a Memorial donation to the
                 9th & 10th (Horse) Cavalry Association in their name. All
                 Memorial Donations will help support our New National
                 Headquarters that proudly honors our Buffalo Soldiers.
@@ -84,10 +105,11 @@ class Comp extends React.Component {
             <Box margin="auto" p={small?1:4} maxWidth={800}>
               <Paper>
                 <Box p={small?1:2}>
-                  <Controller dataHook={this.dataHook}>
+                  <Controller message = "Thank you for supporting the National Association your donation helps us to continue to educate, perpetuate and celebrate the history and heritage of GREAT American Heroes! We have e-mailed you a receipt." 
+dataHook={this.dataHook}>
                     <Donate name="donation" />
                     <PaymentForm name="info" />
-                    <Confirm name="confirm" />
+                    <Confirm  actionRequest={this.paymentAction} name="confirm" />
                   </Controller>
 
                 </Box>
@@ -103,7 +125,7 @@ class Comp extends React.Component {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography >You can help support the Buffalo soldiers Association without paying a dime! Click here to see 20 Other ways to donate and supports the National Buffalo Soldiers Association:</Typography>
+          <Typography >You can help support the Buffalo Soldiers Association without paying a dime! Click here to see 20 Other ways to donate and supports the National Buffalo Soldiers Association:</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Box px={4}>

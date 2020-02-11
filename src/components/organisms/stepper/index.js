@@ -131,7 +131,7 @@ shouldComponentUpdate(nextProps, nextState) {
         {activeStep === steps.length ? (
             <>
               <Typography >
-              Thank you for supporting the National Association your donation helps us to continue to educate, perpetuate and celebrate the history and heritage of GREAT American Heroes!
+{this.props.completedMessage}
               </Typography>
             </>
           ) : (

@@ -172,7 +172,7 @@ function Intro() {
       </div>
       <div className="media__content">
         <div className='content_title'>
-          <h2 className='heading--2 heading -secondary heading--special1'>
+          <h2 style = {{textDecoration:"none",borderBottom:"4px double"}} className='heading--2 heading -secondary heading--special1'>
             National Buffalo Soldiers</h2>
           <h4 className='heading--4 heading -white'>The 9th & 10th (Horse) Calvary Association</h4>
            </div>

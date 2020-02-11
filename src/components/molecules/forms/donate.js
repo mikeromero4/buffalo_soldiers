@@ -24,7 +24,7 @@ export default class extends React.Component {
     let donation = this.props.controller?.data(this.props.index)?.donation?.value 
     return (
       <div className="o-donations__content">
-        <h1 className="heading--special1"> Donate Now</h1>
+        <h1 style = {{fontFamily:"sans-serif"}} className="heading--special1"> Donate Now</h1>
         <Box p={2} textAlign="center">
           <h3 className="o-donations__header">
             {" "}

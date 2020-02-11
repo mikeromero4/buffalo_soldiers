@@ -18,9 +18,9 @@ export default () =>
     <Section name = "intro" classes={['-transparent']}>
 
     <Box  p={small?1:6}><Paper><Box p={small?1:2}>
-    <h1>discount travel</h1>
+    <h1>Discount travel</h1>
 
-    Looking for affordable travel for an event or other matter related to the buffallo soldiers 9th and 10th (horse) calvary association?
+    Looking for affordable travel for an event or other matter related to the Buffallo Soldiers 9th & 10th (Horse) Calvary Association?
     get discounted flights, and other travel accommidations using our vertex360 discounts using the link below!
     <a target='_blank' 
     href='https://myvortex365.com/AKABuffaloSoldiers'>

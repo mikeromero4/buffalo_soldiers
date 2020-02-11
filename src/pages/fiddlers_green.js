@@ -23,7 +23,7 @@ export default props => (
           </div>
           <div style={{position:'relative'}}>
 
-          <h2 style={{position:'absolute',top:'12px',width:"100%",textAlign:"center",fontSize:"40px"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
+          <h2  style={{fontSize:"4em",position:'absolute',top:'12px',width:"100%",textAlign:"center"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
 
           <img style={{width:'100%'}} src={image}/>
           </div>
@@ -40,7 +40,7 @@ export default props => (
      minWidth:'430px',
   flexBasis: "10px",
 }} className='poem'>
-    <h2 className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
+    <h2 style = {{fontSize:"3.5em"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
  
         <p>
           When a cavalryman dies, he begins a long march to his ultimate

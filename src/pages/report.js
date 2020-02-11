@@ -27,10 +27,10 @@ import "../style/report.scss"
 //     }
 // })
 let bankAssets = [
-  "BOA - Scholarship",
-  "BOA - Life Memberships ",
-  "BOA - Operating",
-  "BOA - Savings",
+  "Scholarship",
+  "Life Memberships ",
+  "Operating",
+  "Savings",
 ]
 
 let otherAssets = [
@@ -80,6 +80,15 @@ let expenses = [
 "Soldiers Bust Expense ",
 "Travel and Meetings",
 ]
+function SingleInput({name,controller}){
+  let data = controller.getData(name)
+console.log(data)
+ return <div className='item'> {name}<input type = "number" min = {0}
+            onFocus = {(event) => event.target.select()}
+            onChange={function(event){
+                controller.setInput(name,event.target.value)
+                }} value = {data}></input></div>
+}
 function ControlledInput({list,name,controller}) {
     let data = controller.getData(name)
     list=list.map((e)=>({name:e,value:data?.[e]?.value||0}))
@@ -100,33 +109,37 @@ function ControlledInput({list,name,controller}) {
     
 }
 function Expenses(props) {
-    return<ControlledInput controller = {props.controller} name = "expenses" list = {expenses} />
+    return<ControlledInput controller = {props.controller} name = "Expenses" list = {expenses} />
 }
 function BankAssets(props) {
-    return<ControlledInput controller = {props.controller} name = "bank accounts" list = {bankAssets} />
+    return<ControlledInput controller = {props.controller} name = "Bank Accounts" list = {bankAssets} />
 }
 function OtherAssets(props) {
-    return<ControlledInput controller = {props.controller} name = "other current assets" list = {otherAssets} />
+    return<ControlledInput controller = {props.controller} name = "Other Current Assets" list = {otherAssets} />
 }
 function Liabilities(props) {
-    return<ControlledInput controller = {props.controller} name = "liabilities" list = {liabilities} />
+    return<ControlledInput controller = {props.controller} name = "Liabilities" list = {liabilities} />
 }
 function Income(props) {
-    return<ControlledInput controller = {props.controller} name = "income" list = {income} />
+    return<ControlledInput controller = {props.controller} name = "Income" list = {income} />
 }
 function Equity(props) {
-    return<ControlledInput controller = {props.controller} name = "equity" list = {equity} />
+    return<ControlledInput controller = {props.controller} name = "Equity" list = {equity} />
 }
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {expenses:[],income:[],otherAssets:[],bankAssets:[]}
+    this.state = {test:0,expenses:[],income:[],otherAssets:[],bankAssets:[]}
     this.controller = {
         setData:(name,value)=>{
             console.log(name)
             this.setState({[name]:{...this.state[name],[value.name]:value}})
         },
+        setInput:(name,value)=>{
+          console.log(name)
+          this.setState({[name]:value})
+      },
         getData:((name)=>this.state[name])
     }
   }
@@ -134,9 +147,11 @@ export default class extends React.Component {
   render() {
       console.log(this.state)
       let expenses1 = dd(((this.state?.expenses)||[]),expenses)
+      let liabilities1 = dd(((this.state?.liabilities)||[]),liabilities)
 
       let income1 = dd(((this.state?.income)||[]),income)
       let totalAssets = dd(((this.state["bank accounts"])||[]),bankAssets) + dd(((this.state["other current assets"])||[]),otherAssets)
+      let restrictedAssets=this.state['Restricted net assets']
       const {
       props,
     } = this;
@@ -147,8 +162,8 @@ export default class extends React.Component {
       <Section name = "intro" classes={['-transparent']}>
 
       <Box width = {700} p={6}><Paper><Box p={2}>
-      <h1>income report</h1>
-      <h3 style = {{display:'inline-block'}}>chapter name:</h3> <input/>
+      <h1>Income Report</h1>
+      <h3 style = {{display:'inline-block'}}>Chapter name:</h3> <input/>
      <br/> <h3 style = {{display:'inline-block'}}>January 1 - December 31, 20</h3> <input style={{ width:'100px'}}type = "number"/>
   <Income controller = {this.controller}/>
   <br/><br/>
@@ -168,8 +183,18 @@ export default class extends React.Component {
 <span className = "doubleLabel">Total assets:   <span className = "double">${totalAssets}.00</span></span>
 
 <hr/>
-<Equity controller = {this.controller}/>
-<span className = "doubleLabel">Total equity:   <span className = "double">${totalAssets + income1 - expenses1}.00</span></span>
+<h2>Liabilities & equity</h2>
+<Liabilities controller = {this.controller}/>
+
+{/* <Equity controller = {this.controller}/> */}
+<SingleInput controller = {this.controller} name='Restricted net assets' />
+<div className='item'> Unrestricted net assets: <span> ${totalAssets-liabilities1-(restrictedAssets||0)}.00</span>     </div>
+
+<div className='item'>  net income: <span> ${income1 - expenses1}.00</span>     </div>
+
+<div className='item'> total equity: <span> ${income1 -liabilities1- expenses1+totalAssets-(restrictedAssets||0)}.00</span>     </div>
+
+<span className = "doubleLabel">Total liablilities & Equity:   <span className = "double">${income1 - expenses1+totalAssets-(restrictedAssets||0)-liabilities1}.00</span></span>
 
        </Box> </Paper></Box>
      </Section> </Main>

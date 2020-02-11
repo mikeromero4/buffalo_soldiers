@@ -2,6 +2,7 @@ import React from "react"
 import { Box} from "@material-ui/core"
 
 
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -42,15 +43,11 @@ console.log(d1)
  {"****-****-****-" + card}
   </div>
   </div>
-            <div className="o-donations__holder -t2">
-
-          <br /> <p className="o-donations__header -secondary">Payment:</p>   
-          <div>  
-          subtotal: 
+  <p className="o-donations__header -secondary">Payment Amount: ${props.event.price}.00</p>   
 
           
-            </div>
-            </div>
+
+          
 
 
 

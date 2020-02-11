@@ -114,7 +114,7 @@ export default class Card1 extends React.Component {
       <div className="checkout__payment">
         <h2>Checkout</h2>
 
-        <Controller dataHook={this.dataHook}>
+        <Controller message = "We've received your order and have e-mailed you a receipt. Your package should arrive 5 - 7 days. Thank you!" dataHook={this.dataHook}>
           <AddressForm name="address" actionRequest={this.addressAction}/>
           <PaymentForm name="payment" actionRequest={this.shippingAction}/>
           {/* <Send name="payment"/> */}

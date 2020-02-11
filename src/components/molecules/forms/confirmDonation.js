@@ -17,7 +17,7 @@ export default class extends React.Component {
     } = this;
 
     let d1 = props.controller.allData()
-    let { first, last, email} = d1
+    let { first, last, email,donation} = d1
 
     let card = d1.card.value.card.last4
     
@@ -42,9 +42,8 @@ export default class extends React.Component {
  {"****-****-****-" + card}
   </div>
   </div>
-  <p className="o-donations__header -secondary">Payment Amount: 50.00</p>   
 
-
+  <p className="o-donations__header -secondary">Donation Amount: ${donation.value}.00</p>   
 
 
         </Box>

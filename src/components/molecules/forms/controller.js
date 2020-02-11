@@ -204,7 +204,7 @@ if (error){return{error}}
       
      <div className = {"processingScreen" + (this.state.waiting?" active":"")}>processing...<br/><CircularProgress color="primary"  /></div>
       <Stepper  
-
+completedMessage = {this.props.message || "Payment successful. We have e-mailed you receipt."}
       error = {this.state.error}
       setActiveStep={this.setActiveStep}
       activeStep={this.state.activeStep}
