@@ -9,7 +9,7 @@ import Controller from "../components/molecules/forms/controller"
 import PaymentForm from "../components/molecules/forms/paymentForm"
 import { useMediaQuery } from 'react-responsive'
 import Confirm from "../components/molecules/forms/confirmMembership"
-
+import img1 from '../images/bs1.png'
 
 import Membership from "../components/molecules/forms/memberships"
 
@@ -101,7 +101,7 @@ function(allData) {
       <Carousel showIndicators ={false} showThumbs={false}  autoPlay infiniteLoop height='100px'>
                   
                       <div>
-                          <img height={small?400:500} className='membershipImage' src="http://www.roc55.com/wp-content/uploads/2018/02/Buffalo-soldiers-three-guys-20171201_150356.png" />
+                          <img height={small?400:500} className='membershipImage' src={img1} />
                       </div>
                       <div>
                           <img height={small?400:500} className='membershipImage' src="https://media-cdn.tripadvisor.com/media/photo-s/0b/91/f3/8c/buffalo-soldier-monument.jpg" />
