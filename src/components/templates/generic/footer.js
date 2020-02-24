@@ -13,7 +13,7 @@ const siteMapData = {
   About: [
     {name:"History",
     slug:"/about/"},
-    {name:'executive board',
+    {name:'Executive board',
     slug:'/about?page=3'},
     {name:'Hall of honor',
     slug:'/about?page=4'},
@@ -30,8 +30,8 @@ const siteMapData = {
     {name:"Chaplain's Corner", 
     slug:"/news?page=1"},
     {name:"Fiddlers Green",
-    slug:"/Fiddlers_green/"},
-    {name:"newsletter",
+    slug:"/fiddlers_green/"},
+    {name:"Newsletter",
     slug:"//news?page=2"},
 ],
   Community: [
@@ -41,7 +41,7 @@ const siteMapData = {
     slug:"/junior-buffalo-soldiers/"},
     {name:"Reunion",
     slug:"/Reunion/"},
-    {name:"events",
+    {name:"Events",
     slug:"/events/"},
     {name:"Membership",
     slug:"/Membership/"}
@@ -53,7 +53,7 @@ let Box = ({children})=><div className = "footerBox">{children}</div>
 let footerBoxes =  [
     <Box key='bb1'><Button color='primary'><Link to='/gallery'>Gallery <PhotoLibraryIcon/></Link></Button></Box>,
 
-    <Box key='bb3'>contact  <ContactMailIcon/></Box>,
+    <Box key='bb3'>Contact  <ContactMailIcon/></Box>,
     <Box key='bb4'>National Headquarters:
     3816 Caroline St, Houston, TX 77004 <LocationOnIcon/></Box>,
     <Box key='bb2'><Button color='primary'><Link to='/report'>Report </Link></Button></Box>,

@@ -7,6 +7,9 @@ import { height } from "@material-ui/system"
 import grass from "../images/grass.png"
 import image from '../images/fgw.png'
 import image2 from '../images/crosses.jpg'
+
+import image3 from '../images/fiddlersGreen.jpg'
+
 import { Box, Button,Paper,Checkbox, TextField } from "@material-ui/core"
 import { Main } from "../components/templates/generic/common"
 import { Parallax, Background } from 'react-parallax';
@@ -17,16 +20,16 @@ export default props => (
     <Main margin flush>
           <div className="l-topSection">
             <div className="l-topSection__seperation">
-              <p className="o-donations__note -t">
-                </p>
+              {/* <p className="o-donations__note -t">
+                </p> */}
             </div>
           </div>
-          <div style={{position:'relative'}}>
+          {/* <div style={{position:'relative'}}>
 
           <h2  style={{fontSize:"4em",position:'absolute',top:'12px',width:"100%",textAlign:"center"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
 
           <img style={{width:'100%'}} src={image}/>
-          </div>
+          </div> */}
           <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row-reverse",background: '#0a2f55'}}>
 <div style = {{
   minWidth:'430px',
@@ -34,7 +37,7 @@ export default props => (
   flexBasis: "10px",
   flexGrow: 1,
 }}>
-      <img style={{width:'100%'}} src={image2}/>
+      <img style={{width:'100%'}} src={image3}/>
 </div>
    <div style = {{
      minWidth:'430px',

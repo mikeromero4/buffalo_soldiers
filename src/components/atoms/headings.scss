@@ -6,7 +6,6 @@
     text-align: center;
     font-size: 69px;
 text-decoration: underline;
-    line-height: 1em;
     font-weight: 100;
     margin-top: 2px;
   }
@@ -23,6 +22,7 @@ text-decoration: underline;
       background:$primary
     }
         &--secondary{
+
       background:$secondary
     }
   }
@@ -30,6 +30,8 @@ text-decoration: underline;
     color: $primary;
   }
     &.-secondary {
+      line-height: 1em;
+
     color: $secondary;
   }
   &.-white{

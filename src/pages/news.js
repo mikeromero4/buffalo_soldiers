@@ -102,7 +102,7 @@ History
   },
 
   {
-    name:"Chaplains corner",
+    name:"Chaplain's corner",
     description:<>3816 Caroline Street ~ Houston, TX
  
 
