@@ -23,7 +23,7 @@ let key2 = "pk_live_IBJ2KJKhKasoN7D2iRp6YbxI0063zOaMbF"
 
 let Catalog = ({ items, loaded, addToCart }) => (
     <div className="storeCatalogContainer">
-      <h1>Buffalo Soldiers' store</h1>
+      <h1>Buffalo Soldiers' Store</h1>
   <div className="storeCatalog">
     {loaded == false ? (
       <span>loading catalog...</span>

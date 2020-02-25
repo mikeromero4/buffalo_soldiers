@@ -88,11 +88,11 @@ function(allData) {
           <div className="l-topSection">
             <div className="l-topSection__seperation">
               <p className="o-donations__note -t">
-                Want to honor our loved ones and living Troops, or those who
-                have gone to Fiddlers Green? Consider a Memorial donation to the
+                Want to honor our loved ones and living troops, or those who
+                have gone to Fiddler's Green? Consider a memorial donation to the
                 9th & 10th (Horse) Cavalry Association in their name. All
-                Memorial Donations will help support our New National
-                Headquarters that proudly honors our Buffalo Soldiers.
+                memorial donations will help support our new national
+                headquarters that proudly honors our Buffalo Soldiers.
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ dataHook={this.dataHook}>
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography >You can help support the Buffalo Soldiers Association without paying a dime! Click here to see 20 Other ways to donate and supports the National Buffalo Soldiers Association:</Typography>
+          <Typography >You can help support the Buffalo Soldiers Association without paying a dime! Click here to see 20 Other ways to donate and support the National Buffalo Soldiers Association:</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Box px={4}>
@@ -163,7 +163,7 @@ dataHook={this.dataHook}>
               honor of a memorial donation is a unique way to acknowledge that
               extraordinary individual in your life. Your donation helps us to
               continue to educate, perpetuate and celebrate the history and
-              heritage of GREAT American Heros.
+              heritage of GREAT American Heroes.
             </p>
           </div>
         </Main>

@@ -40,7 +40,7 @@ export default class extends React.Component {
       <div className="o-donations__content">
         <Box  textAlign="center">
           <h3 className="o-donations__header">
-            Choose a membership
+            Choose a Membership
           </h3>
          
         </Box>

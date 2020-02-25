@@ -89,7 +89,7 @@ if (page.length==1){
   <h1>{list[page[0]]?.list?.[page[1]]?.name}</h1>
 <h3>{list[page[0]]?.list?.[page[1]]?.summary}</h3>
 <hr/>
-  <p className='single'><img src={list[page[0]]?.list?.[page[1]]?.hero} width={300}/>
+  <p className='single'><img src={list[page[0]]?.list?.[page[1]]?.hero} width={350}/>
 {list[page[0]]?.list?.[page[1]]?.description}</p>
 </div>
 

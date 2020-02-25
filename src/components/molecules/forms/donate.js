@@ -28,11 +28,11 @@ export default class extends React.Component {
         <Box p={2} textAlign="center">
           <h3 className="o-donations__header">
             {" "}
-            How much would you like to Donate?
+            How much would you like to donate?
           </h3>
           <p>
-            Donate $50 or more to be added to perpetual Plaque which will hang
-            proudly in our Headquarters office in the National Buffalo Soldier
+            Donate $50 or more to be added to a perpetual plaque which will hang
+            proudly in our headquarters office in the National Buffalo Soldier
             Museum.
           </p>
         </Box>

@@ -60,7 +60,7 @@ let secondaryNavigationItems = [
   },
 
   {
-    name:"fiddlers green",
+    name:"fiddler's green",
     slug:"/fiddlers_green/"
   },
   {

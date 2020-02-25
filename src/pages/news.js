@@ -63,7 +63,7 @@ function processPosts(data) {
             if(node.data.target.fields.file.contentType=="application/pdf"){
               return  <PdfViewer {...{url:node.data.target.fields.file.url}}/>
             }
-            return <img width = {300} class="img-fluid" src={`${node.data.target.fields.file.url}`}/>
+            return <img width = {350} class="img-fluid" src={`${node.data.target.fields.file.url}`}/>
           }
         }
       }),
@@ -149,7 +149,7 @@ function syncData(type,index){
       {list[index].list.map((e,i)=><li className = "t-postItem">
         <Link to={"/news?page="+index+"_" + i}>
           <div className='t-postItem__media'>
-            <img width={250} src={e.hero}/>
+            <img width={350} src={e.hero}/>
 <div>
 
           <h2 className = "t-postItem__header">{e.name}</h2>

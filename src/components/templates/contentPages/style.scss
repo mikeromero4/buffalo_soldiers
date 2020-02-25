@@ -78,6 +78,8 @@ padding: 0;
     padding: 6px;
     // align-items: center;
     img{
+      height: 225px;
+    object-fit: cover;
       align-self: center;
       margin:0 !important;
       margin-right: 6px;
@@ -91,8 +93,11 @@ padding: 0;
       align-items: end;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: baseline;
       // text-align: right;
+      > * {
+        margin: 12px 0 !important;
+    }
     }
   }
   &__header {

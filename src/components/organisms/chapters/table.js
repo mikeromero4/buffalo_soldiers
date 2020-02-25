@@ -43,9 +43,9 @@ function EnhancedTableHead(props) {
   };
   const headCells = [
     { id: 'name', numeric: false, disablePadding: false, label: 'Chapter Name' },
-    { id: 'd', numeric: true, disablePadding: false, label: 'distance (from '+props.location+')' },
-    { id: 'state', numeric: true, disablePadding: false, label: 'state' },
-    { id: 'city', numeric: true, disablePadding: false, label: 'city' },
+    { id: 'd', numeric: true, disablePadding: false, label: 'Distance (from '+props.location+')' },
+    { id: 'state', numeric: true, disablePadding: false, label: 'State' },
+    { id: 'city', numeric: true, disablePadding: false, label: 'City' },
   ];
   return (
     <TableHead>
