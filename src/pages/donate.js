@@ -125,7 +125,7 @@ dataHook={this.dataHook}>
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography >You can help support the Buffalo Soldiers Association without paying a dime! Click here to see 20 Other ways to donate and support the National Buffalo Soldiers Association:</Typography>
+          <Typography >You can help support the Buffalo Soldiers Association without paying a dime! Click here to see 20 other ways to donate and support the National Buffalo Soldiers Association:</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Box px={4}>

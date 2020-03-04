@@ -24,12 +24,12 @@ export default props => (
                 </p> */}
             </div>
           </div>
-          {/* <div style={{position:'relative'}}>
+          <div style={{position:'relative'}}>
 
           <h2  style={{fontSize:"4em",position:'absolute',top:'12px',width:"100%",textAlign:"center"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
 
           <img style={{width:'100%'}} src={image}/>
-          </div> */}
+          </div>
           <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row",background: '#0a2f55'}}>
 <div style = {{
   minWidth:'430px',

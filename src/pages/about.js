@@ -34,7 +34,7 @@ History
  </>
   },
   {
-    name:"national headquarters",
+    name:"National headquarters",
     description:<>3816 Caroline Street ~ Houston, TX
  
 
@@ -49,7 +49,7 @@ History
      </>
   },
   {
-    name:"our mission",
+    name:"Our mission",
     description:<>
 MISSION STATEMENT
 The GSAAC is dedicated to preserving the legacy of the Buffalo Soldiers of the United States by informing, educating, and engaging the community, especially Black youth, reinforcing the tremendous and often forgotten impact of these brave soldiers’ achievements past, present and future.
@@ -64,7 +64,7 @@ To promote community service to the nation and Southern Arizona by setting an ex
     </>
   },
   {
-    name:"executive board",
+    name:"Executive board",
     description:<ExecutiveBoard cols={4}/>
   },
   {

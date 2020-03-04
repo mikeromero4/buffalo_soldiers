@@ -39,7 +39,7 @@ export default function (props) {
           <Box p = {4}>  
     {location?<>  <div onClick={handleClose}  className='dialog-close'>x</div>
       <DialogTitle id="simple-dialog-title"> {location.name}</DialogTitle>
-    address: {location.geocoding.formatted_address}
+    Address: {location.geocoding.formatted_address}
     </>
     :''
     }
