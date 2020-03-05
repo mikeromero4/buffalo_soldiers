@@ -37,7 +37,7 @@ export default props => (
   flexBasis: "10px",
   flexGrow: 1,
 }}>
-      <img style={{width:'100%',height:'500px',objectFit:'cover'}} src={image2}/>
+      <img style={{width:'100%',height:'100%',objectFit:'cover'}} src={image2}/>
 </div>
    <div style = {{
      minWidth:'350px',
