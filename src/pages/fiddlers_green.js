@@ -40,7 +40,7 @@ export default props => (
       <img style={{width:'100%',height:'500px',objectFit:'cover'}} src={image2}/>
 </div>
    <div style = {{
-     minWidth:'430px',
+     minWidth:'350px',
   flexBasis: "10px",
 }} className='poem'>
     <h2 style = {{fontSize:"3.5em"}} className="heading--2 ut-gold heading--special1">Fiddler's Green</h2>
