@@ -33,11 +33,14 @@ export default props => (
           <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row",background: '#0a2f55'}}>
 <div style = {{
   minWidth:'430px',
-  alignSelf: "center",
+  alignSelf: "stretch",
   flexBasis: "10px",
   flexGrow: 1,
 }}>
-      <img style={{width:'100%'}} src={image}/>
+      <img style={{width:'100%',width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'right'}} src={image3}/>
 </div>
    <div style = {{
      minWidth:'430px',
