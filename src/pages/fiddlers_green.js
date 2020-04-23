@@ -28,7 +28,7 @@ export default props => (
 
           <h2  style={{fontSize:"4em",position:'absolute',top:'12px',width:"100%",textAlign:"center"}} className="heading--2 ut-gold heading--special1">Fiddlers Green</h2>
 
-          <img style={{width:'100%',height:'500px',objectFit:'cover'}} src={image2}/>
+          <img style={{width:'100%'}} src={image}/>
           </div>
           <div className = "poemContainer" style={{    flexWrap: 'wrap', justifyContent: 'space-around',display:'flex',flexDirection:"row",background: '#0a2f55'}}>
 <div style = {{
@@ -37,13 +37,10 @@ export default props => (
   flexBasis: "10px",
   flexGrow: 1,
 }}>
-      <img style={{width:'100%',width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    objectPosition: 'right'}} src={image3}/>
+      <img style={{width:'100%',height:'100%',objectFit:'cover'}} src={image2}/>
 </div>
    <div style = {{
-     minWidth:'430px',
+     minWidth:'350px',
   flexBasis: "10px",
 }} className='poem'>
     <h2 style = {{fontSize:"3.5em"}} className="heading--2 ut-gold heading--special1">Fiddler's Green</h2>
