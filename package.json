@@ -31,7 +31,7 @@
     "google-map-react": "^1.1.5",
     "iplocation": "^6.1.0",
     "markdown-to-jsx": "^6.11.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",
     "react": "^16.12.0",
